@@ -224,7 +224,7 @@
 
   <div class= "box-info" id="info1">
       <h1 id="year1">First Year</h1>
-      <a href="resultlist.php" id="view1"><i class="bx bx-right-arrow-circle"></i></a>
+      <a href="bsit.php" id="view1"><i class="bx bx-right-arrow-circle"></i></a>
     </div>
   
 
