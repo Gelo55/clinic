@@ -206,7 +206,7 @@
 
         <!-- CBC Section -->
         <div>
-            <h1 class="section-title"> (CBC)</h1>
+            <h2 class="section-title">Complete Blood Count (CBC)</h2>
             <table>
                 <thead>
                     <tr>
