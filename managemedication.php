@@ -2,25 +2,22 @@
 include 'connect.php';
 
 if (isset($_POST['submit'])) {
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $department = $_POST['department'];
+    $name = $_POST['name'];
     $category = $_POST['category'];
+    $description = $_POST['description'];
+    $quantity = $_POST['quantity'];
     $date = $_POST['date'];
-    $time = $_POST['time']; // Fixed spelling of 'address'
-    $reason = $_POST['reason'];
-    $prescription = $_POST['prescription']; // Corrected variable name
 
     // Use prepared statements to prevent SQL injection
-    $sql = "INSERT INTO admission (firstname, lastname, department, category, date, time, reason, prescription) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO medication (name, category, description, quantity, date) 
+            VALUES (?, ?, ?, ?, ?)";
     
-    $stmt = $con3->prepare($sql);
-    $stmt->bind_param("ssssssss", $firstname, $lastname, $department, $category, $date, $time, $reason, $prescription);
+    $stmt = $con4->prepare($sql);
+    $stmt->bind_param("sssis", $name, $category, $description, $quantity, $date); // Corrected number of 's'
     
     if ($stmt->execute()) {
         echo "Data inserted successfully";
-        header('location:admit000000000000000000000000000000000000000000000000000000000history.php');
+        header('location:medication.php');
     } else {
         die("Error: " . $stmt->error);
     }
@@ -33,13 +30,14 @@ if (isset($_POST['submit'])) {
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/admissioninfo.css">
+    <link rel="stylesheet" href="assets/css/managemed.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
@@ -121,7 +119,7 @@ if (isset($_POST['submit'])) {
     </button>
     <div class="dropdown-container3">
     <a class="dropdown-a" href="admithistory.php"><span class="droplinks_name">Admission History</span></a>
-    <a class="dropdown-a" href="#"><span class="droplinks_name">Manage Admission</span></a>
+    <a class="dropdown-a" href="manageadmit.php"><span class="droplinks_name">Manage Admission</span></a>
     </div>
 
   </div><br>
@@ -162,7 +160,7 @@ if (isset($_POST['submit'])) {
       <i class="fa fa-caret-down" id="fifth"></i>
     </button>
     <div class="dropdown-container4">
-        <a class="dropdown-a" href="medhealth.php"><span class="droplinks_name">Medication</span></a>
+   <a class="dropdown-a" href="medication.php"><span class="droplinks_name">Medication</span></a>
      </div>
 
           </div><br>
@@ -223,25 +221,25 @@ if (isset($_POST['submit'])) {
 <div class="frame">
 
     <div class="box-info">
-      <h1>Admission History</h1>
+      <h1>Medication</h1>
       <div class="container my-5">
         <form method="post">
           <div class="form-group">
-            <label for="name">Firstname</label>
-            <input type="text" class="form-control" placeholder="Enter your Firstname" name="firstname" autocomplete="off">
+            <label for="name">name</label>
+            <input type="text" class="form-control" placeholder="Enter Medicine name" name="name" autocomplete="off">
           </div>
           <div class="form-group1">
-            <label for="name">Lastname</label>
-            <input type="text" class="form-control" placeholder="Enter your Lastname" name="lastname" autocomplete="off">
+            <label for="category">category</label>
+            <input type="text" class="form-control" placeholder="Enter Category" name="category" autocomplete="off">
           </div>
           <div class="form-group2">
-            <label for="name">Department</label>
-            <input type="text" class="form-control" placeholder="Enter your Department" name="department" autocomplete="off">
+            <label for="name">Description</label>
+            <input type="text" class="form-control" placeholder="Enter Description" name="description" autocomplete="off">
           </div>
 
           <div class="form-group3">
-            <label for="name">category</label>
-            <input type="text" class="form-control" placeholder="what category you are?" name="category" autocomplete="off">
+            <label for="name">quantity</label>
+            <input type="number" class="form-control" placeholder="Quantity" name="quantity" autocomplete="off">
           </div>
             
           <div class="form-group5">
@@ -249,21 +247,7 @@ if (isset($_POST['submit'])) {
             <input type="date" class="form-control" placeholder="Enter date" name="date" autocomplete="off">
           </div>
 
-          <div class="form-group6">
-            <label for="time">Time</label>
-            <input type="time" class="form-control" placeholder="Enter timer" name="time" autocomplete="off">
-          </div>
-
-          <div class="form-group7">
-            <label for="reason">Reason</label>
-            <input type="text" class="form-control" placeholder="Enter your reason" name="reason" autocomplete="off">
-          </div>
-          <div class="form-group8">
-            <label for="prescription">Prescription</label>
-            <input type="text" class="form-control" placeholder="Enter prescription" name="prescription" autocomplete="off">
-          </div>
-
-            <button type="submit" class="btn btn-primary" name="submit">submit</button>
+            <button type="submit" class="btn btn-primary" name="submit">Add</button>
 
         </form>
       </div>

@@ -1,33 +1,64 @@
 <?php
 include 'connect.php';
 
-if (isset($_POST['submit'])) {
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $department = $_POST['department'];
-    $category = $_POST['category'];
-    $date = $_POST['date'];
-    $time = $_POST['time']; // Fixed spelling of 'address'
-    $reason = $_POST['reason'];
-    $prescription = $_POST['prescription']; // Corrected variable name
+$id = $_GET['updateid'];
+$id = intval($id); // Ensure $id is an integer to prevent SQL injection
 
-    // Use prepared statements to prevent SQL injection
-    $sql = "INSERT INTO admission (firstname, lastname, department, category, date, time, reason, prescription) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    
-    $stmt = $con3->prepare($sql);
-    $stmt->bind_param("ssssssss", $firstname, $lastname, $department, $category, $date, $time, $reason, $prescription);
-    
-    if ($stmt->execute()) {
-        echo "Data inserted successfully";
-        header('location:admit000000000000000000000000000000000000000000000000000000000history.php');
-    } else {
-        die("Error: " . $stmt->error);
+// Correct SQL query - no single quotes around the table name
+$sql4 = "SELECT * FROM `medication` WHERE id = $id";
+$result4 = mysqli_query($con4, $sql4);
+
+// Check if the query was successful and data was fetched
+if ($result4 && mysqli_num_rows($result4) > 0) {
+    $row = mysqli_fetch_assoc($result4);
+
+    // Pre-populate form fields with fetched data
+    $name = $row['name'];
+    $category = $row['category'];
+    $description = $row['description'];
+    $quantity = $row['quantity'];
+    $date = $row['date'];
+} else {
+    die("No data found for this ID.");
+}
+
+if (isset($_POST['submit'])) {
+    // Fetch new values from the form submission
+    $name = $_POST['name'];
+    $category = $_POST['category'];
+    $description = $_POST['description'];
+    $quantity = intval($_POST['quantity']); // Ensure it's an integer
+    $date = $_POST['date'];
+
+    // Prepare an SQL statement to update the data
+    $sql4 = "UPDATE `medication` SET name = ?, category = ?, description = ?, quantity = ?, date = ? WHERE id = ?";
+    $stmt = $con4->prepare($sql4);
+
+    if ($stmt === false) {
+        die("Error preparing statement: " . $con4->error);
     }
 
+    // Bind parameters to the prepared statement
+    $stmt->bind_param(
+        "sssisi", // 3 strings, 1 integer (quantity), 1 string (date), and 1 integer (id)
+        $name, $category, $description, $quantity, $date, $id
+    );
+
+    // Execute the statement and check for errors
+    if ($stmt->execute()) {
+        // Redirect to manage page after successful update
+        header('location:medication.php');
+        exit();
+    } else {
+        die("Error executing statement: " . $stmt->error);
+    }
+
+    // Close the statement
     $stmt->close();
 }
 ?>
+
+
 
 
 
@@ -39,7 +70,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/admissioninfo.css">
+    <link rel="stylesheet" href="assets/css/updatemedication.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
@@ -77,7 +108,7 @@ if (isset($_POST['submit'])) {
         <td>
           <ul class="nav-links">
           <li>
-            <a href="dash.php">
+            <a href="#">
               <i class='bx bx-home' ></i>
               <span class="links_name">Home</span>
             </a>
@@ -88,8 +119,8 @@ if (isset($_POST['submit'])) {
       <i class="fa fa-caret-down" id="second"></i>
     </button>
     <div class="dropdown-container1">
-      <a class="dropdown-a" href="studentinformation.php"><span class="droplinks_name">Student Information</span></a>
-      <a class="dropdown-a" href="managestud.php"><span class="droplinks_name">Manage Student</span></a>
+      <a class="dropdown-a" href="#"><span class="droplinks_name">Student Information</span></a>
+      <a class="dropdown-a" href="#"><span class="droplinks_name">Manage Student</span></a>
     </div>
 
   </div>
@@ -100,7 +131,7 @@ if (isset($_POST['submit'])) {
       <i class="fa fa-caret-down" id="third"></i>
     </button>
     <div class="dropdown-container2">
-      <a class="dropdown-a" href="managestaff.php"><span class="droplinks_name">Manage Staff</span></a>
+      <a class="dropdown-a" href="#"><span class="droplinks_name">Manage Staff</span></a>
     </div>
 
   </div>
@@ -114,14 +145,14 @@ if (isset($_POST['submit'])) {
         <td>
         <div class="dropdownadmission">
     <span class="main"><b>Admission</b></span><br>
-    <span class="subs"><b>Admission history</b></span><br><br>
-    <button class="dropdown-btn"> <i class='bx bx-add-to-queue' ></i>
+    <span class="sub"><b>Admission history</b></span><br><br>
+    <button class="dropdown-btn"> <i class='bx bx-plus-medical' ></i>
       <span class="droplinks_name">Admission</span>
       <i class="fa fa-caret-down" id="fourth"></i>
     </button>
     <div class="dropdown-container3">
-    <a class="dropdown-a" href="admithistory.php"><span class="droplinks_name">Admission History</span></a>
-    <a class="dropdown-a" href="#"><span class="droplinks_name">Manage Admission</span></a>
+      <a class="dropdown-a" href="medhealth.php"><span class="droplinks_name">Admission History</span></a>
+      <a class="dropdown-a" href="medstatus.php"><span class="droplinks_name">Manage Admission</span></a>
     </div>
 
   </div><br>
@@ -134,14 +165,15 @@ if (isset($_POST['submit'])) {
         <td>
     <div class="dropdownmedical">
     <span class="main"><b>Medical</b></span><br>
-    <span class="subs"><b>Medical Status</b></span><br><br>
-    <button class="dropdown-btn"> <i class='bx bx-plus' ></i>
+    <span class="sub"><b>Medical Status</b></span><br><br>
+    <button class="dropdown-btn"> <i class='bx bx-plus-medical' ></i>
       <span class="droplinks_name">Medical</span>
       <i class="fa fa-caret-down" id="first"></i>
     </button>
     <div class="dropdown-container3">
-    <a class="dropdown-a" href="healthform.php"><span class="droplinks_name">Health Form</span></a>
-    <a class="dropdown-a" href="medresult.php"><span class="droplinks_name">Medical Result</span></a>
+      <a class="dropdown-a" href="medhealth.php"><span class="droplinks_name">Health Form</span></a>
+      <a class="dropdown-a" href="medstatus.php"><span class="droplinks_name">Medical Result</span></a>
+      <a class="dropdown-a" href="#"><span class="droplinks_name">Medical History</span></a>
     </div>
 
   </div><br>
@@ -156,8 +188,8 @@ if (isset($_POST['submit'])) {
         <td>
     <div class="dropdowninventory">
     <span class="main"><b>Inventory</b></span><br>
-    <span class="subs"><b>Inventory Monitoring</b></span><br><br>
-    <button class="dropdown-btn"> <i class='bx bx-capsule' ></i>
+    <span class="sub"><b>Inventory Monitoring</b></span><br><br>
+    <button class="dropdown-btn"> <i class='bx bx-plus-medical' ></i>
       <span class="droplinks_name">inventory</span>
       <i class="fa fa-caret-down" id="fifth"></i>
     </button>
@@ -174,9 +206,9 @@ if (isset($_POST['submit'])) {
       <tr>
         <td>
         <div class="dropdownreport">
-    <span class="main"><b>Report</b></span><br>
-    <span class="subs"><b>Report Update</b></span><br><br>
-    <button class="dropdown-btn"> <i class='bx bx-edit' ></i>
+    <span class="main"><b>Report and Analytics</b></span><br>
+    <span class="sub"><b>Report Update</b></span><br><br>
+    <button class="dropdown-btn"> <i class='bx bx-plus-medical' ></i>
       <span class="droplinks_name">Report and Analytics</span>
       <i class="fa fa-caret-down" id="sixth"></i>
     </button>
@@ -202,19 +234,20 @@ if (isset($_POST['submit'])) {
      <div class="container">
     <div class="head-title">
 				<div class="left">
-					<h1>Student</h1>
+					<h1>Dashboard</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Student</a>
+							<a href="#">Dashboard</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Information</a>
+							<a class="active" href="#">Home</a>
 						</li>
 					</ul>
 				</div>
     </div> 
 </div>
+<!-- main -->
     
      
 </>
@@ -223,47 +256,34 @@ if (isset($_POST['submit'])) {
 <div class="frame">
 
     <div class="box-info">
-      <h1>Admission History</h1>
+      <h1>Update Medication</h1>
       <div class="container my-5">
         <form method="post">
           <div class="form-group">
             <label for="name">Firstname</label>
-            <input type="text" class="form-control" placeholder="Enter your Firstname" name="firstname" autocomplete="off">
+            <input type="text" class="form-control" placeholder="Enter your Firstname" name="firstname" autocomplete="off" value=<?php echo $name;?>>
           </div>
           <div class="form-group1">
             <label for="name">Lastname</label>
-            <input type="text" class="form-control" placeholder="Enter your Lastname" name="lastname" autocomplete="off">
+            <input type="text" class="form-control" placeholder="Enter your Lastname" name="lastname" autocomplete="off" value=<?php echo $category;?>>
           </div>
           <div class="form-group2">
             <label for="name">Department</label>
-            <input type="text" class="form-control" placeholder="Enter your Department" name="department" autocomplete="off">
+            <input type="text" class="form-control" placeholder="Enter your Department" name="department" autocomplete="off" value=<?php echo $description;?>>
           </div>
 
           <div class="form-group3">
             <label for="name">category</label>
-            <input type="text" class="form-control" placeholder="what category you are?" name="category" autocomplete="off">
+            <input type="text" class="form-control" placeholder="what category you are?" name="category" autocomplete="off" value=<?php echo $quantity;?>>
           </div>
+
             
-          <div class="form-group5">
+          <div class="form-group4">
             <label for="date">Date</label>
-            <input type="date" class="form-control" placeholder="Enter date" name="date" autocomplete="off">
+            <input type="date" class="form-control" placeholder="Enter date" name="date" autocomplete="off" value=<?php echo $date;?>>
           </div>
 
-          <div class="form-group6">
-            <label for="time">Time</label>
-            <input type="time" class="form-control" placeholder="Enter timer" name="time" autocomplete="off">
-          </div>
-
-          <div class="form-group7">
-            <label for="reason">Reason</label>
-            <input type="text" class="form-control" placeholder="Enter your reason" name="reason" autocomplete="off">
-          </div>
-          <div class="form-group8">
-            <label for="prescription">Prescription</label>
-            <input type="text" class="form-control" placeholder="Enter prescription" name="prescription" autocomplete="off">
-          </div>
-
-            <button type="submit" class="btn btn-primary" name="submit">submit</button>
+            <button type="submit" class="btn btn-primary" name="submit">update</button>
 
         </form>
       </div>
