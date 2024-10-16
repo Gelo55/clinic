@@ -61,7 +61,7 @@
       <i class="fa fa-caret-down" id="second"></i>
     </button>
     <div class="dropdown-container1">
-      <a class="dropdown-a" href="#"><span class="droplinks_name">Student Information</span></a>
+      <a class="dropdown-a" href="studentinformation.php"><span class="droplinks_name">Student Information</span></a>
       <a class="dropdown-a" href="managestud.php"><span class="droplinks_name">Manage Student</span></a>
     </div>
 
@@ -93,7 +93,7 @@
       <i class="fa fa-caret-down" id="fourth"></i>
     </button>
     <div class="dropdown-container3">
-    <a class="dropdown-a" href="admithistory.php"><span class="droplinks_name">Admission History</span></a>
+    <a class="dropdown-a" href="#"><span class="droplinks_name">Admission History</span></a>
     <a class="dropdown-a" href="manageadmit.php"><span class="droplinks_name">Manage Admission</span></a>
     </div>
 
