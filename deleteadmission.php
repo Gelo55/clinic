@@ -12,7 +12,7 @@ if (isset($_GET['deleteid'])) {
 
     if ($result3) {
         echo "Deleted successfully";
-        header('location:admissionhistory.php');
+        header('location:admithistory.php');
     } else {
         die(mysqli_error($con3));
     }
