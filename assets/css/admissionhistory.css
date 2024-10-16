@@ -14,6 +14,8 @@ body{
 }
 
   
+
+    
 .sidenav{
   height: 100vh;
   width: 280px;
@@ -150,6 +152,7 @@ tr,td{
   font-size: 14px;
   font-weight: 400;
   white-space: nowrap;
+  margin-left: -3%;
 }
 
 /* hover effect for links */
@@ -190,7 +193,7 @@ text-align: center;
 }
 
 .main{
-margin-left: -60%;
+margin-left: -50%;
 font-size: 14px;
 color: #7064DD;
 margin-top: 2%;
@@ -199,10 +202,8 @@ margin-top: 2%;
 
 .subs{
 color: #A8A8A8;
-margin-left: -50%;
+margin-left: -40%;
 font-size: 12px;
-position: relative;
-top: -5px;
 }
 
 /*--first dropdown --*/
@@ -225,7 +226,7 @@ text-align: center;
 font-size: 18px;
 color: white;
 position: relative;
-left: -5px;
+left: -15px;
 }
 
 .dropdownmedical .dropdown-btn .droplinks_name{
@@ -233,7 +234,7 @@ color: white;
 font-size: 14px;
 font-weight: 400;
 white-space: nowrap;
-margin-left: -5%;
+margin-left: -10%;
 }
 
 .dropdownmedical .droplinks_name:hover{
@@ -316,7 +317,7 @@ color: white;
 font-size: 14px;
 font-weight: 400;
 white-space: nowrap;
-margin-left: -1%;
+margin-left: -4%;
 position: relative;
 top: 5%;
 }
@@ -403,7 +404,7 @@ color: white;
 font-size: 14px;
 font-weight: 400;
 white-space: nowrap;
-margin-left: -1%;
+margin-left: -3%;
 position: relative;
 top: 7px;
 left: -3px;
@@ -482,7 +483,7 @@ text-align: center;
 font-size: 18px;
 color: white;
 position: relative;
-left: -5px;
+left: -15px;
 }
 
 .dropdownadmission .dropdown-btn .droplinks_name{
@@ -490,7 +491,7 @@ color: white;
 font-size: 14px;
 font-weight: 400;
 white-space: nowrap;
-margin-left: -5%;
+margin-left: -10%;
 }
 
 .dropdownadmission .droplinks_name:hover{
@@ -565,6 +566,8 @@ min-width: 60px;
 text-align: center;
 font-size: 18px;
 color: white;
+position: relative;
+left: -5%;
 }
 
 .dropdowninventory .dropdown-btn .droplinks_name{
@@ -572,7 +575,7 @@ color: white;
 font-size: 14px;
 font-weight: 400;
 white-space: nowrap;
-margin-left: -3%;
+margin-left: -10%;
 }
 
 .dropdowninventory .droplinks_name:hover{
@@ -647,6 +650,8 @@ min-width: 60px;
 text-align: center;
 font-size: 18px;
 color: white;
+position: relative;
+left: -5%;
 }
 
 .dropdownreport .dropdown-btn .droplinks_name{
@@ -654,7 +659,7 @@ color: white;
 font-size: 14px;
 font-weight: 400;
 white-space: nowrap;
-margin-left: -3%;
+margin-left: -10%;
 }
 
 .dropdownreport .droplinks_name:hover{
@@ -812,7 +817,7 @@ background-color: #555; /* Scrollbar color on hover */
     /* Center align on smaller screens */
     text-align: left;
     position: relative;
-    left: 5%;
+    left: -50%;
     top: -10px;
 }
 
@@ -828,8 +833,8 @@ background-color: #555; /* Scrollbar color on hover */
     color: var(--blue);
     list-style: none;
     position: relative;
-    left: 2%;
-    top: 3px;
+    left: -55%;
+    top: -15px;
     /* Removed negative positioning */
 }
 
@@ -848,6 +853,7 @@ background-color: #555; /* Scrollbar color on hover */
     background-color: #e0e0e0; 
 }
 /* Breadcrumb */
+
 
 .container{
   height: 100%;

@@ -77,7 +77,7 @@ if (isset($_POST['submit'])) {
         <td>
           <ul class="nav-links">
           <li>
-            <a href="#">
+            <a href="dash.php">
               <i class='bx bx-home' ></i>
               <span class="links_name">Home</span>
             </a>
@@ -89,7 +89,7 @@ if (isset($_POST['submit'])) {
     </button>
     <div class="dropdown-container1">
       <a class="dropdown-a" href="#"><span class="droplinks_name">Student Information</span></a>
-      <a class="dropdown-a" href="#"><span class="droplinks_name">Manage Student</span></a>
+      <a class="dropdown-a" href="managestud.php"><span class="droplinks_name">Manage Student</span></a>
     </div>
 
   </div>
@@ -100,7 +100,7 @@ if (isset($_POST['submit'])) {
       <i class="fa fa-caret-down" id="third"></i>
     </button>
     <div class="dropdown-container2">
-      <a class="dropdown-a" href="#"><span class="droplinks_name">Manage Staff</span></a>
+      <a class="dropdown-a" href="managestaff.php"><span class="droplinks_name">Manage Staff</span></a>
     </div>
 
   </div>
@@ -114,14 +114,14 @@ if (isset($_POST['submit'])) {
         <td>
         <div class="dropdownadmission">
     <span class="main"><b>Admission</b></span><br>
-    <span class="sub"><b>Admission history</b></span><br><br>
-    <button class="dropdown-btn"> <i class='bx bx-plus-medical' ></i>
+    <span class="subs"><b>Admission history</b></span><br><br>
+    <button class="dropdown-btn"> <i class='bx bx-add-to-queue' ></i>
       <span class="droplinks_name">Admission</span>
       <i class="fa fa-caret-down" id="fourth"></i>
     </button>
     <div class="dropdown-container3">
-      <a class="dropdown-a" href="medhealth.php"><span class="droplinks_name">Admission History</span></a>
-      <a class="dropdown-a" href="medstatus.php"><span class="droplinks_name">Manage Admission</span></a>
+    <a class="dropdown-a" href="admithistory.php"><span class="droplinks_name">Admission History</span></a>
+    <a class="dropdown-a" href="manageadmit.php"><span class="droplinks_name">Manage Admission</span></a>
     </div>
 
   </div><br>
@@ -134,15 +134,14 @@ if (isset($_POST['submit'])) {
         <td>
     <div class="dropdownmedical">
     <span class="main"><b>Medical</b></span><br>
-    <span class="sub"><b>Medical Status</b></span><br><br>
-    <button class="dropdown-btn"> <i class='bx bx-plus-medical' ></i>
+    <span class="subs"><b>Medical Status</b></span><br><br>
+    <button class="dropdown-btn"> <i class='bx bx-plus' ></i>
       <span class="droplinks_name">Medical</span>
       <i class="fa fa-caret-down" id="first"></i>
     </button>
     <div class="dropdown-container3">
-      <a class="dropdown-a" href="medhealth.php"><span class="droplinks_name">Health Form</span></a>
-      <a class="dropdown-a" href="medstatus.php"><span class="droplinks_name">Medical Result</span></a>
-      <a class="dropdown-a" href="#"><span class="droplinks_name">Medical History</span></a>
+    <a class="dropdown-a" href="healthform.php"><span class="droplinks_name">Health Form</span></a>
+    <a class="dropdown-a" href="medresult.php"><span class="droplinks_name">Medical Result</span></a>
     </div>
 
   </div><br>
@@ -157,8 +156,8 @@ if (isset($_POST['submit'])) {
         <td>
     <div class="dropdowninventory">
     <span class="main"><b>Inventory</b></span><br>
-    <span class="sub"><b>Inventory Monitoring</b></span><br><br>
-    <button class="dropdown-btn"> <i class='bx bx-plus-medical' ></i>
+    <span class="subs"><b>Inventory Monitoring</b></span><br><br>
+    <button class="dropdown-btn"> <i class='bx bx-capsule' ></i>
       <span class="droplinks_name">inventory</span>
       <i class="fa fa-caret-down" id="fifth"></i>
     </button>
@@ -175,9 +174,9 @@ if (isset($_POST['submit'])) {
       <tr>
         <td>
         <div class="dropdownreport">
-    <span class="main"><b>Report and Analytics</b></span><br>
-    <span class="sub"><b>Report Update</b></span><br><br>
-    <button class="dropdown-btn"> <i class='bx bx-plus-medical' ></i>
+    <span class="main"><b>Report</b></span><br>
+    <span class="subs"><b>Report Update</b></span><br><br>
+    <button class="dropdown-btn"> <i class='bx bx-edit' ></i>
       <span class="droplinks_name">Report and Analytics</span>
       <i class="fa fa-caret-down" id="sixth"></i>
     </button>
@@ -203,20 +202,19 @@ if (isset($_POST['submit'])) {
      <div class="container">
     <div class="head-title">
 				<div class="left">
-					<h1>Dashboard</h1>
+					<h1>Student</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Dashboard</a>
+							<a href="#">Student</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Home</a>
+							<a class="active" href="#">Information</a>
 						</li>
 					</ul>
 				</div>
     </div> 
 </div>
-<!-- main -->
     
      
 </>
