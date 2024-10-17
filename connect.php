@@ -27,4 +27,9 @@ if(!$con4){
     die(mysqli_error($con4));
 }
 
+$con5=new mysqli('localhost','root', 'password','inventory_db');
+
+if(!$con5){
+    die(mysqli_error($con5));
+}
 ?>

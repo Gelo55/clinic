@@ -5,12 +5,12 @@ $id = $_GET['updateid'];
 $id = intval($id); // Ensure $id is an integer to prevent SQL injection
 
 // Correct SQL query - no single quotes around the table name
-$sql4 = "SELECT * FROM `medication` WHERE id = $id";
-$result4 = mysqli_query($con4, $sql4);
+$sql5 = "SELECT * FROM `equipment` WHERE id = $id";
+$result5 = mysqli_query($con5, $sql5);
 
 // Check if the query was successful and data was fetched
-if ($result4 && mysqli_num_rows($result4) > 0) {
-    $row = mysqli_fetch_assoc($result4);
+if ($result5 && mysqli_num_rows($result5) > 0) {
+    $row = mysqli_fetch_assoc($result5);
 
     // Pre-populate form fields with fetched data
     $name = $row['name'];
@@ -31,11 +31,11 @@ if (isset($_POST['submit'])) {
     $date = $_POST['date'];
 
     // Prepare an SQL statement to update the data
-    $sql4 = "UPDATE `medication` SET name = ?, category = ?, description = ?, quantity = ?, date = ? WHERE id = ?";
-    $stmt = $con4->prepare($sql4);
+    $sql5 = "UPDATE `equipment` SET name = ?, category = ?, description = ?, quantity = ?, date = ? WHERE id = ?";
+    $stmt = $con5->prepare($sql5);
 
     if ($stmt === false) {
-        die("Error preparing statement: " . $con4->error);
+        die("Error preparing statement: " . $con5->error);
     }
 
     // Bind parameters to the prepared statement
@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
     // Execute the statement and check for errors
     if ($stmt->execute()) {
         // Redirect to manage page after successful update
-        header('location:medication.php');
+        header('location:equipment.php');
         exit();
     } else {
         die("Error executing statement: " . $stmt->error);
