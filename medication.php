@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/invmedication.css">
+    <link rel="stylesheet" href="assets/css/medication.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -206,10 +206,7 @@ if (isset($_POST['submit'])) {
     </div> 
 </div>
 
-    
-<div clas="container">
     <div class="frame">
-    <div class="crud-container">
   
 
     <table class="table-container">
@@ -257,12 +254,9 @@ if (isset($_POST['submit'])) {
       </tbody>
     </table>
 
-
-</div>
-
  <!-- Button to trigger modal -->
  <div class="container">
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMedicationModal">Add Medication</button>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMedicationModal" id="btn-modal">Add Medication</button>
     </div>
 
     <!-- Modal Structure -->
@@ -302,15 +296,16 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   
 
     </div>
-</div>
 
 
 </body>
 
+
+    <!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
        
 <script type="text/javascript">
     function toggleNav() {
