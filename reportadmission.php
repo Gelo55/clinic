@@ -14,14 +14,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/reportadmit.css">
+    <link rel="stylesheet" href="assets/css/reportadmission.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <title>Clinic Management System</title>
 </head>
 <body>
@@ -201,9 +201,39 @@
 <div clas="container">
     <div class="frame">
 
-   
+    <div class="container" id="report-container">
+        <header class="header-report">
+            <h1>Admission Report</h1>
+            <p>Date: <span id="report-date"></span></p>
+        </header>
+        <section class="student-info">
+            <h2>Student Information</h2>
+            <div class="input-group">
+                <label for="student-name"><strong>Name:</strong></label>
+                <input type="text" id="student-name" value="John Doe" />
+            </div>
+            <div class="input-group">
+                <label for="student-age"><strong>Age:</strong></label>
+                <input type="number" id="student-age" value="18" />
+            </div>
+            <div class="input-group">
+                <label for="program"><strong>Program:</strong></label>
+                <input type="text" id="program" value="Computer Science" />
+            </div>
+            <div class="input-group">
+                <label for="status"><strong>Status:</strong></label>
+                <select id="status">
+                    <option value="Admitted" selected>Admitted</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+            </div>
+        </section>
+        <button id="generate-pdf">Download PDF</button>
+    </div>
 
-  
+
+    
   </div>
 
 </div>
@@ -255,5 +285,34 @@ for (i = 0; i < dropdown.length; i++) {
 
 <script src="script.js"></script>
 
+<script>
+ document.addEventListener('DOMContentLoaded', () => {
+    // Set the report date
+    document.getElementById('report-date').textContent = new Date().toLocaleDateString();
+
+    // Function to generate PDF
+    document.getElementById('generate-pdf').addEventListener('click', () => {
+        // Create a clone of the report for PDF generation
+        const clone = document.querySelector('.container').cloneNode(true);
+
+        // Update the cloned element with the current values
+        clone.querySelector('#student-name').outerHTML = `<strong>Name:</strong> ${document.getElementById('student-name').value}`;
+        clone.querySelector('#student-age').outerHTML = `<strong>Age:</strong> ${document.getElementById('student-age').value}`;
+        clone.querySelector('#program').outerHTML = `<strong>Program:</strong> ${document.getElementById('program').value}`;
+        clone.querySelector('#status').outerHTML = `<strong>Status:</strong> ${document.getElementById('status').value}`;
+
+        // Generate PDF
+        html2pdf()
+            .from(clone)
+            .set({
+                margin: 1,
+                filename: 'admission_report.pdf',
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            })
+            .save();
+    });
+});
+</script>
 
 </html>
