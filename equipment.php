@@ -110,7 +110,7 @@ if (isset($_POST['submit'])) {
       <i class="fa fa-caret-down" id="fourth"></i>
     </button>
     <div class="dropdown-container3">
-    <a class="dropdown-a" href="#"><span class="droplinks_name">Admission History</span></a>
+    <a class="dropdown-a" href="admithistory.php"><span class="droplinks_name">Admission History</span></a>
     <a class="dropdown-a" href="manageadmit.php"><span class="droplinks_name">Manage Admission</span></a>
     </div>
 
@@ -153,7 +153,7 @@ if (isset($_POST['submit'])) {
     </button>
     <div class="dropdown-container4">
         <a class="dropdown-a" href="medication.php"><span class="droplinks_name">Medication</span></a>
-        <a class="dropdown-a" href="equipment.php"><span class="droplinks_name">Medication</span></a>
+        <a class="dropdown-a" href="#"><span class="droplinks_name">Equipment</span></a>
      </div>
 
           </div><br>
@@ -172,8 +172,8 @@ if (isset($_POST['submit'])) {
       <i class="fa fa-caret-down" id="sixth"></i>
     </button>
     <div class="dropdown-container5">
-      <a class="dropdown-a" href="medhealth.php"><span class="droplinks_name">Admission Report</span></a>
-      <a class="dropdown-a" href="medstatus.php"><span class="droplinks_name">Inventory Report</span></a>
+    <a class="dropdown-a" href="reportadmission.php"><span class="droplinks_name">Admission Report</span></a>
+    <a class="dropdown-a" href="reportinventory.php"><span class="droplinks_name">Inventory Report</span></a>
     </div>
 
       </div><br>

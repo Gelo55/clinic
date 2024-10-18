@@ -134,7 +134,8 @@
       <i class="fa fa-caret-down" id="fifth"></i>
     </button>
     <div class="dropdown-container4">
-        <a class="dropdown-a" href="medhealth.php"><span class="droplinks_name">Medication</span></a>
+    <a class="dropdown-a" href="medication.php"><span class="droplinks_name">Medication</span></a>
+        <a class="dropdown-a" href="equipment.php"><span class="droplinks_name">Equipment</span></a>
      </div>
 
           </div><br>
@@ -153,8 +154,8 @@
       <i class="fa fa-caret-down" id="sixth"></i>
     </button>
     <div class="dropdown-container5">
-      <a class="dropdown-a" href="medhealth.php"><span class="droplinks_name">Admission Report</span></a>
-      <a class="dropdown-a" href="medstatus.php"><span class="droplinks_name">Inventory Report</span></a>
+    <a class="dropdown-a" href="reportadmission.php"><span class="droplinks_name">Admission Report</span></a>
+    <a class="dropdown-a" href="reportinventory.php"><span class="droplinks_name">Inventory Report</span></a>
     </div>
 
       </div><br>
@@ -187,24 +188,6 @@
 				</div>
     </div> 
 </div>
-
-
-<div class="container">
-    <div class="head-title">
-				<div class="left">
-					<h1>Student</h1>
-					<ul class="breadcrumb">
-						<li>
-							<a href="#">Manage</a>
-						</li>
-						<li><i class='bx bx-chevron-right' ></i></li>
-						<li>
-							<a class="active" href="#">information</a>
-						</li>
-					</ul>
-				</div>
-    </div> 
-</div><br>
 <!-- SIDEBAR -->
 
  

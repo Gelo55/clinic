@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <title>Clinic Management System</title>
-    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/dash.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
@@ -13,147 +13,147 @@
 <body>
      <!-- SIDEBAR -->
  <div id="sidenav" class="sidenav">
-  <img src="assets/images/bcp.png" alt="img" class="bcp">
-  <ul class="nav-link">
-      <li class="bell">
-      <a href="#" class="active">
-          <i class='bx bx-bell'></i>
-      </a>
-      </li>
-      <li class="settings">
-      <a href="#">
-          <i class='bx bx-cog'></i>
-      </a>
-      </li>
-      <img src="assets/images/changli.jpg" alt="avatar" class="admin-profile">
-      <table class="user-profile">
-        <tr>
-          <td><span class="user-name"><b>admin name</b></span></td>
-        </tr>
-        <tr>
-            <td> <span class="user-gmail">adminid@gmail.com</span></td>    
-        </tr>
-      </table>        
-  </ul>
-
-  <table class="dashboard">
-    <tr>
-      <td>
-        <ul class="nav-links">
-        <li>
-          <a href="#">
-            <i class='bx bx-home' ></i>
-            <span class="links_name">Home</span>
-          </a>
+    <img src="assets/images/bcp.png" alt="img" class="bcp">
+    <ul class="nav-link">
+        <li class="bell">
+        <a href="#" class="active">
+            <i class='bx bx-bell'></i>
+        </a>
         </li>
-  <div class="dropdownstudent">
-  <button class="dropdown-btn"> <i class='bx bx-user' ></i>
-    <span class="droplinks_name">Student</span>
-    <i class="fa fa-caret-down" id="second"></i>
-  </button>
-  <div class="dropdown-container1">
-    <a class="dropdown-a" href="studentinformation.php"><span class="droplinks_name">Student Information</span></a>
-    <a class="dropdown-a" href="managestud.php"><span class="droplinks_name">Manage Student</span></a>
+        <li class="settings">
+        <a href="#">
+            <i class='bx bx-cog'></i>
+        </a>
+        </li>
+        <img src="assets/images/changli.jpg" alt="avatar" class="admin-profile">
+        <table class="user-profile">
+          <tr>
+            <td><span class="user-name"><b>admin name</b></span></td>
+          </tr>
+          <tr>
+              <td> <span class="user-gmail">adminid@gmail.com</span></td>    
+          </tr>
+        </table>        
+    </ul>
+
+    <table class="dashboard">
+      <tr>
+        <td>
+          <ul class="nav-links">
+          <li>
+            <a href="#">
+              <i class='bx bx-home' ></i>
+              <span class="links_name">Home</span>
+            </a>
+          </li>
+    <div class="dropdownstudent">
+    <button class="dropdown-btn"> <i class='bx bx-user' ></i>
+      <span class="droplinks_name">Student</span>
+      <i class="fa fa-caret-down" id="second"></i>
+    </button>
+    <div class="dropdown-container1">
+      <a class="dropdown-a" href="studentinformation.php"><span class="droplinks_name">Student Information</span></a>
+      <a class="dropdown-a" href="managestud.php"><span class="droplinks_name">Manage Student</span></a>
+    </div>
+
   </div>
 
-</div>
+  <div class="dropdownstaff">
+    <button class="dropdown-btn"> <i class='bx bx-user' ></i>
+      <span class="droplinks_name">Clinic Staff</span>
+      <i class="fa fa-caret-down" id="third"></i>
+    </button>
+    <div class="dropdown-container2">
+      <a class="dropdown-a" href="managestaff.php"><span class="droplinks_name">Manage Staff</span></a>
+    </div>
 
-<div class="dropdownstaff">
-  <button class="dropdown-btn"> <i class='bx bx-user' ></i>
-    <span class="droplinks_name">Clinic Staff</span>
-    <i class="fa fa-caret-down" id="third"></i>
-  </button>
-  <div class="dropdown-container2">
-    <a class="dropdown-a" href="managestaff.php"><span class="droplinks_name">Manage Staff</span></a>
   </div>
+        </ul>   
+        </td>
+      </tr>            
+    </table>
 
-</div>
-      </ul>   
-      </td>
-    </tr>            
-  </table>
+    <table class="table-module">
+      <tr>
+        <td>
+        <div class="dropdownadmission">
+    <span class="main"><b>Admission</b></span><br>
+    <span class="subs"><b>Admission history</b></span><br><br>
+    <button class="dropdown-btn"> <i class='bx bx-add-to-queue' ></i>
+      <span class="droplinks_name">Admission</span>
+      <i class="fa fa-caret-down" id="fourth"></i>
+    </button>
+    <div class="dropdown-container3">
+    <a class="dropdown-a" href="admithistory.php"><span class="droplinks_name">Admission History</span></a>
+    <a class="dropdown-a" href="manageadmit.php"><span class="droplinks_name">Manage Admission</span></a>
+    </div>
 
-  <table class="table-module">
-    <tr>
-      <td>
-      <div class="dropdownadmission">
-  <span class="main"><b>Admission</b></span><br>
-  <span class="sub"><b>Admission history</b></span><br><br>
-  <button class="dropdown-btn"> <i class='bx bx-plus-medical' ></i>
-    <span class="droplinks_name">Admission</span>
-    <i class="fa fa-caret-down" id="fourth"></i>
-  </button>
-  <div class="dropdown-container3">
-  <a class="dropdown-a" href="admithistory.php"><span class="droplinks_name">Admission History</span></a>
-  <a class="dropdown-a" href="manageadmit.php"><span class="droplinks_name">Manage Admission</span></a>
-  </div>
+  </div><br>
+        </td>
+      </tr>            
+    </table>
 
-</div><br>
-      </td>
-    </tr>            
-  </table>
+    <table class="table-module">
+      <tr>
+        <td>
+    <div class="dropdownmedical">
+    <span class="main"><b>Medical</b></span><br>
+    <span class="subs"><b>Medical Status</b></span><br><br>
+    <button class="dropdown-btn"> <i class='bx bx-plus' ></i>
+      <span class="droplinks_name">Medical</span>
+      <i class="fa fa-caret-down" id="first"></i>
+    </button>
+    <div class="dropdown-container3">
+    <a class="dropdown-a" href="healthform.php"><span class="droplinks_name">Health Form</span></a>
+    <a class="dropdown-a" href="medresult.php"><span class="droplinks_name">Medical Result</span></a>
+    </div>
 
-  <table class="table-module">
-    <tr>
-      <td>
-  <div class="dropdownmedical">
-  <span class="main"><b>Medical</b></span><br>
-  <span class="sub"><b>Medical Status</b></span><br><br>
-  <button class="dropdown-btn"> <i class='bx bx-plus-medical' ></i>
-    <span class="droplinks_name">Medical</span>
-    <i class="fa fa-caret-down" id="first"></i>
-  </button>
-  <div class="dropdown-container3">
-  <a class="dropdown-a" href="healthform.php"><span class="droplinks_name">Health Form</span></a>
-  <a class="dropdown-a" href="medresult.php"><span class="droplinks_name">Medical Result</span></a>
-  </div>
+  </div><br>
+        </td>
+      </tr>            
+    </table>
 
-</div><br>
-      </td>
-    </tr>            
-  </table>
+   
 
- 
+    <table class="table-module">
+      <tr>
+        <td>
+    <div class="dropdowninventory">
+    <span class="main"><b>Inventory</b></span><br>
+    <span class="subs"><b>Inventory Monitoring</b></span><br><br>
+    <button class="dropdown-btn"> <i class='bx bx-capsule' ></i>
+      <span class="droplinks_name">inventory</span>
+      <i class="fa fa-caret-down" id="fifth"></i>
+    </button>
+    <div class="dropdown-container4">
+    <a class="dropdown-a" href="medication.php"><span class="droplinks_name">Medication</span></a>
+    <a class="dropdown-a" href="equipment.php"><span class="droplinks_name">Equipment</span></a>
+     </div>
 
-  <table class="table-module">
-    <tr>
-      <td>
-  <div class="dropdowninventory">
-  <span class="main"><b>Inventory</b></span><br>
-  <span class="sub"><b>Inventory Monitoring</b></span><br><br>
-  <button class="dropdown-btn"> <i class='bx bx-plus-medical' ></i>
-    <span class="droplinks_name">inventory</span>
-    <i class="fa fa-caret-down" id="fifth"></i>
-  </button>
-  <div class="dropdown-container4">
-  <a class="dropdown-a" href="medication.php"><span class="droplinks_name">Medication</span></a>
-  <a class="dropdown-a" href="equipment.php"><span class="droplinks_name">Equipment</span></a>
-   </div>
+          </div><br>
+        </td>
+      </tr>            
+    </table>
 
-        </div><br>
-      </td>
-    </tr>            
-  </table>
+    <table class="table-module">
+      <tr>
+        <td>
+        <div class="dropdownreport">
+    <span class="main"><b>Report</b></span><br>
+    <span class="subs"><b>Report Update</b></span><br><br>
+    <button class="dropdown-btn"> <i class='bx bx-edit' ></i>
+      <span class="droplinks_name">Report and Analytics</span>
+      <i class="fa fa-caret-down" id="sixth"></i>
+    </button>
+    <div class="dropdown-container5">
+    <a class="dropdown-a" href="reportadmission.php"><span class="droplinks_name">Admission Report</span></a>
+    <a class="dropdown-a" href="reportinventory.php"><span class="droplinks_name">Inventory Report</span></a>
+    </div>
 
-  <table class="table-module">
-    <tr>
-      <td>
-      <div class="dropdownreport">
-  <span class="main"><b>Report and Analytics</b></span><br>
-  <span class="sub"><b>Report Update</b></span><br><br>
-  <button class="dropdown-btn"> <i class='bx bx-plus-medical' ></i>
-    <span class="droplinks_name">Report and Analytics</span>
-    <i class="fa fa-caret-down" id="sixth"></i>
-  </button>
-  <div class="dropdown-container5">
-  <a class="dropdown-a" href="reportadmission.php"><span class="droplinks_name">Admission Report</span></a>
-  <a class="dropdown-a" href="reportinventory.php"><span class="droplinks_name">Inventory Report</span></a>
-  </div>
-
-    </div><br>
-      </td>
-    </tr>            
-  </table>
+      </div><br>
+        </td>
+      </tr>            
+    </table>
 </div>
 <div id="uppernav" >
   <div class="upnav">
@@ -161,23 +161,26 @@
 
 
 </div>
+<!-- SIDEBAR -->
 
-<div class="container">
-  <div class="head-title">
-      <div class="left">
-        <h1>Dashboard</h1>
-        <ul class="breadcrumb">
-          <li>
-            <a href="#">Dashboard</a>
-          </li>
-          <li><i class='bx bx-chevron-right' ></i></li>
-          <li>
-            <a class="active" href="#">Home</a>
-          </li>
-        </ul>
-      </div>
-  </div> 
+     <!-- main -->
+     <div class="container">
+    <div class="head-title">
+				<div class="left">
+					<h1>Student</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Student</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Information</a>
+						</li>
+					</ul>
+				</div>
+    </div> 
 </div>
+
 <!-- main -->
 <!-- SIDEBAR -->
 <!--#################################################################################-->
@@ -221,41 +224,42 @@
           <thead class= "sched-table">
               <tr>
                   <th class= "sched-table">Department</th>
+                  <th class="sched-table">Time</th>
                   <th class= "sched-table">Schedule</th>
                   <th class= "sched-table">Status</th>
-                  <th class= "sched-table">View</th>
+              
               </tr>
           </thead>
           <tbody class= "table-body">
               <tr>
                   <td>CRIM</td>
+                  <td>8:00 AM - 5:00 PM</td>
                   <td>Monday</td>
                   <td><span class="status finished">Finished</span></td>
-                  <td><button class="action-btn">View</button></td>
               </tr>
               <tr>
                   <td>EDUC</td>
+                  <td>8:00 AM - 5:00 PM</td>
                   <td>Tuesday</td>
                   <td><span class="status ongoing">ongoing</span></td>
-                  <td><button class="action-btn">View</button></td>
               </tr>
               <tr>
                   <td>BSBA/BSOA/BSAIS/ENTREP</td>
+                  <td>8:00 AM - 5:00 PM</td>
                   <td>Wednesday</td>
                   <td><span class="status pending">pending</span></td>
-                  <td><button class="action-btn">View</button></td>
               </tr>
               <tr>
                   <td>BSIT/BLIS/BSCPE/BSP</td>
+                  <td>8:00 AM - 5:00 PM</td>
                   <td>Thursday</td>
                   <td><span class="status pending">pending</span></td>
-                  <td><button class="action-btn">View</button></td>
               </tr>
               <tr>
                   <td>BSHM/BSTM</td>
+                  <td>8:00 AM - 5:00 PM</td>
                   <td>Friday</td>
                   <td><span class="status pending">pending</span></td>
-                  <td><button class="action-btn">View</button></td>
               </tr>
           </tbody>
       </table>

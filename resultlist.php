@@ -129,7 +129,8 @@
       <i class="fa fa-caret-down" id="fifth"></i>
     </button>
     <div class="dropdown-container4">
-        <a class="dropdown-a" href="medhealth.php"><span class="droplinks_name">Medication</span></a>
+    <a class="dropdown-a" href="medication.php"><span class="droplinks_name">Medication</span></a>
+    <a class="dropdown-a" href="equipment.php"><span class="droplinks_name">Equipment</span></a>
      </div>
 
           </div><br>
@@ -148,8 +149,8 @@
       <i class="fa fa-caret-down" id="sixth"></i>
     </button>
     <div class="dropdown-container5">
-      <a class="dropdown-a" href="medhealth.php"><span class="droplinks_name">Admission Report</span></a>
-      <a class="dropdown-a" href="medstatus.php"><span class="droplinks_name">Inventory Report</span></a>
+    <a class="dropdown-a" href="reportadmission.php"><span class="droplinks_name">Admission Report</span></a>
+    <a class="dropdown-a" href="reportinventory.php"><span class="droplinks_name">Inventory Report</span></a>
     </div>
 
       </div><br>
@@ -264,4 +265,35 @@
     </div>
     </div>
 </body>
+<script type="text/javascript">
+    function toggleNav() {
+    const sidenav = document.getElementById("sidenav");
+    const uppernav = document.getElementById("uppernav");
+
+    if (sidenav.style.left === "0px") {
+        sidenav.style.left = "-280px";
+        uppernav.style.marginLeft = "0";
+    } else {
+        sidenav.style.left = "0";
+        uppernav.style.marginLeft = "280px";
+    }
+}
+
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+
+
+    </script>
 </html>
