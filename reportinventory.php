@@ -20,7 +20,8 @@
         <table id="inventory-table">
             <thead>
                 <tr>
-                    <th>Item</th>
+                    <th>Medicine</th>
+                    <th>Equipment</th>
                     <th>Quantity</th>
                     <th>Price per Unit</th>
                     <th>Action</th>
@@ -29,17 +30,20 @@
             <tbody>
                 <tr>
                     <td contenteditable="true">Apples</td>
+                    <td contenteditable="true">Apples</td>
                     <td contenteditable="true">50</td>
                     <td contenteditable="true">$0.50</td>
                     <td><button class="btn-delete">Delete</button></td>
                 </tr>
                 <tr>
                     <td contenteditable="true">Bananas</td>
+                    <td contenteditable="true">Bananas</td>
                     <td contenteditable="true">30</td>
                     <td contenteditable="true">$0.25</td>
                     <td><button class="btn-delete">Delete</button></td>
                 </tr>
                 <tr>
+                    <td contenteditable="true">Oranges</td>
                     <td contenteditable="true">Oranges</td>
                     <td contenteditable="true">20</td>
                     <td contenteditable="true">$0.75</td>
@@ -65,18 +69,20 @@
             const cell2 = newRow.insertCell(1);
             const cell3 = newRow.insertCell(2);
             const cell4 = newRow.insertCell(3);
+             const cell5 = newRow.insertCell(4);
 
             cell1.contentEditable = true;
             cell2.contentEditable = true;
             cell3.contentEditable = true;
 
             cell1.innerHTML = "New Item";
-            cell2.innerHTML = "0";
-            cell3.innerHTML = "$0.00";
-            cell4.innerHTML = '<button class="btn-delete">Delete</button>';
+            cell2.innerHTML = "New Item";
+            cell3.innerHTML = "0";
+            cell4.innerHTML = "$0.00";
+            cell5.innerHTML = '<button class="btn-delete">Delete</button>';
 
             // Add delete functionality to the new row's delete button
-            cell4.querySelector('.btn-delete').addEventListener('click', function() {
+            cell5.querySelector('.btn-delete').addEventListener('click', function() {
                 newRow.remove();
             });
         });
