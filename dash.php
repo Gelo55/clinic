@@ -15,16 +15,27 @@
  <div id="sidenav" class="sidenav">
     <img src="assets/images/bcp.png" alt="img" class="bcp">
     <ul class="nav-link">
-        <li class="bell">
-        <a href="#" class="active">
-            <i class='bx bx-bell'></i>
-        </a>
-        </li>
-        <li class="settings">
-        <a href="#">
-            <i class='bx bx-cog'></i>
-        </a>
-        </li>
+    <li class="bell">
+    <a href="#" id="bell-icon" class="active">
+        <i class='bx bx-bell'></i>
+    </a>
+    <!-- Notification Box -->
+    <div id="notification-box" class="notification-box">
+        <p><i class="bx bx-bell"></i>No new notifications</p>
+        <p class="second-paragraph">When you have notifications,</p> <br> <p class="third-paragraph">they will appear here.</p>
+    </div>
+</li>
+<li class="settings">
+    <a href="#" id="settings-icon">
+        <i class='bx bx-cog'></i>
+    </a>
+    <!-- Unique Dropdown Menu -->
+    <ul id="settings-dropdown-menu" class="settings-dropdown-menu">
+        <li><a href="profile.php">Profile</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Logout</a></li>
+    </ul>
+</li>
         <img src="assets/images/changli.jpg" alt="avatar" class="admin-profile">
         <table class="user-profile">
           <tr>
@@ -197,7 +208,7 @@
   
 
     <div class= "box-info" id="info2">
-      <a href=""><header class= "header"></header>
+      <a href="healthform.php"><header class= "header"></header>
       <h1>Medical</h1>
       <span><i class= "bx bx-plus-medical"></i></span></a>
     </div>
@@ -205,16 +216,16 @@
     
     
     <div class= "box-info" id="info3">
-      <a href=""><header class= "header"></header>
-      <h1>Schedule</h1>
+      <a href="Medication.php"><header class= "header"></header>
+      <h1>Inventory</h1>
       <span><i class= "bx bx-calendar"></i></span></a>
     </div>
   
     
     <div class= "box-info" id="info4">
-      <header class= "header"></header>
+      <a href="admithistory.php"><header class= "header"></header>
       <h1>Admit</h1>
-      <span><i class= "bx bx-message-square-add"></i></span>
+      <span><i class= "bx bx-message-square-add"></i></span></a>
     </div>
 
     
@@ -386,6 +397,23 @@ for (i = 0; i < dropdown.length; i++) {
     // Rendering the chart
     var chart = new ApexCharts(document.querySelector("#chart"), options);
     chart.render();
+</script>
+
+<script>
+  document.getElementById("bell-icon").addEventListener("click", function(event) {
+    event.preventDefault();
+    const notificationBox = document.getElementById("notification-box");
+    notificationBox.classList.toggle("active"); // Toggle visibility
+});
+
+</script>
+
+<script>
+  document.getElementById("settings-icon").addEventListener("click", function(event) {
+    event.preventDefault();
+    const dropdown = document.getElementById("settings-dropdown-menu");
+    dropdown.classList.toggle("active"); // Toggle the dropdown visibility
+});
 </script>
 </body>
 </html>

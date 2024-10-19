@@ -1,12 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-body{
+*{
     margin: 0;
-    font-family: "Lato", sans-serif;
+    padding: 0;
     box-sizing: border-box;
-}
 
-
+  }
+  
+  body{
+      margin: 0;
+      font-family: "Lato", sans-serif;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+  }
+  
     
 .sidenav{
   height: 100vh;
@@ -33,6 +39,7 @@ body{
 .sidenav .nav-link{
   margin-top: -16%;
   margin-left: 38%;
+  height: 40%;
 }
 
 .sidenav .nav-link li{
@@ -69,10 +76,10 @@ body{
 }
 
 .admin-profile{
-  width: 80%;
-  height: 50%;
-  margin-left: -20%;
-  margin-top: 30%;
+  width: 100px;
+  height: 100px;
+  margin-left: -150%;
+  margin-top: 50%;
   border-radius: 50%;
 }
 
@@ -91,18 +98,19 @@ tr,td{
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
-  top: -10px;
-  left: 65px;
+  top: 5px;
+  left: -70%;
 }
 
 .user-gmail{
   color: #A8A8A8;
   font-size: 13px;
   position: relative;
-  top: -20px;
-  left: 65px
+  top: -5px;
+  left: -70%;
  
 }
+
 
 /* upper nav close*/
 
@@ -846,116 +854,203 @@ background-color: #555; /* Scrollbar color on hover */
 }
 /* Breadcrumb */
 
+  
+  .container{
+    height: 100%;
+    width: 100%;
+  }
+  
+  
+    .frame {
+      background-color: rgba(168, 168, 168, 0.2); 
+      background: cover;
+      height: 90vh;
+      width: 100%;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px; 
+      box-sizing: border-box; 
+      transition: padding 0.3s ease; 
+  }
 
-/*-- frame --*/
-.frame{
-background-color: rgba(168, 168, 168, 0.2); 
-height: 120vh;
-width: 100%;
-box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-padding: 20px; 
-box-sizing: border-box; 
-transition: padding 0.3s ease; 
+  .frame a{
+    color: white;
+    text-decoration: none;
+  }
+
+  .frame #btn-first{
+    color: white;
+    position: relative;
+    top: 3%;
+    left: 2%;
+  }
+
+  .frame #btn-second{
+    width: 30%;
+  }
+  .frame #btn-third{
+    position: relative;
+    left: 10%;
+    width: 30%;
+  }
+
+  .table-container {
+    width: 100%;
+    margin-top: 50px;
+    margin: 5px auto; /* Center the table */
+    font-size: 10px;
+    text-align: left;
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: relative;
+    top: 20px;
+  }
+  
+  .table-container caption {
+    caption-side: top;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #fFF; /* Accent background */
+    color: black; /* White text for contrast */
+    text-align: left;
+  }
+  
+  .table-container th, 
+  .table-container td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd; /* Soft borders between rows */
+  }
+  
+  .table-container th {
+    background-color: #033683; /* Accent color for headers */
+    color: white; /* White text for contrast */
+    font-weight: bold;
+    text-transform: uppercase; /* Make headers stand out */
+  }
+
+  
+  
+  .table-container tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light background for alternating rows */
+  }
+  
+  .table-container tr:nth-child(odd) {
+    background-color: #f4f4f4; /* Slightly darker for contrast */
+  }
+  
+  .table-container tr:hover {
+    background-color: #e9e9e9; /* Hover effect for rows */
+  }
+  
+  .table-container td {
+    color: #333; /* Darker text for readability */
+  }
+  
+  /* Optional: Responsive design for smaller screens */
+  @media screen and (max-width: 768px) {
+    .table-container {
+      font-size: 16px;
+      width: 95%; /* Slightly reduce width on smaller screens */
+    }
+  
+    .table-container th, 
+    .table-container td {
+      padding: 8px;
+    }
+  }
+  
+  
+/* Style for notification box */
+.notification-box {
+  display: none;
+  position: absolute;
+  top: 40px; /* Adjust depending on your layout */
+  right: 0;
+  width: 230px;
+  height: 250%;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
 }
 
-.frame .box-info{
-  height: 95%;
-  width: 65%;
-  box-shadow:  0 -4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+/* Show the notification box */
+.notification-box.active {
+  display: block;
+}
+
+/* Sample styling for the notification message */
+.notification-box p {
+  margin: 0;
+  color: black;
+  font-size: 14px;
   position: relative;
-  left: 10%;
-  top: 20px;
+  top: 38%;
+  left: 20%;
 }
 
+.notification-box p i{
+  position: absolute;
+  left: 15%;
+  top: -20px;
+  color: black;
+}
 
-h1{
+.notification-box .second-paragraph{
+  font-size: 9px;
+  color: rgba(0, 0, 0, 0.356);
   position: relative;
-  top: 20px;
-  left: 5%;
+  left: 22%;
+  top: 35%;
+ 
 }
 
-.frame .form-control{
-  color: #333;
-  width: 35%;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+.notification-box .third-paragraph{
+  font-size: 9px;
+  color: rgba(0, 0, 0, 0.356);
+ position: relative;
+ left: 30%;
+ top: 10%;
 }
 
-.frame .form-group{
-  position: relative;
-  top: 10px;
-  left: 10%;
+/* Unique Dropdown menu styles */
+.settings-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 40px; /* Adjust depending on your layout */
+  right: 0;
+  width: 130px;
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+  list-style: none;
+  padding: 5px 0;
 }
 
-.frame .form-group1{
-  position: relative;
-  top: -52px;
-  left: 50%;
+/* Show the unique dropdown */
+.settings-dropdown-menu.active {
+  display: block;
 }
 
-.frame .form-group2{
-  position: relative;
-  top: -12px;
-  left: 10%;
+/* Unique Dropdown menu item styles */
+.settings-dropdown-menu li {
+  padding: 5px 10px;
 }
 
-
-.frame .form-group3{
-  position: relative;
-  top: -72px;
-  left: 50%;
+.settings-dropdown-menu li a {
+  text-decoration: none;
+  color: black;
 }
 
-
-.frame .form-group4{
-  position: relative;
-  top: -10px;
-  left: 10%;
-}
-
-
-.frame .form-group5{
-  position: relative;
-  top: -72px;
-  left: 50%;
-}
-
-.frame .form-group6{
-  position: relative;
-  top: -35px;
-  left: 10%;
-}
-
-.frame .form-group7{
-  position: relative;
-  top: -97px;
-  left: 50%;
-}
-
-
-.frame .form-group8{
-  position: relative;
-  top: -55px;
-  left: 10%;
-}
-
-.frame .form-group9{
-  position: relative;
-  top: -117px;
-  left: 50%;
-}
-
-.frame .form-group10{
-  position: relative;
-  top: -75px;
-  left: 10%;
-}
-.btn-primary{
-position: relative;
-top: -70px;
-left: 90%;
+.settings-dropdown-menu li a:hover {
+  color: #0056b3;
+  background-color: #f0f0f0;
 }
 
 
 
-
+  
+  

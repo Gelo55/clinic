@@ -6,7 +6,8 @@ body{
     box-sizing: border-box;
 }
 
-   
+
+    
 .sidenav{
   height: 100vh;
   width: 280px;
@@ -32,6 +33,7 @@ body{
 .sidenav .nav-link{
   margin-top: -16%;
   margin-left: 38%;
+  height: 40%;
 }
 
 .sidenav .nav-link li{
@@ -68,10 +70,10 @@ body{
 }
 
 .admin-profile{
-  width: 80%;
-  height: 50%;
-  margin-left: -20%;
-  margin-top: 30%;
+  width: 100px;
+  height: 100px;
+  margin-left: -150%;
+  margin-top: 50%;
   border-radius: 50%;
 }
 
@@ -90,16 +92,16 @@ tr,td{
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
-  top: -10px;
-  left: 65px;
+  top: 5px;
+  left: -70%;
 }
 
 .user-gmail{
   color: #A8A8A8;
   font-size: 13px;
   position: relative;
-  top: -20px;
-  left: 65px
+  top: -10px;
+  left: -70%;
  
 }
 
@@ -843,6 +845,7 @@ background-color: #555; /* Scrollbar color on hover */
     pointer-events: unset;
     background-color: #e0e0e0; 
 }
+/* Breadcrumb */
 
 
 /*-- frame --*/
@@ -857,7 +860,7 @@ transition: padding 0.3s ease;
 }
 
 .frame .box-info{
-  height: 70%;
+  height: 95%;
   width: 65%;
   box-shadow:  0 -4px 6px rgba(0, 0, 0, 0.1);
   background-color: #fff;
@@ -879,65 +882,168 @@ h1{
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.frame #fname{
+.frame .form-group{
   position: relative;
   top: 10px;
   left: 10%;
 }
 
-.frame #lname{
+.frame .form-group1{
   position: relative;
   top: -52px;
   left: 50%;
 }
 
-.frame #birthday{
+.frame .form-group2{
   position: relative;
   top: -12px;
   left: 10%;
 }
 
 
-.frame #gender{
+.frame .form-group3{
   position: relative;
-  top: -50px;
+  top: -72px;
   left: 50%;
 }
 
-.frame #contact {
+
+.frame .form-group4{
   position: relative;
+  top: -10px;
   left: 10%;
-  top: -2px;
 }
 
 
-.frame #email {
+.frame .form-group5{
   position: relative;
-  left: 50%;
-  top: -65px;
-}
-
-
-.frame #pass{
-  position: relative;
-  top: -20px;
+  top: -72px;
   left: 50%;
 }
 
-
-.frame #role{
+.frame .form-group6{
   position: relative;
+  top: -35px;
   left: 10%;
-  top: -80px;
+}
+
+.frame .form-group7{
+  position: relative;
+  top: -97px;
+  left: 50%;
 }
 
 
+.frame .form-group8{
+  position: relative;
+  top: -55px;
+  left: 10%;
+}
+
+.frame .form-group9{
+  position: relative;
+  top: -117px;
+  left: 50%;
+}
+
+.frame .form-group10{
+  position: relative;
+  top: -75px;
+  left: 10%;
+}
 .btn-primary{
 position: relative;
-top: -50px;
-left: 43%;
+top: -70px;
+left: 90%;
 }
 
+/* Style for notification box */
+.notification-box {
+  display: none;
+  position: absolute;
+  top: 40px; /* Adjust depending on your layout */
+  right: 0;
+  width: 230px;
+  height: 250%;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+}
 
+/* Show the notification box */
+.notification-box.active {
+  display: block;
+}
+
+/* Sample styling for the notification message */
+.notification-box p {
+  margin: 0;
+  color: black;
+  font-size: 14px;
+  position: relative;
+  top: 38%;
+  left: 20%;
+}
+
+.notification-box p i{
+  position: absolute;
+  left: 15%;
+  top: -20px;
+  color: black;
+}
+
+.notification-box .second-paragraph{
+  font-size: 9px;
+  color: rgba(0, 0, 0, 0.356);
+  position: relative;
+  left: 22%;
+  top: 35%;
+ 
+}
+
+.notification-box .third-paragraph{
+  font-size: 9px;
+  color: rgba(0, 0, 0, 0.356);
+ position: relative;
+ left: 30%;
+ top: 10%;
+}
+
+/* Unique Dropdown menu styles */
+.settings-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 40px; /* Adjust depending on your layout */
+  right: 0;
+  width: 130px;
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+  list-style: none;
+  padding: 5px 0;
+}
+
+/* Show the unique dropdown */
+.settings-dropdown-menu.active {
+  display: block;
+}
+
+/* Unique Dropdown menu item styles */
+.settings-dropdown-menu li {
+  padding: 5px 10px;
+}
+
+.settings-dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+.settings-dropdown-menu li a:hover {
+  color: #0056b3;
+  background-color: #f0f0f0;
+}
 
 

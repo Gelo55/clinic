@@ -7,7 +7,7 @@ body{
 }
 
 .sidenav{
-  height: 90vh;
+  height: 95vh;
   width: 280px;
   position: fixed;
   top: 0;
@@ -42,11 +42,11 @@ body{
 
 .sidenav .nav-link .bell{
   margin-top: -38%;
-  margin-left:40%;
+  margin-left:30%;
 }
 
 .sidenav .nav-link .settings{
-  margin-top: -30%;
+  margin-top: -39%;
   margin-left: 60%;
 }
 
@@ -69,7 +69,7 @@ body{
 .admin-profile{
   width: 80%;
   height: 50%;
-  margin-left: -20%;
+  margin-left: -42%;
   margin-top: 30%;
   border-radius: 50%;
 }
@@ -90,15 +90,15 @@ tr,td{
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
   top: -10px;
-  left: 65px;
+  left: 5px;
 }
 
 .user-gmail{
   color: #A8A8A8;
   font-size: 13px;
   position: relative;
-  top: -20px;
-  left: 65px
+  top: -35px;
+  left: -15px
  
 }
 
@@ -643,7 +643,7 @@ text-align: center;
 font-size: 18px;
 color: white;
 position: relative;
-left: -5%;
+left: -10%;
 }
 
 .dropdownreport .dropdown-btn .droplinks_name{
@@ -651,7 +651,7 @@ color: white;
 font-size: 14px;
 font-weight: 400;
 white-space: nowrap;
-margin-left: -10%;
+margin-left: -17%;
 }
 
 .dropdownreport .droplinks_name:hover{
@@ -690,7 +690,7 @@ float: right;
 padding-right: 8px;
 position: relative;
 left: 5%;
-top: -5px;
+top: 5px;
 }
 
 tr,td{
@@ -1083,6 +1083,94 @@ background-color: #0056b3;
    #chart {
     max-width: 620px;
     margin: 5px auto;
+}
+
+/* Style for notification box */
+.notification-box {
+  display: none;
+  position: absolute;
+  top: 40px; /* Adjust depending on your layout */
+  right: 0;
+  width: 200px;
+  height: 200%;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+/* Show the notification box */
+.notification-box.active {
+  display: block;
+}
+
+/* Sample styling for the notification message */
+.notification-box p {
+  margin: 0;
+  color: black;
+  font-size: 14px;
+  position: relative;
+  top: 38%;
+  left: 20%;
+}
+
+.notification-box p i{
+  position: absolute;
+  left: 15%;
+  top: -20px;
+  color: black;
+}
+
+.notification-box .second-paragraph{
+  font-size: 9px;
+  color: rgba(0, 0, 0, 0.329);
+  position: relative;
+  left: 22%;
+ 
+}
+
+.notification-box .third-paragraph{
+  font-size: 9px;
+  color: rgba(0, 0, 0, 0.329);
+ position: relative;
+ left: 30%;
+ top: 20%;
+}
+
+/* Unique Dropdown menu styles */
+.settings-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 40px; /* Adjust depending on your layout */
+  right: 0;
+  width: 130px;
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+  list-style: none;
+  padding: 5px 0;
+}
+
+/* Show the unique dropdown */
+.settings-dropdown-menu.active {
+  display: block;
+}
+
+/* Unique Dropdown menu item styles */
+.settings-dropdown-menu li {
+  padding: 5px 10px;
+}
+
+.settings-dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+.settings-dropdown-menu li a:hover {
+  color: #0056b3;
+  background-color: #f0f0f0;
 }
 
 @media (max-width: 768px) {
