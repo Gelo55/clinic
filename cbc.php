@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/cbc.css">
+    <link rel="stylesheet" href="assets/css/resultcbc.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
@@ -23,15 +23,18 @@
 
     <div class="blood-container">
         <header class="header">
-            <h1>Medical Test Results</h1>
+            <img src="assets/images/bcp.png" alt="" id="cbc-logo">
+            <h1>CBC Results</h1>
         </header>
 
         <section class="patient-info">
-            <h2>Patient Information</h2>
-            <p><strong>Name:</strong> John Doe</p>
-            <p><strong>Date of Birth:</strong> January 15, 1985</p>
+            <h2>Student Information</h2>
+            <p><strong>Name:</strong> Angelo Abargos</p>
+            <p><strong>Course:</strong> BSIT</p>
             <p><strong>Gender:</strong> Male</p>
-            <p><strong>Patient ID:</strong> 123456</p>
+            <p><strong>Year Level:</strong> 1st Year</p>
+            <p><strong>Student ID:</strong> 2123456</p>
+            <p><strong></strong></p>
         </section>
 
         <section class="test-results">
@@ -71,7 +74,7 @@
 
         <footer>
             <p>Generated on: October 12, 2024</p>
-            <p>Contact your healthcare provider for further interpretation of these results.</p>
+            <p>Contact BCP Clinic for further interpretation of these results.</p>
         </footer>
     </div>
     </div>

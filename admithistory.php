@@ -186,14 +186,14 @@
      <div class="container">
     <div class="head-title">
 				<div class="left">
-					<h1>Student</h1>
+					<h1>Admission</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Student</a>
+							<a href="#">Admit</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Information</a>
+							<a class="active" href="#">History</a>
 						</li>
 					</ul>
 				</div>
@@ -204,64 +204,87 @@
 <div clas="container">
     <div class="frame">
     <div class="crud-container">
-    <button class="btn btn-primary" id="btn-first"><a href="manageadmit.php" class="=text-light">manage admit</a></button>
+    <button class="btn btn-primary" id="btn-first"><a href="manageadmit.php" class="text-light">Manage Admit</a></button>
+
+    <!-- Search Form -->
+    <div class="search-container">
+        <form method="GET" action="">
+            <input type="text" name="search" class="search-input" placeholder="Search..." value="<?php if(isset($_GET['search'])) { echo $_GET['search']; } ?>">
+            <button type="submit" class="btn btn-primary search-btn">Search</button>
+        </form>
+    </div>
 
     <table class="table-container">
-      <caption>Admission History</caption>
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>Firtname</th>
-          <th>lastname</th>
-          <th>Department</th>
-          <th>Category</th>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Reason</th>
-          <th>Prescription</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-      <?php 
-    $sql3 = "SELECT * FROM `admission`";
-    $result3 = mysqli_query($con3, $sql3);
-    
-    if ($result3){
-      while($row = mysqli_fetch_assoc($result3)){  // Assigning $row inside the loop
-        $id = $row['id'];
-        $firstname = $row['firstname'];
-        $lastname = $row['lastname'];
-        $department = $row['department'];
-        $category = $row['category'];
-        $date = $row['date'];
-        $time = $row['time'];
-        $reason = $row['reason'];
-        $prescription = $row['prescription'];
-       
-        echo '<tr>
-        <th>'.$id.'</th>
-          <td>'.$firstname.'</td>
-          <td>'.$lastname.'</td>
-          <td>'.$department.'</td>
-          <td>'.$category.'</td>
-          <td>'.$date.'</td>
-          <td>'.$time.'</td>
-          <td>'.$reason.'</td>
-          <td>'.$prescription.'</td>
-          <td><button class="btn btn-primary" id="btn-second"><a href="updateadmission.php?updateid='.$id.'"><i class="fas fa-pen"></i></a></button>
-          <button class="btn btn-danger" id="btn-third"><a href="deleteadmission.php?deleteid='.$id.'"><i class="fas fa-trash"></i></a></button>
-           <button class="btn btn-info" id="btn-fourth"><a href="viewadmit.php?viewid='.$id.'" class="text-light"><i class="fas fa-eye"></i></a></button>
-          </td>
-        </tr>';
-      }
-    }
-?>
-      </tbody>
+        <caption>Admission History</caption>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Department</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Reason</th>
+                <th>Prescription</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php
+        // Define function to fetch and display admission records
+        function fetchAdmissions($con3, $search = null) {
+            if ($search) {
+                // If a search term is provided, include it in the query
+                $sql3 = "SELECT * FROM `admission` WHERE firstname LIKE '%$search%' OR lastname LIKE '%$search%' OR department LIKE '%$search%'";
+            } else {
+                // Default query to get all records
+                $sql3 = "SELECT * FROM `admission`";
+            }
+
+            $result3 = mysqli_query($con3, $sql3);
+
+            if ($result3) {
+                while ($row = mysqli_fetch_assoc($result3)) {
+                    $id = $row['id'];
+                    $firstname = $row['firstname'];
+                    $lastname = $row['lastname'];
+                    $department = $row['department'];
+                    $category = $row['category'];
+                    $date = $row['date'];
+                    $time = $row['time'];
+                    $reason = $row['reason'];
+                    $prescription = $row['prescription'];
+
+                    // Render each table row
+                    echo '<tr>
+                        <th>' . $id . '</th>
+                        <td>' . $firstname . '</td>
+                        <td>' . $lastname . '</td>
+                        <td>' . $department . '</td>
+                        <td>' . $category . '</td>
+                        <td>' . $date . '</td>
+                        <td>' . $time . '</td>
+                        <td>' . $reason . '</td>
+                        <td>' . $prescription . '</td>
+                        <td>
+                            <button class="btn btn-primary" id="btn-second"><a href="updateadmission.php?updateid=' . $id . '"><i class="fas fa-pen"></i></a></button>
+                            <button class="btn btn-danger" id="btn-third"><a href="deleteadmission.php?deleteid=' . $id . '"><i class="fas fa-trash"></i></a></button>
+                            <button class="btn btn-info" id="btn-fourth"><a href="viewadmit.php?viewid=' . $id . '" class="text-light"><i class="fas fa-eye"></i></a></button>
+                        </td>
+                    </tr>';
+                }
+            }
+        }
+
+        // Call the function and pass the search term if it's set
+        $search = isset($_GET['search']) ? $_GET['search'] : null;
+        fetchAdmissions($con3, $search);
+        ?>
+        </tbody>
     </table>
-
-
 </div>
+
 
     </div>
 </div>

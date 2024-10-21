@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/staffmanage.css">
+    <link rel="stylesheet" href="assets/css/managestaff.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
@@ -186,14 +186,14 @@
      <div class="container">
     <div class="head-title">
 				<div class="left">
-					<h1>Student</h1>
+					<h1>Staff</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Student</a>
+							<a href="#">Staff</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Information</a>
+							<a class="active" href="#">Manage</a>
 						</li>
 					</ul>
 				</div>
@@ -204,62 +204,78 @@
 <div clas="container">
     <div class="frame">
     <div class="crud-container">
-    <button class="btn btn-primary" id="btn-first"><a href="staffinformation.php" class="=text-light">Add Staff</a></button>
+    <button class="btn btn-primary" id="btn-first"><a href="staffinformation.php" class="text-light">Add Staff</a></button>
+    
+    <!-- Search Form with styling -->
+    <div class="search-container">
+        <form method="GET" action="">
+            <input type="text" name="search" class="search-input" placeholder="Search staff" value="<?php if(isset($_GET['search'])) { echo $_GET['search']; } ?>">
+            <button type="submit" class="btn btn-primary search-btn">Search</button>
+        </form>
+    </div>
 
     <table class="table-container">
-      <caption>Staff information</caption>
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>firstname</th>
-          <th>lastname</th>
-          <th>birthday</th>
-          <th>gender</th>
-          <th>contact</th>
-          <th>email</th>
-          <th>password</th>
-          <th>role</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-      <?php 
-    $sql2 = "SELECT * FROM `staff`";
-    $result2 = mysqli_query($con2, $sql2);
-    
-    if ($result2){
-      while($row = mysqli_fetch_assoc($result2)){  // Assigning $row inside the loop
-        $id = $row['id'];
-        $firstname = $row['firstname'];
-        $lastname = $row['lastname'];
-        $birthday = $row['birthday'];
-        $gender = $row['gender'];
-        $contact = $row['contact'];
-        $email = $row['email'];
-        $password = $row['password'];
-        $role = $row['role'];
-        
-        echo '<tr>
-        <th>'.$id.'</th>
-          <td>'.$firstname.'</td>
-           <td>'.$lastname.'</td>
-            <td>'.$birthday.'</td>
-             <td>'.$gender.'</td>
-              <td>'.$contact.'</td>
-          <td>'.$email.'</td>
-          <td>'.$password.'</td>
-          <td>'.$role.'</td>
-          <td><button class="btn btn-primary" id="btn-second"><a href="updatestaff.php?updateid='.$id.'"><i class="fas fa-pen"></i></a></button>
-          <button class="btn btn-danger" id="btn-third"><a href="deletestaff.php?deleteid='.$id.'"><i class="fas fa-trash"></i></a></button>
-          </td>
-        </tr>';
-      }
-    }
-?>
-      </tbody>
+        <caption>Staff information</caption>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>birthday</th>
+                <th>gender</th>
+                <th>contact</th>
+                <th>email</th>
+                <th>password</th>
+                <th>role</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php
+        // Check if the search term is set
+        if (isset($_GET['search'])) {
+            $search = $_GET['search'];
+            // Search query to find matching results by firstname, lastname, or email
+            $sql2 = "SELECT * FROM `staff` WHERE firstname LIKE '%$search%' OR lastname LIKE '%$search%' OR email LIKE '%$search%'";
+        } else {
+            // Default query to get all results
+            $sql2 = "SELECT * FROM `staff`";
+        }
+
+        $result2 = mysqli_query($con2, $sql2);
+
+        if ($result2) {
+            while ($row = mysqli_fetch_assoc($result2)) {
+                $id = $row['id'];
+                $firstname = $row['firstname'];
+                $lastname = $row['lastname'];
+                $birthday = $row['birthday'];
+                $gender = $row['gender'];
+                $contact = $row['contact'];
+                $email = $row['email'];
+                $password = $row['password'];
+                $role = $row['role'];
+
+                echo '<tr>
+                    <th>' . $id . '</th>
+                    <td>' . $firstname . '</td>
+                    <td>' . $lastname . '</td>
+                    <td>' . $birthday . '</td>
+                    <td>' . $gender . '</td>
+                    <td>' . $contact . '</td>
+                    <td>' . $email . '</td>
+                    <td>' . $password . '</td>
+                    <td>' . $role . '</td>
+                    <td>
+                        <button class="btn btn-primary" id="btn-second"><a href="updatestaff.php?updateid=' . $id . '"><i class="fas fa-pen"></i></a></button>
+                        <button class="btn btn-danger" id="btn-third"><a href="deletestaff.php?deleteid=' . $id . '"><i class="fas fa-trash"></i></a></button>
+                    </td>
+                </tr>';
+            }
+        }
+        ?>
+        </tbody>
     </table>
-
-
 </div>
 
     </div>

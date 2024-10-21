@@ -41,16 +41,26 @@ if (isset($_POST['submit'])) {
  <div id="sidenav" class="sidenav">
     <img src="assets/images/bcp.png" alt="img" class="bcp">
     <ul class="nav-link">
-        <li class="bell">
-        <a href="#" class="active">
-            <i class='bx bx-bell'></i>
-        </a>
-        </li>
-        <li class="settings">
-        <a href="#">
-            <i class='bx bx-cog'></i>
-        </a>
-        </li>
+    <li class="bell">
+    <a href="#" id="bell-icon" class="active">
+        <i class='bx bx-bell'></i>
+    </a>
+    <!-- Notification Box -->
+    <div id="notification-box" class="notification-box">
+        <p><i class="bx bx-bell"></i>No new notifications</p>
+        <p class="second-paragraph">When you have notifications,</p> <br> <p class="third-paragraph">they will appear here.</p>
+    </div>
+</li>
+<li class="settings">
+    <a href="#" id="settings-icon">
+        <i class='bx bx-cog'></i>
+    </a>
+    <!-- Unique Dropdown Menu -->
+    <ul id="settings-dropdown-menu" class="settings-dropdown-menu">
+        <li><a href="profile.php">Profile</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Logout</a></li>
+    </ul>
         <img src="assets/images/changli.jpg" alt="avatar" class="admin-profile">
         <table class="user-profile">
           <tr>
@@ -193,14 +203,14 @@ if (isset($_POST['submit'])) {
      <div class="container">
     <div class="head-title">
 				<div class="left">
-					<h1>Student</h1>
+					<h1>Inventory</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Student</a>
+							<a href="#">Inventory</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Information</a>
+							<a class="active" href="#">Equipment</a>
 						</li>
 					</ul>
 				</div>
@@ -209,34 +219,52 @@ if (isset($_POST['submit'])) {
 
     <div class="frame">
   
+    <div class="container">
+  <!-- Search Bar -->
+  <form method="GET" class="search-form" style="float: right;">
+    <input type="text" name="search" id="search-input" placeholder="Search equipment" class="form-control" style="display: inline-block; width: auto; margin-right: 10px;">
+    <button type="submit" class="btn btn-primary" id="btn-search">Search</button>
+  </form>
 
-    <table class="table-container">
-      <caption>Equipment</caption>
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>Name</th>
-          <th>Category</th>
-          <th>Description</th>
-          <th>Quantity</th>
-          <th>Date</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-      <?php 
+  <!-- Button to trigger modal -->
+  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEquipmentModal" id="btn-modal">Add equipment</button>
+</div>
+
+<table class="table-container">
+  <caption>Equipment</caption>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th>Date</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php 
+    // Retrieve the search keyword if it exists
+    $search = isset($_GET['search']) ? mysqli_real_escape_string($con5, $_GET['search']) : '';
+
+    // Modify SQL to include search functionality
     $sql5 = "SELECT * FROM `equipment`";
+    if (!empty($search)) {
+        $sql5 .= " WHERE `name` LIKE '%$search%' OR `category` LIKE '%$search%' OR `description` LIKE '%$search%'";
+    }
+
     $result5 = mysqli_query($con5, $sql5);
-    
+
     if ($result5){
-      while($row = mysqli_fetch_assoc($result5)){  // Assigning $row inside the loop
+      while($row = mysqli_fetch_assoc($result5)){  
         $id = $row['id'];
         $name = $row['name'];
         $category = $row['category'];
         $description = $row['description'];
         $quantity = $row['quantity'];
         $date = $row['date'];
-       
+
         echo '<tr>
         <th>'.$id.'</th>
           <td>'.$name.'</td>
@@ -244,59 +272,60 @@ if (isset($_POST['submit'])) {
           <td>'.$description.'</td>
           <td>'.$quantity.'</td>
           <td>'.$date.'</td>
-          <td><button class="btn btn-primary" id="btn-second"><a href="updateequipment.php?updateid='.$id.'"><i class="fas fa-pen"></i></a></button>
-          <button class="btn btn-danger" id="btn-third"><a href="deleteequipment.php?deleteid='.$id.'"><i class="fas fa-trash"></i></a></button>
-           <button class="btn btn-info" id="btn-fourth"><a href="viewequipment.php?viewid='.$id.'" class="text-light"><i class="fas fa-eye"></i></a></button>
+          <td>
+            <button class="btn btn-primary" id="btn-second">
+              <a href="updateequipment.php?updateid='.$id.'"><i class="fas fa-pen"></i></a>
+            </button>
+            <button class="btn btn-danger" id="btn-third">
+              <a href="deleteequipment.php?deleteid='.$id.'"><i class="fas fa-trash"></i></a>
+            </button>
+            <button class="btn btn-info" id="btn-fourth">
+              <a href="viewequipment.php?viewid='.$id.'" class="text-light"><i class="fas fa-eye"></i></a>
+            </button>
           </td>
         </tr>';
       }
     }
-?>
-      </tbody>
-    </table>
+    ?>
+  </tbody>
+</table>
 
- <!-- Button to trigger modal -->
- <div class="container">
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEquipmentModal" id="btn-modal">Add equipment</button>
+<!-- Modal Structure -->
+<div class="modal fade" id="addEquipmentModal" tabindex="-1" aria-labelledby="addEquipmentLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <uip class="modal-title" id="addEquipmentLabel">Add Equipment</uip>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" placeholder="Enter Equipment name" name="name" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <input type="text" class="form-control" placeholder="Enter Category" name="category" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" placeholder="Enter Description" name="description" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" class="form-control" placeholder="Quantity" name="quantity" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" class="form-control" placeholder="Enter Date" name="date" autocomplete="off">
+          </div>
+          <button type="submit" class="btn btn-primary" name="submit">Add</button>
+        </form>
+      </div>
     </div>
-
-    <!-- Modal Structure -->
-    <div class="modal fade" id="addEquipmentModal" tabindex="-1" aria-labelledby="addEquipmentLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <uip class="modal-title" id="addEquipmentLabel">Add Equipment</uip>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form method="post">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" placeholder="Enter Medicine name" name="name" autocomplete="off">
-                        </div>
-                        <div class="form-group">
-                            <label for="category">Category</label>
-                            <input type="text" class="form-control" placeholder="Enter Category" name="category" autocomplete="off">
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Description</label>
-                            <input type="text" class="form-control" placeholder="Enter Description" name="description" autocomplete="off">
-                        </div>
-                        <div class="form-group">
-                            <label for="quantity">Quantity</label>
-                            <input type="number" class="form-control" placeholder="Quantity" name="quantity" autocomplete="off">
-                        </div>
-                        <div class="form-group">
-                            <label for="date">Date</label>
-                            <input type="date" class="form-control" placeholder="Enter Date" name="date" autocomplete="off">
-                        </div>
-                        <button type="submit" class="btn btn-primary" name="submit">Add</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
+  </div>
+</div>
    
 
     </div>
@@ -394,5 +423,21 @@ for (i = 0; i < dropdown.length; i++) {
     }
 </script>
 
+<script>
+  document.getElementById("bell-icon").addEventListener("click", function(event) {
+    event.preventDefault();
+    const notificationBox = document.getElementById("notification-box");
+    notificationBox.classList.toggle("active"); // Toggle visibility
+});
+
+</script>
+
+<script>
+  document.getElementById("settings-icon").addEventListener("click", function(event) {
+    event.preventDefault();
+    const dropdown = document.getElementById("settings-dropdown-menu");
+    dropdown.classList.toggle("active"); // Toggle the dropdown visibility
+});
+</script>
 
 </html>

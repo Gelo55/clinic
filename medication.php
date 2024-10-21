@@ -43,16 +43,26 @@ if (isset($_POST['submit'])) {
  <div id="sidenav" class="sidenav">
     <img src="assets/images/bcp.png" alt="img" class="bcp">
     <ul class="nav-link">
-        <li class="bell">
-        <a href="#" class="active">
-            <i class='bx bx-bell'></i>
-        </a>
-        </li>
-        <li class="settings">
-        <a href="#">
-            <i class='bx bx-cog'></i>
-        </a>
-        </li>
+    <li class="bell">
+    <a href="#" id="bell-icon" class="active">
+        <i class='bx bx-bell'></i>
+    </a>
+    <!-- Notification Box -->
+    <div id="notification-box" class="notification-box">
+        <p><i class="bx bx-bell"></i>No new notifications</p>
+        <p class="second-paragraph">When you have notifications,</p> <br> <p class="third-paragraph">they will appear here.</p>
+    </div>
+</li>
+<li class="settings">
+    <a href="#" id="settings-icon">
+        <i class='bx bx-cog'></i>
+    </a>
+    <!-- Unique Dropdown Menu -->
+    <ul id="settings-dropdown-menu" class="settings-dropdown-menu">
+        <li><a href="profile.php">Profile</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Logout</a></li>
+    </ul>
         <img src="assets/images/changli.jpg" alt="avatar" class="admin-profile">
         <table class="user-profile">
           <tr>
@@ -195,14 +205,14 @@ if (isset($_POST['submit'])) {
      <div class="container">
     <div class="head-title">
 				<div class="left">
-					<h1>Student</h1>
+					<h1>Inventory</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Student</a>
+							<a href="#">Inventory</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Information</a>
+							<a class="active" href="#">Medication</a>
 						</li>
 					</ul>
 				</div>
@@ -211,94 +221,109 @@ if (isset($_POST['submit'])) {
 
     <div class="frame">
   
+    <div class="container">
+  <!-- Search Bar -->
+  <form method="GET" action="" class="d-flex justify-content-end mb-3">
+      <input class="form-control me-2" type="search" name="search" id= "search-input" placeholder="Search Medication" aria-label="Search" value="<?php if (isset($_GET['search'])) { echo $_GET['search']; } ?>">
+      <button class="btn btn-primary" type="submit" id="btn-search">Search</button>
+  </form>
 
-    <table class="table-container">
-      <caption>Medication</caption>
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>Name</th>
-          <th>Category</th>
-          <th>Description</th>
-          <th>Quantity</th>
-          <th>Date</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
+  <!-- Medication Table -->
+  <table class="table-container">
+    <caption>Medication</caption>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
       <?php 
-    $sql4 = "SELECT * FROM `medication`";
-    $result4 = mysqli_query($con4, $sql4);
-    
-    if ($result4){
-      while($row = mysqli_fetch_assoc($result4)){  // Assigning $row inside the loop
-        $id = $row['id'];
-        $name = $row['name'];
-        $category = $row['category'];
-        $description = $row['description'];
-        $quantity = $row['quantity'];
-        $date = $row['date'];
-       
-        echo '<tr>
-        <th>'.$id.'</th>
-          <td>'.$name.'</td>
-          <td>'.$category.'</td>
-          <td>'.$description.'</td>
-          <td>'.$quantity.'</td>
-          <td>'.$date.'</td>
-          <td><button class="btn btn-primary" id="btn-second"><a href="updatemedication.php?updateid='.$id.'"><i class="fas fa-pen"></i></a></button>
-          <button class="btn btn-danger" id="btn-third"><a href="deletemedication.php?deleteid='.$id.'"><i class="fas fa-trash"></i></a></button>
-           <button class="btn btn-info" id="btn-fourth"><a href="viewmedication.php?viewid='.$id.'" class="text-light"><i class="fas fa-eye"></i></a></button>
-          </td>
-        </tr>';
-      }
-    }
-?>
-      </tbody>
-    </table>
+        // Check if search query exists
+        $search_query = "";
+        if (isset($_GET['search'])) {
+            $search_query = $_GET['search'];
+        }
 
- <!-- Button to trigger modal -->
- <div class="container">
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMedicationModal" id="btn-modal">Add Medication</button>
-    </div>
+        // Modify SQL query to filter based on search input
+        $sql4 = "SELECT * FROM `medication` WHERE `name` LIKE '%$search_query%' OR `category` LIKE '%$search_query%' OR `description` LIKE '%$search_query%' OR `date` LIKE '%$search_query%'";
+        $result4 = mysqli_query($con4, $sql4);
 
-    <!-- Modal Structure -->
-    <div class="modal fade" id="addMedicationModal" tabindex="-1" aria-labelledby="addMedicationLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addMedicationLabel">Add Medication</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form method="post">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" placeholder="Enter Medicine name" name="name" autocomplete="off">
-                        </div>
-                        <div class="form-group">
-                            <label for="category">Category</label>
-                            <input type="text" class="form-control" placeholder="Enter Category" name="category" autocomplete="off">
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Description</label>
-                            <input type="text" class="form-control" placeholder="Enter Description" name="description" autocomplete="off">
-                        </div>
-                        <div class="form-group">
-                            <label for="quantity">Quantity</label>
-                            <input type="number" class="form-control" placeholder="Quantity" name="quantity" autocomplete="off">
-                        </div>
-                        <div class="form-group">
-                            <label for="date">Date</label>
-                            <input type="date" class="form-control" placeholder="Enter Date" name="date" autocomplete="off">
-                        </div>
-                        <button type="submit" class="btn btn-primary" name="submit">Add</button>
-                    </form>
-                </div>
-            </div>
+        if ($result4) {
+          while ($row = mysqli_fetch_assoc($result4)) {  // Assigning $row inside the loop
+            $id = $row['id'];
+            $name = $row['name'];
+            $category = $row['category'];
+            $description = $row['description'];
+            $quantity = $row['quantity'];
+            $date = $row['date'];
+
+            echo '<tr>
+              <th>'.$id.'</th>
+              <td>'.$name.'</td>
+              <td>'.$category.'</td>
+              <td>'.$description.'</td>
+              <td>'.$quantity.'</td>
+              <td>'.$date.'</td>
+              <td>
+                <button class="btn btn-primary" id="btn-second"><a href="updatemedication.php?updateid='.$id.'"><i class="fas fa-pen"></i></a></button>
+                <button class="btn btn-danger" id="btn-third"><a href="deletemedication.php?deleteid='.$id.'"><i class="fas fa-trash"></i></a></button>
+                <button class="btn btn-info" id="btn-fourth"><a href="viewmedication.php?viewid='.$id.'" class="text-light"><i class="fas fa-eye"></i></a></button>
+              </td>
+            </tr>';
+          }
+        }
+      ?>
+    </tbody>
+  </table>
+  
+  <!-- Button to trigger modal -->
+  <div class="container">
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMedicationModal" id="btn-modal">Add Medication</button>
+  </div>
+
+  <!-- Modal Structure -->
+  <div class="modal fade" id="addMedicationModal" tabindex="-1" aria-labelledby="addMedicationLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addMedicationLabel">Add Medication</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <form method="post">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" placeholder="Enter Medicine name" name="name" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label for="category">Category</label>
+              <input type="text" class="form-control" placeholder="Enter Category" name="category" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <input type="text" class="form-control" placeholder="Enter Description" name="description" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label for="quantity">Quantity</label>
+              <input type="number" class="form-control" placeholder="Quantity" name="quantity" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" class="form-control" placeholder="Enter Date" name="date" autocomplete="off">
+            </div>
+            <button type="submit" class="btn btn-primary" name="submit">Add</button>
+          </form>
+        </div>
+      </div>
     </div>
-
+  </div>
+</div>
    
 
     </div>
@@ -396,5 +421,22 @@ for (i = 0; i < dropdown.length; i++) {
     }
 </script>
 
+
+<script>
+  document.getElementById("bell-icon").addEventListener("click", function(event) {
+    event.preventDefault();
+    const notificationBox = document.getElementById("notification-box");
+    notificationBox.classList.toggle("active"); // Toggle visibility
+});
+
+</script>
+
+<script>
+  document.getElementById("settings-icon").addEventListener("click", function(event) {
+    event.preventDefault();
+    const dropdown = document.getElementById("settings-dropdown-menu");
+    dropdown.classList.toggle("active"); // Toggle the dropdown visibility
+});
+</script>
 
 </html>

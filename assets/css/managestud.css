@@ -862,7 +862,7 @@ background-color: #555; /* Scrollbar color on hover */
   
   
     .frame {
-      background-color: rgba(168, 168, 168, 0.2); 
+      background-color: #f0f0f0; 
       background: cover;
       height: 90vh;
       width: 100%;
@@ -1064,6 +1064,10 @@ background-color: #555; /* Scrollbar color on hover */
 
 
 
-  
+  #btn-searchbar{
+    position: relative;
+    top: -3px;
+    font-size: 15px;
+  }
   
   

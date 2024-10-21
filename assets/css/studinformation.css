@@ -1,20 +1,13 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body{
     margin: 0;
-    padding: 0;
+    font-family: "Lato", sans-serif;
     box-sizing: border-box;
+}
 
-  }
-  
-  body{
-      margin: 0;
-      font-family: "Lato", sans-serif;
-      box-sizing: border-box;
-      width: 100%;
-      height: 100%;
-  }
-  
+
     
-  
 .sidenav{
   height: 100vh;
   width: 280px;
@@ -40,6 +33,7 @@
 .sidenav .nav-link{
   margin-top: -16%;
   margin-left: 38%;
+  height: 40%;
 }
 
 .sidenav .nav-link li{
@@ -76,10 +70,10 @@
 }
 
 .admin-profile{
-  width: 80%;
-  height: 50%;
-  margin-left: -20%;
-  margin-top: 30%;
+  width: 100px;
+  height: 100px;
+  margin-left: -150%;
+  margin-top: 50%;
   border-radius: 50%;
 }
 
@@ -98,16 +92,16 @@ tr,td{
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
-  top: -10px;
-  left: 65px;
+  top: 5px;
+  left: -70%;
 }
 
 .user-gmail{
   color: #A8A8A8;
   font-size: 13px;
   position: relative;
-  top: -20px;
-  left: 65px
+  top: -10px;
+  left: -70%;
  
 }
 
@@ -852,62 +846,217 @@ background-color: #555; /* Scrollbar color on hover */
     background-color: #e0e0e0; 
 }
 /* Breadcrumb */
-  
-  .container{
-    height: 100%;
-    width: 100%;
-  }
-  
-  
-    .frame {
-      background-color: #fff4fb; 
-      background: cover;
-      height: 90vh;
-      width: 100%;
-      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-      padding: 20px; 
-      box-sizing: border-box; 
-      transition: padding 0.3s ease; 
-  }
 
-  h1 {
-    text-align: center;
-    color: #333;
+
+/*-- frame --*/
+.frame{
+background-color: #f0f0f0; 
+height: 110vh;
+width: 100%;
+box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+padding: 20px; 
+box-sizing: border-box; 
+transition: padding 0.3s ease; 
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+.frame .box-info{
+  height: 95%;
+  width: 65%;
+  background-color: #f0f0f0;
+  position: relative;
+  left: -5%;
+  top: 10px;
 }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
+
+h1{
+  position: relative;
+  top: 20px;
+  left: 10%;
 }
 
-th {
-    background-color: #033683;
-    color: white;
+.frame .form-control{
+  color: #333;
+  width: 35%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+.frame .form-group{
+  position: relative;
+  top: 10px;
+  left: 10%;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
+.frame .form-group1{
+  position: relative;
+  top: -52px;
+  left: 50%;
 }
 
-.section-title {
-    margin: 20px 0 10px;
-    color: #033683;
-    font-size: 24px;
+.frame .form-group2{
+  position: relative;
+  top: -12px;
+  left: 10%;
 }
 
-.notes {
-    font-style: italic;
-    color: #888;
+
+.frame .form-group3{
+  position: relative;
+  top: -72px;
+  left: 50%;
+}
+
+
+.frame .form-group4{
+  position: relative;
+  top: -10px;
+  left: 10%;
+}
+
+
+.frame .form-group5{
+  position: relative;
+  top: -72px;
+  left: 50%;
+}
+
+.frame .form-group6{
+  position: relative;
+  top: -35px;
+  left: 10%;
+}
+
+.frame .form-group7{
+  position: relative;
+  top: -97px;
+  left: 50%;
+}
+
+
+.frame .form-group8{
+  position: relative;
+  top: -55px;
+  left: 10%;
+}
+
+.frame .form-group9{
+  position: relative;
+  top: -117px;
+  left: 50%;
+}
+
+.frame .form-group10{
+  position: relative;
+  top: -75px;
+  left: 10%;
+}
+.btn-primary{
+position: relative;
+top: -100px;
+left: 75%;
+}
+
+.box-bg{
+  height: 106%;
+  width: 50%;
+  background-color: #0056b3;
+  position: relative;
+  left: 52%;
+  top: -98%;
+}
+
+/* Style for notification box */
+.notification-box {
+  display: none;
+  position: absolute;
+  top: 40px; /* Adjust depending on your layout */
+  right: 0;
+  width: 230px;
+  height: 250%;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+/* Show the notification box */
+.notification-box.active {
+  display: block;
+}
+
+/* Sample styling for the notification message */
+.notification-box p {
+  margin: 0;
+  color: black;
+  font-size: 14px;
+  position: relative;
+  top: 38%;
+  left: 20%;
+}
+
+.notification-box p i{
+  position: absolute;
+  left: 15%;
+  top: -20px;
+  color: black;
+}
+
+.notification-box .second-paragraph{
+  font-size: 9px;
+  color: rgba(0, 0, 0, 0.356);
+  position: relative;
+  left: 22%;
+  top: 35%;
+ 
+}
+
+.notification-box .third-paragraph{
+  font-size: 9px;
+  color: rgba(0, 0, 0, 0.356);
+ position: relative;
+ left: 30%;
+ top: 10%;
+}
+
+/* Unique Dropdown menu styles */
+.settings-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 40px; /* Adjust depending on your layout */
+  right: 0;
+  width: 130px;
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+  list-style: none;
+  padding: 5px 0;
+}
+
+/* Show the unique dropdown */
+.settings-dropdown-menu.active {
+  display: block;
+}
+
+/* Unique Dropdown menu item styles */
+.settings-dropdown-menu li {
+  padding: 5px 10px;
+}
+
+.settings-dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+.settings-dropdown-menu li a:hover {
+  color: #0056b3;
+  background-color: #f0f0f0;
+}
+
+#side-logo{
+  width: 30%;
+  position: relative;
+  left: 40%;
+  top: 40%;
 }

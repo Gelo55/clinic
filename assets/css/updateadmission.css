@@ -844,7 +844,7 @@ background-color: #555; /* Scrollbar color on hover */
 
 /*-- frame --*/
 .frame{
-background-color: rgba(168, 168, 168, 0.2); 
+background-color: #f0f0f0; 
 height: 120vh;
 width: 100%;
 box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
@@ -856,18 +856,17 @@ transition: padding 0.3s ease;
 .frame .box-info{
   height: 70%;
   width: 65%;
-  box-shadow:  0 -4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: #f0f0f0;
   position: relative;
-  left: 5%;
-  top: 120px;
+  left: -5%;
+  top: 30px;
 }
 
 
 h1{
   position: relative;
   top: 20px;
-  left: 5%;
+  left: 10%;
 }
 
 .frame .form-control{
@@ -876,65 +875,94 @@ h1{
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.frame #fname{
+.frame .form-group{
   position: relative;
   top: 10px;
   left: 10%;
 }
 
-.frame #lname{
+.frame .form-group1{
   position: relative;
   top: -52px;
   left: 50%;
 }
 
-.frame #birthday{
+.frame .form-group2{
   position: relative;
   top: -12px;
   left: 10%;
 }
 
 
-.frame #gender{
+.frame .form-group3{
   position: relative;
-  top: -50px;
+  top: -72px;
   left: 50%;
 }
 
-.frame #contact {
+
+.frame .form-group4{
   position: relative;
+  top: -10px;
   left: 10%;
-  top: -2px;
 }
 
 
-.frame #email {
+.frame .form-group5{
   position: relative;
-  left: 50%;
-  top: -65px;
-}
-
-
-.frame #pass{
-  position: relative;
-  top: -20px;
+  top: -72px;
   left: 50%;
 }
 
-
-.frame #role{
+.frame .form-group6{
   position: relative;
+  top: -35px;
   left: 10%;
-  top: -80px;
+}
+
+.frame .form-group7{
+  position: relative;
+  top: -97px;
+  left: 50%;
 }
 
 
+.frame .form-group8{
+  position: relative;
+  top: -55px;
+  left: 10%;
+}
+
+.frame .form-group9{
+  position: relative;
+  top: -117px;
+  left: 50%;
+}
+
+.frame .form-group10{
+  position: relative;
+  top: -75px;
+  left: 10%;
+}
 .btn-primary{
 position: relative;
-top: -50px;
-left: 43%;
+top: -70px;
+left:45%;
 }
 
 
+.box-bg{
+  height: 106%;
+  width: 50%;
+  background-color: #0056b3;
+  position: relative;
+  left: 52%;
+  top: -73%;
+}
 
-
+#side-logo{
+  width: 30%;
+  position: relative;
+  left: 40%;
+  top: 40%;
+}

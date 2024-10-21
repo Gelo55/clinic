@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/it.css">
+    <link rel="stylesheet" href="assets/css/bsit.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
@@ -23,16 +23,26 @@
  <div id="sidenav" class="sidenav">
     <img src="assets/images/bcp.png" alt="img" class="bcp">
     <ul class="nav-link">
-        <li class="bell">
-        <a href="#" class="active">
-            <i class='bx bx-bell'></i>
-        </a>
-        </li>
-        <li class="settings">
-        <a href="#">
-            <i class='bx bx-cog'></i>
-        </a>
-        </li>
+    <li class="bell">
+    <a href="#" id="bell-icon" class="active">
+        <i class='bx bx-bell'></i>
+    </a>
+    <!-- Notification Box -->
+    <div id="notification-box" class="notification-box">
+        <p><i class="bx bx-bell"></i>No new notifications</p>
+        <p class="second-paragraph">When you have notifications,</p> <br> <p class="third-paragraph">they will appear here.</p>
+    </div>
+</li>
+<li class="settings">
+    <a href="#" id="settings-icon">
+        <i class='bx bx-cog'></i>
+    </a>
+    <!-- Unique Dropdown Menu -->
+    <ul id="settings-dropdown-menu" class="settings-dropdown-menu">
+        <li><a href="profile.php">Profile</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Logout</a></li>
+    </ul>
         <img src="assets/images/changli.jpg" alt="avatar" class="admin-profile">
         <table class="user-profile">
           <tr>
@@ -175,14 +185,14 @@
      <div class="container">
     <div class="head-title">
 				<div class="left">
-					<h1>Student</h1>
+					<h1>Medical</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Student</a>
+							<a href="#">Healthform</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Information</a>
+							<a class="active" href="#">Liat</a>
 						</li>
 					</ul>
 				</div>
@@ -194,8 +204,14 @@
 <div clas="container">
     <div class="frame">
 
-
+    <div class="crud-container">
     <button id="backButton" onclick="goBack()">Back</button>
+
+    <!-- Search Form -->
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" onkeyup="searchTable()" placeholder="Search for students...">
+        <button type="submit" class="btn btn-primary search-btn">Search</button>
+    </div>
 
     <!-- Table -->
     <table id="studentTable">
@@ -211,8 +227,7 @@
             </tr>
         </thead>
         <tbody>
-         
-        <tr>
+          <tr>
             <td>gelo</td>
             <td>21014343</td>
             <td>BSIT</td>
@@ -221,79 +236,33 @@
             <td><a href="formhealth.php" id="health">Health Form</a></td>
           </tr>
           <tr>
-            <td>gelo</td>
-            <td>21014343</td>
+            <td>john</td>
+            <td>21014344</td>
             <td>BSIT</td>
-            <td>1st Year</td>
-            <td>10/12/2024</td>
-            <td><a href="" id="health">Health Form</a></td>
+            <td>2nd Year</td>
+            <td>09/15/2024</td>
+            <td><a href="formhealth.php" id="health">Health Form</a></td>
           </tr>
           <tr>
-            <td>gelo</td>
-            <td>21014343</td>
+            <td>john</td>
+            <td>21014344</td>
             <td>BSIT</td>
-            <td>1st Year</td>
-            <td>10/12/2024</td>
-            <td><a href="" id="health">Health Form</a></td>
+            <td>2nd Year</td>
+            <td>09/15/2024</td>
+            <td><a href="formhealth.php" id="health">Health Form</a></td>
           </tr>
           <tr>
-            <td>gelo</td>
-            <td>21014343</td>
+            <td>john</td>
+            <td>21014344</td>
             <td>BSIT</td>
-            <td>1st Year</td>
-            <td>10/12/2024</td>
-            <td><a href="" id="health">Health Form</a></td>
+            <td>2nd Year</td>
+            <td>09/15/2024</td>
+            <td><a href="formhealth.php" id="health">Health Form</a></td>
           </tr>
-          <tr>
-            <td>gelo</td>
-            <td>21014343</td>
-            <td>BSIT</td>
-            <td>1st Year</td>
-            <td>10/12/2024</td>
-            <td><a href="" id="health">Health Form</a></td>
-          </tr>
-          <tr>
-            <td>gelo</td>
-            <td>21014343</td>
-            <td>BSIT</td>
-            <td>1st Year</td>
-            <td>10/12/2024</td>
-            <td><a href="" id="health">Health Form</a></td>
-          </tr>
-          <tr>
-            <td>gelo</td>
-            <td>21014343</td>
-            <td>BSIT</td>
-            <td>1st Year</td>
-            <td>10/12/2024</td>
-            <td><a href="" id="health">Health Form</a></td>
-          </tr>
-          <tr>
-            <td>gelo</td>
-            <td>21014343</td>
-            <td>BSIT</td>
-            <td>1st Year</td>
-            <td>10/12/2024</td>
-            <td><a href="" id="health">Health Form</a></td>
-          </tr>
-          <tr>
-            <td>gelo</td>
-            <td>21014343</td>
-            <td>BSIT</td>
-            <td>1st Year</td>
-            <td>10/12/2024</td>
-            <td><a href="" id="health">Health Form</a></td>
-          </tr>
-          <tr>
-            <td>gelo</td>
-            <td>21014343</td>
-            <td>BSIT</td>
-            <td>1st Year</td>
-            <td>10/12/2024</td>
-            <td><a href="" id="health">Health Form</a></td>
-          </tr>
+          <!-- Add more rows as needed -->
         </tbody>
     </table>
+</div>
 
 
     </div>
@@ -348,5 +317,48 @@ for (i = 0; i < dropdown.length; i++) {
             window.history.back();
         }
     </script>
+
+<script>
+  document.getElementById("bell-icon").addEventListener("click", function(event) {
+    event.preventDefault();
+    const notificationBox = document.getElementById("notification-box");
+    notificationBox.classList.toggle("active"); // Toggle visibility
+});
+
+</script>
+
+<script>
+  document.getElementById("settings-icon").addEventListener("click", function(event) {
+    event.preventDefault();
+    const dropdown = document.getElementById("settings-dropdown-menu");
+    dropdown.classList.toggle("active"); // Toggle the dropdown visibility
+});
+</script>
+
+  <!-- JavaScript to filter the table -->
+<script>
+function searchTable() {
+    // Get the search input
+    var input = document.getElementById("searchInput");
+    var filter = input.value.toUpperCase();
+    var table = document.getElementById("studentTable");
+    var tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those that don't match the search query
+    for (var i = 1; i < tr.length; i++) {
+        var tdName = tr[i].getElementsByTagName("td")[0];  // Student Name
+        var tdNumber = tr[i].getElementsByTagName("td")[1]; // Student Number
+        if (tdName || tdNumber) {
+            var textValueName = tdName.textContent || tdName.innerText;
+            var textValueNumber = tdNumber.textContent || tdNumber.innerText;
+            if (textValueName.toUpperCase().indexOf(filter) > -1 || textValueNumber.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+</script>
 
 </html>

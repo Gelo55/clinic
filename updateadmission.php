@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
     // Execute the statement and check for errors
     if ($stmt->execute()) {
         // Redirect to manage page after successful update
-        header('location:admissionhistory.php');
+        header('location:admithistory.php');
         exit();
     } else {
         die("Error executing statement: " . $stmt->error);
@@ -74,7 +74,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/updateadmit.css">
+    <link rel="stylesheet" href="assets/css/updateadmission.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
@@ -260,7 +260,7 @@ if (isset($_POST['submit'])) {
 <div class="frame">
 
     <div class="box-info">
-      <h1>Admission information</h1>
+      <h1> Update Admission information</h1>
       <div class="container my-5">
         <form method="post">
           <div class="form-group">
@@ -306,6 +306,10 @@ if (isset($_POST['submit'])) {
         </form>
       </div>
     </div>
+
+    <div class="box-bg">
+    <img src="assets/images/bcp.png" alt="" id="side-logo">
+  </div>
 
 </div>
 

@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/updatemedication.css">
+    <link rel="stylesheet" href="assets/css/updateequipment.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
@@ -145,7 +145,7 @@ if (isset($_POST['submit'])) {
         <td>
         <div class="dropdownadmission">
     <span class="main"><b>Admission</b></span><br>
-    <span class="sub"><b>Admission history</b></span><br><br>
+    <span class="subss"><b>Admission history</b></span><br><br>
     <button class="dropdown-btn"> <i class='bx bx-plus-medical' ></i>
       <span class="droplinks_name">Admission</span>
       <i class="fa fa-caret-down" id="fourth"></i>
@@ -165,7 +165,7 @@ if (isset($_POST['submit'])) {
         <td>
     <div class="dropdownmedical">
     <span class="main"><b>Medical</b></span><br>
-    <span class="sub"><b>Medical Status</b></span><br><br>
+    <span class="subss"><b>Medical Status</b></span><br><br>
     <button class="dropdown-btn"> <i class='bx bx-plus-medical' ></i>
       <span class="droplinks_name">Medical</span>
       <i class="fa fa-caret-down" id="first"></i>
@@ -188,7 +188,7 @@ if (isset($_POST['submit'])) {
         <td>
     <div class="dropdowninventory">
     <span class="main"><b>Inventory</b></span><br>
-    <span class="sub"><b>Inventory Monitoring</b></span><br><br>
+    <span class="subss"><b>Inventory Monitoring</b></span><br><br>
     <button class="dropdown-btn"> <i class='bx bx-plus-medical' ></i>
       <span class="droplinks_name">inventory</span>
       <i class="fa fa-caret-down" id="fifth"></i>
@@ -207,7 +207,7 @@ if (isset($_POST['submit'])) {
         <td>
         <div class="dropdownreport">
     <span class="main"><b>Report and Analytics</b></span><br>
-    <span class="sub"><b>Report Update</b></span><br><br>
+    <span class="subss"><b>Report Update</b></span><br><br>
     <button class="dropdown-btn"> <i class='bx bx-plus-medical' ></i>
       <span class="droplinks_name">Report and Analytics</span>
       <i class="fa fa-caret-down" id="sixth"></i>
@@ -256,7 +256,7 @@ if (isset($_POST['submit'])) {
 <div class="frame">
 
     <div class="box-info">
-      <h1>Update Medication</h1>
+      <h1>Update Equipment</h1>
       <div class="container my-5">
         <form method="post">
           <div class="form-group">
@@ -288,6 +288,10 @@ if (isset($_POST['submit'])) {
         </form>
       </div>
     </div>
+
+    <div class="box-bg">
+    <img src="assets/images/bcp.png" alt="" id="side-logo">
+  </div>
 
 </div>
 

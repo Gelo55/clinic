@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/reportinv.css">
+    <link rel="stylesheet" href="assets/css/invreport.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
@@ -28,16 +28,26 @@
  <div id="sidenav" class="sidenav">
     <img src="assets/images/bcp.png" alt="img" class="bcp">
     <ul class="nav-link">
-        <li class="bell">
-        <a href="#" class="active">
-            <i class='bx bx-bell'></i>
-        </a>
-        </li>
-        <li class="settings">
-        <a href="#">
-            <i class='bx bx-cog'></i>
-        </a>
-        </li>
+    <li class="bell">
+    <a href="#" id="bell-icon" class="active">
+        <i class='bx bx-bell'></i>
+    </a>
+    <!-- Notification Box -->
+    <div id="notification-box" class="notification-box">
+        <p><i class="bx bx-bell"></i>No new notifications</p>
+        <p class="second-paragraph">When you have notifications,</p> <br> <p class="third-paragraph">they will appear here.</p>
+    </div>
+</li>
+<li class="settings">
+    <a href="#" id="settings-icon">
+        <i class='bx bx-cog'></i>
+    </a>
+    <!-- Unique Dropdown Menu -->
+    <ul id="settings-dropdown-menu" class="settings-dropdown-menu">
+        <li><a href="profile.php">Profile</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Logout</a></li>
+    </ul>
         <img src="assets/images/changli.jpg" alt="avatar" class="admin-profile">
         <table class="user-profile">
           <tr>
@@ -180,14 +190,14 @@
      <div class="container">
     <div class="head-title">
 				<div class="left">
-					<h1>Student</h1>
+					<h1>Report</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Student</a>
+							<a href="#">Report</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Information</a>
+							<a class="active" href="#">Inventory</a>
 						</li>
 					</ul>
 				</div>
@@ -202,16 +212,16 @@
     <div class="inv-container">
         <h1>Inventory Report</h1>
         <div class="button-container">
-            <button id="addUniqueItemBtn" class="btn">Add Item</button>
+            <button id="addUniqueItemBtn" class="btn">Add Medicine</button>
             <button id="downloadUniqueBtn" class="btn">Download as PDF</button>
         </div>
 
         <table id="uniqueInventoryTable" class="inventory-table">
             <thead>
                 <tr>
-                    <th>Product Name</th>
+                    <th>Medicine Name</th>
+                    <th>Quantity</th>
                     <th>Stock</th>
-                    <th>Cost</th>
                     <th>Manage</th>
                 </tr>
             </thead>
@@ -279,9 +289,9 @@ for (i = 0; i < dropdown.length; i++) {
 
     // Add Item functionality
     addUniqueItemBtn.addEventListener('click', () => {
-        const productName = prompt("Enter product name:");
-        const stock = prompt("Enter stock quantity:");
-        const cost = prompt("Enter product cost:");
+        const productName = prompt("Enter medicine name:");
+        const stock = prompt("Enter quantity:");
+        const cost = prompt("Enter Medicine Status:");
 
         if (productName && stock && cost) {
             const row = document.createElement('tr');
@@ -314,5 +324,23 @@ for (i = 0; i < dropdown.length; i++) {
 });
 
 </script>
+
+<script>
+  document.getElementById("bell-icon").addEventListener("click", function(event) {
+    event.preventDefault();
+    const notificationBox = document.getElementById("notification-box");
+    notificationBox.classList.toggle("active"); // Toggle visibility
+});
+
+</script>
+
+<script>
+  document.getElementById("settings-icon").addEventListener("click", function(event) {
+    event.preventDefault();
+    const dropdown = document.getElementById("settings-dropdown-menu");
+    dropdown.classList.toggle("active"); // Toggle the dropdown visibility
+});
+</script>
+
 
 </html>

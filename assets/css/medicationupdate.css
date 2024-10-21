@@ -844,7 +844,7 @@ background-color: #555; /* Scrollbar color on hover */
 
 /*-- frame --*/
 .frame{
-background-color: rgba(168, 168, 168, 0.2); 
+background-color: #f0f0f0; 
 height: 120vh;
 width: 100%;
 box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
@@ -854,20 +854,19 @@ transition: padding 0.3s ease;
 }
 
 .frame .box-info{
-  height: 95%;
+  height: 60%;
   width: 65%;
-  box-shadow:  0 -4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: #f0f0f0;
   position: relative;
-  left: 10%;
-  top: 20px;
+  left: -5%;
+  top: 30px;
 }
 
 
 h1{
   position: relative;
   top: 20px;
-  left: 5%;
+  left: 10%;
 }
 
 .frame .form-control{
@@ -947,10 +946,26 @@ h1{
 }
 .btn-primary{
 position: relative;
-top: -70px;
-left: 90%;
+top: 15px;
+left:45%;
 }
 
 
+#side-logo{
+  width: 30%;
+  position: relative;
+  left: 40%;
+  top: 40%;
+}
+
+
+.box-bg{
+  height: 106%;
+  width: 50%;
+  background-color: #0056b3;
+  position: relative;
+  left: 52%;
+  top: -63%;
+}
 
 

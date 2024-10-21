@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/xray.css">
+    <link rel="stylesheet" href="assets/css/xrayresult.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
@@ -20,15 +20,17 @@
 
 <div class="container">
         <header class="header">
-            <h1>X-Ray Report</h1>
+            <h1>X-Ray Result</h1>
+            <img src="assets/images/bcp.png" alt="" id="xray-logo">
         </header>
 
         <section class="patient-info">
-            <h2>Patient Information</h2>
-            <p><strong>Name:</strong> John Doe</p>
-            <p><strong>Date of Birth:</strong> January 15, 1985</p>
+            <h2>Student Information</h2>
+            <p><strong>Name:</strong> Angelo Abargos</p>
+            <p><strong>Course:</strong> BSIT</p>
             <p><strong>Gender:</strong> Male</p>
-            <p><strong>Patient ID:</strong> 123456</p>
+            <p><strong>Year Level:</strong> 4th Year</p>
+            <p><strong>Student ID:</strong> 211234</p>
         </section>
 
         <section class="xray-info">
@@ -57,7 +59,7 @@
 
         <footer>
             <p>Generated on: October 13, 2024</p>
-            <p>Please contact your physician for further interpretation or questions regarding these results.</p>
+            <p>Please contact BCP Clinic for further interpretation or questions regarding these results.</p>
         </footer>
     </div>
 

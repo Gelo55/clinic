@@ -1,18 +1,13 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body{
     margin: 0;
-    padding: 0;
+    font-family: "Lato", sans-serif;
     box-sizing: border-box;
+}
 
-  }
-  
-  body{
-      margin: 0;
-      font-family: "Lato", sans-serif;
-      box-sizing: border-box;
-      width: 100%;
-      height: 100%;
-  }
-  
+
+    
 .sidenav{
   height: 100vh;
   width: 280px;
@@ -149,7 +144,6 @@ tr,td{
   font-size: 14px;
   font-weight: 400;
   white-space: nowrap;
-  margin-left: -3%;
 }
 
 /* hover effect for links */
@@ -190,7 +184,7 @@ text-align: center;
 }
 
 .main{
-margin-left: -50%;
+margin-left: -60%;
 font-size: 14px;
 color: #7064DD;
 margin-top: 2%;
@@ -199,7 +193,7 @@ margin-top: 2%;
 
 .subs{
 color: #A8A8A8;
-margin-left: -40%;
+margin-left: -50%;
 font-size: 12px;
 }
 
@@ -223,7 +217,7 @@ text-align: center;
 font-size: 18px;
 color: white;
 position: relative;
-left: -15px;
+left: -5px;
 }
 
 .dropdownmedical .dropdown-btn .droplinks_name{
@@ -231,7 +225,7 @@ color: white;
 font-size: 14px;
 font-weight: 400;
 white-space: nowrap;
-margin-left: -10%;
+margin-left: -5%;
 }
 
 .dropdownmedical .droplinks_name:hover{
@@ -314,7 +308,7 @@ color: white;
 font-size: 14px;
 font-weight: 400;
 white-space: nowrap;
-margin-left: -4%;
+margin-left: -1%;
 position: relative;
 top: 5%;
 }
@@ -401,7 +395,7 @@ color: white;
 font-size: 14px;
 font-weight: 400;
 white-space: nowrap;
-margin-left: -3%;
+margin-left: -1%;
 position: relative;
 top: 7px;
 left: -3px;
@@ -480,7 +474,7 @@ text-align: center;
 font-size: 18px;
 color: white;
 position: relative;
-left: -15px;
+left: -5px;
 }
 
 .dropdownadmission .dropdown-btn .droplinks_name{
@@ -488,7 +482,7 @@ color: white;
 font-size: 14px;
 font-weight: 400;
 white-space: nowrap;
-margin-left: -10%;
+margin-left: -5%;
 }
 
 .dropdownadmission .droplinks_name:hover{
@@ -563,8 +557,6 @@ min-width: 60px;
 text-align: center;
 font-size: 18px;
 color: white;
-position: relative;
-left: -5%;
 }
 
 .dropdowninventory .dropdown-btn .droplinks_name{
@@ -572,7 +564,7 @@ color: white;
 font-size: 14px;
 font-weight: 400;
 white-space: nowrap;
-margin-left: -10%;
+margin-left: -3%;
 }
 
 .dropdowninventory .droplinks_name:hover{
@@ -647,8 +639,6 @@ min-width: 60px;
 text-align: center;
 font-size: 18px;
 color: white;
-position: relative;
-left: -5%;
 }
 
 .dropdownreport .dropdown-btn .droplinks_name{
@@ -656,7 +646,7 @@ color: white;
 font-size: 14px;
 font-weight: 400;
 white-space: nowrap;
-margin-left: -10%;
+margin-left: -3%;
 }
 
 .dropdownreport .droplinks_name:hover{
@@ -814,7 +804,7 @@ background-color: #555; /* Scrollbar color on hover */
     /* Center align on smaller screens */
     text-align: left;
     position: relative;
-    left: -50%;
+    left: -60%;
     top: -10px;
 }
 
@@ -830,7 +820,7 @@ background-color: #555; /* Scrollbar color on hover */
     color: var(--blue);
     list-style: none;
     position: relative;
-    left: -55%;
+    left: -65%;
     top: -15px;
     /* Removed negative positioning */
 }
@@ -850,89 +840,114 @@ background-color: #555; /* Scrollbar color on hover */
     background-color: #e0e0e0; 
 }
 /* Breadcrumb */
-  
-    
-  .container{
-    height: 100%;
-    width: 100%;
-  }
-  
-  
-    .frame {
-      background-color: rgba(168, 168, 168, 0.2); 
-      background: cover;
-      height: 80vh;
-      width: 100%;
-      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-      padding: 20px; 
-      box-sizing: border-box; 
-      transition: padding 0.3s ease; 
-  }
-
-  .result-container{
-    width: 50%;
-    height: 80%;
-    background-color: #fff;
-    box-shadow:  -10px 0 10px rgba(0, 0, 0, 0.211);
-    position: relative;
-    left: 25%;
-    top: 10%;
-  }
-
-  .cbc{
-    font-size: 25px;
-    color: black;
-    position: relative;
-    top: 10%;
-    left: 3%;
-  }
 
 
-  .uri{
-    font-size: 25px;
-    color: black;
-    position: relative;
-    top: 15%;
-    left: 3%;
-  }
+/*-- frame --*/
+.frame{
+background-color: #f0f0f0; 
+height: 120vh;
+width: 100%;
+box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+padding: 20px; 
+box-sizing: border-box; 
+transition: padding 0.3s ease; 
+}
 
-  
-  .xray{
-    font-size: 25px;
-    color: black;
-    position: relative;
-    top: 20%;
-    left: 3%;
-  }
+.frame .box-info{
+  height: 70%;
+  width: 65%;
+  background-color: #f0f0f0;
+  position: relative;
+  left: -5%;
+  top: 120px;
+}
 
-  .medical-title{
-    font-size: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 10%;
-    color: #fff;
-  }
 
-  .medical-header{
-    background-color: #033683;
-    border-bottom: 1px solid black;
-  }
+h1{
+  position: relative;
+  top: 20px;
+  left: 10%;
+}
 
-  #btn-gmail{
-    font-size: 40px;
-    position: relative;
-    left: 90%;
-    top: 38%;
-    border-radius: 100%;
-    background-color: transparent;
-    border: none;
-    
-  }
+.frame .form-control{
+  color: #333;
+  width: 35%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
 
-  .btn-primary{
-    position: relative;
-    top: 35%;
-    left: -3%;
-  }
+.frame #fname{
+  position: relative;
+  top: 10px;
+  left: 10%;
+}
+
+.frame #lname{
+  position: relative;
+  top: -52px;
+  left: 50%;
+}
+
+.frame #birthday{
+  position: relative;
+  top: -12px;
+  left: 10%;
+}
+
+
+.frame #gender{
+  position: relative;
+  top: -50px;
+  left: 50%;
+}
+
+.frame #contact {
+  position: relative;
+  left: 10%;
+  top: -2px;
+}
+
+
+.frame #email {
+  position: relative;
+  left: 50%;
+  top: -65px;
+}
+
+
+.frame #pass{
+  position: relative;
+  top: -20px;
+  left: 50%;
+}
+
+
+.frame #role{
+  position: relative;
+  left: 10%;
+  top: -80px;
+}
+
+
+.btn-primary{
+position: relative;
+top: -50px;
+left: 43%;
+}
+
+
+.box-bg{
+  height: 106%;
+  width: 50%;
+  background-color: #0056b3;
+  position: relative;
+  left: 52%;
+  top: -73%;
+}
+
+#side-logo{
+  width: 30%;
+  position: relative;
+  left: 40%;
+  top: 40%;
+}
+

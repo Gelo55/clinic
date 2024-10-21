@@ -865,7 +865,7 @@ background-color: #555; /* Scrollbar color on hover */
 
 
   .frame {
-    background-color: rgba(168, 168, 168, 0.2); 
+    background-color: #f0f0f0; 
     background: cover;
     height: 90vh;
     width: 100%;
@@ -884,7 +884,7 @@ background-color: #555; /* Scrollbar color on hover */
 .frame #btn-first{
   color: white;
   position: relative;
-  top: 3%;
+  top: 40px;
   left: 2%;
 }
 
@@ -1064,3 +1064,30 @@ background-color: #555; /* Scrollbar color on hover */
 }
 
 
+    /* Search bar styling and alignment */
+    .search-container {
+      text-align: right;
+      margin-bottom: 20px;
+  }
+
+  .search-input {
+      padding: 10px;
+      width: 200px;
+      height: 40px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-right: 10px;
+      font-size: 16px;
+  }
+
+  .search-btn {
+      padding: 10px 15px;
+      background-color: #5bc0de;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      position: relative;
+      top: -3px;
+      left: -0.5%;
+  }

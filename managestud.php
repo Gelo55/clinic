@@ -193,7 +193,7 @@
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Information</a>
+							<a class="active" href="#">Manage</a>
 						</li>
 					</ul>
 				</div>
@@ -205,72 +205,97 @@
 <div clas="container">
     <div class="frame">
     <div class="crud-container">
-    <button class="btn btn-primary" id="btn-first"><a href="studentinformation.php" class="=text-light">Add Student</a></button>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <button class="btn btn-primary" id="btn-first"><a href="studentinformation.php" class="text-light">Add Student</a></button>
+        
+        <!-- Search Bar -->
+        <form action="" method="GET" style="margin-right: 20px;">
+            <input type="text" name="search" placeholder="Search Student" class="form-control" style="display: inline-block; width: 250px;">
+            <button type="submit" class="btn btn-primary" id="btn-searchbar">Search</button>
+        </form>
+    </div>
 
     <table class="table-container">
-      <caption>Student Data</caption>
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>Firtname</th>
-          <th>lastname</th>
-          <th>middlename</th>
-          <th>suffix</th>
-          <th>gender</th>
-          <th>address</th>
-          <th>contact number</th>
-          <th>email</th>
-          <th>student number</th>
-          <th>course</th>
-          <th>Year Level</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-      <?php 
-    $sql = "SELECT * FROM `information`";
-    $result = mysqli_query($con, $sql);
-    
-    if ($result){
-      while($row = mysqli_fetch_assoc($result)){  // Assigning $row inside the loop
-        $id = $row['id'];
-        $firstname = $row['firstname'];
-        $lastname = $row['lastname'];
-        $middlename = $row['middlename'];
-        $suffix = $row['suffix'];
-        $gender = $row['gender'];
-        $address = $row['address'];
-        $contact = $row['contact'];
-        $email = $row['email'];
-        $studentnumber = $row['studentnumber'];
-        $course = $row['course'];
-        $year = $row['year'];
+        <caption>Student Data</caption>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Middlename</th>
+                <th>Suffix</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Contact number</th>
+                <th>Email</th>
+                <th>Student number</th>
+                <th>Course</th>
+                <th>Year Level</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php 
+        // Establishing database connection
+        include 'connect.php'; // Include your database connection file
+
+        // Check if a search query is submitted
+        if (isset($_GET['search'])) {
+            $search = mysqli_real_escape_string($con, $_GET['search']);
+            // Search query with LIKE clause
+            $sql = "SELECT * FROM `information` WHERE `firstname` LIKE '%$search%' OR `lastname` LIKE '%$search%' OR `studentnumber` LIKE '%$search%'";
+        } else {
+            // Default query to display all students
+            $sql = "SELECT * FROM `information`";
+        }
         
-        echo '<tr>
-        <th>'.$id.'</th>
-          <td>'.$firstname.'</td>
-          <td>'.$lastname.'</td>
-          <td>'.$middlename.'</td>
-          <td>'.$suffix.'</td>
-          <td>'.$gender.'</td>
-          <td>'.$address.'</td>
-          <td>'.$contact.'</td>
-          <td>'.$email.'</td>
-          <td>'.$studentnumber.'</td>
-          <td>'.$course.'</td>
-          <td>'.$year.'</td>
-          <td><button class="btn btn-primary" id="btn-second"><a href="updatestud.php?updateid='.$id.'"><i class="fas fa-pen"></i></a></button>
-          <button class="btn btn-danger" id="btn-third"><a href="deletestud.php?deleteid='.$id.'"><i class="fas fa-trash"></i></a></button>
-           <button class="btn btn-info" id="btn-fourth"><a href="viewstudent.php?viewid='.$id.'" class="text-light"><i class="fas fa-eye"></i></a></button>
-          </td>
-        </tr>';
-      }
-    }
-?>
-      </tbody>
+        $result = mysqli_query($con, $sql);
+        
+        if ($result) {
+            while($row = mysqli_fetch_assoc($result)){
+                $id = $row['id'];
+                $firstname = $row['firstname'];
+                $lastname = $row['lastname'];
+                $middlename = $row['middlename'];
+                $suffix = $row['suffix'];
+                $gender = $row['gender'];
+                $address = $row['address'];
+                $contact = $row['contact'];
+                $email = $row['email'];
+                $studentnumber = $row['studentnumber'];
+                $course = $row['course'];
+                $year = $row['year'];
+                
+                echo '<tr>
+                <th>'.$id.'</th>
+                <td>'.$firstname.'</td>
+                <td>'.$lastname.'</td>
+                <td>'.$middlename.'</td>
+                <td>'.$suffix.'</td>
+                <td>'.$gender.'</td>
+                <td>'.$address.'</td>
+                <td>'.$contact.'</td>
+                <td>'.$email.'</td>
+                <td>'.$studentnumber.'</td>
+                <td>'.$course.'</td>
+                <td>'.$year.'</td>
+                <td>
+                    <button class="btn btn-primary" id="btn-second">
+                        <a href="updatestud.php?updateid='.$id.'"><i class="fas fa-pen"></i></a>
+                    </button>
+                    <button class="btn btn-danger" id="btn-third">
+                        <a href="deletestud.php?deleteid='.$id.'"><i class="fas fa-trash"></i></a>
+                    </button>
+                    <button class="btn btn-info" id="btn-fourth">
+                        <a href="viewstudent.php?viewid='.$id.'" class="text-light"><i class="fas fa-eye"></i></a>
+                    </button>
+                </td>
+                </tr>';
+            }
+        }
+        ?>
+        </tbody>
     </table>
-
-
 </div>
 
     </div>

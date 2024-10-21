@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/record.css">
+    <link rel="stylesheet" href="assets/css/resultlist.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
@@ -18,16 +18,26 @@
  <div id="sidenav" class="sidenav">
     <img src="assets/images/bcp.png" alt="img" class="bcp">
     <ul class="nav-link">
-        <li class="bell">
-        <a href="#" class="active">
-            <i class='bx bx-bell'></i>
-        </a>
-        </li>
-        <li class="settings">
-        <a href="#">
-            <i class='bx bx-cog'></i>
-        </a>
-        </li>
+    <li class="bell">
+    <a href="#" id="bell-icon" class="active">
+        <i class='bx bx-bell'></i>
+    </a>
+    <!-- Notification Box -->
+    <div id="notification-box" class="notification-box">
+        <p><i class="bx bx-bell"></i>No new notifications</p>
+        <p class="second-paragraph">When you have notifications,</p> <br> <p class="third-paragraph">they will appear here.</p>
+    </div>
+</li>
+<li class="settings">
+    <a href="#" id="settings-icon">
+        <i class='bx bx-cog'></i>
+    </a>
+    <!-- Unique Dropdown Menu -->
+    <ul id="settings-dropdown-menu" class="settings-dropdown-menu">
+        <li><a href="profile.php">Profile</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Logout</a></li>
+    </ul>
         <img src="assets/images/changli.jpg" alt="avatar" class="admin-profile">
         <table class="user-profile">
           <tr>
@@ -170,14 +180,14 @@
      <div class="container">
     <div class="head-title">
 				<div class="left">
-					<h1>Student</h1>
+					<h1>Medical</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Student</a>
+							<a href="#">Result</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Information</a>
+							<a class="active" href="#">List</a>
 						</li>
 					</ul>
 				</div>
@@ -188,79 +198,84 @@
     
 <div clas="container">
     <div class="frame">
-
     <div class="stud-container">
-        <header class="header">
-            <h1>Medical Result</h1>
-        </header>
+    <header class="header">
+        <h1>Medical Result</h1>
+    </header>
 
-        <section class="student-list">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Student Number</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Course</th>
-                        <th>Year Level</th>
-                        <th>Email</th>
-                        <th>Record</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>21010021</td>
-                        <td>Angelo</td>
-                        <td>Abargos</td>
-                        <td>BSIT</td>
-                        <td>First Year</td>
-                        <td>gelo00@gmail.com</td>
-                        <td><a href="linkrecord.php" id="record">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>21012525</td>
-                        <td>Michael</td>
-                        <td>Smith</td>
-                        <td>BSIT</td>
-                        <td>First Year</td>
-                        <td>michael.s@gmail.com</td>
-                        <td><a href="" id="record">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>21012323</td>
-                        <td>Sarah</td>
-                        <td>Brown</td>
-                        <td>BSIT</td>
-                        <td>First Year</td>
-                        <td>sarah.b@gmail.com</td>
-                        <td><a href="" id="record">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>21013333</td>
-                        <td>David</td>
-                        <td>Wilson</td>
-                        <td>BSIT</td>
-                        <td>First Year</td>
-                        <td>david.w@gmail.com</td>
-                        <td><a href="" id="record">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>21012232</td>
-                        <td>Olivia</td>
-                        <td>Davis</td>
-                        <td>BSIT</td>
-                        <td>First Year</td>
-                        <td>olivia.d@gmail.com</td>
-                        <td><a href="" id="record">View</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <footer>
-            <p>Generated on: October 13, 2024</p>
-        </footer>
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+        <button type="submit" class="btn btn-primary search-btn">Search</button>
     </div>
+
+    <section class="student-list">
+        <table id="studentTable">
+            <thead>
+                <tr>
+                    <th>Student Number</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Course</th>
+                    <th>Year Level</th>
+                    <th>Email</th>
+                    <th>Record</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>21010021</td>
+                    <td>Angelo</td>
+                    <td>Abargos</td>
+                    <td>BSIT</td>
+                    <td>First Year</td>
+                    <td>gelo00@gmail.com</td>
+                    <td><a href="linkrecord.php" id="record">View</a></td>
+                </tr>
+                <tr>
+                    <td>21012525</td>
+                    <td>Michael</td>
+                    <td>Smith</td>
+                    <td>BSIT</td>
+                    <td>First Year</td>
+                    <td>michael.s@gmail.com</td>
+                    <td><a href="" id="record">View</a></td>
+                </tr>
+                <tr>
+                    <td>21012323</td>
+                    <td>Sarah</td>
+                    <td>Brown</td>
+                    <td>BSIT</td>
+                    <td>First Year</td>
+                    <td>sarah.b@gmail.com</td>
+                    <td><a href="" id="record">View</a></td>
+                </tr>
+                <tr>
+                    <td>21013333</td>
+                    <td>David</td>
+                    <td>Wilson</td>
+                    <td>BSIT</td>
+                    <td>First Year</td>
+                    <td>david.w@gmail.com</td>
+                    <td><a href="" id="record">View</a></td>
+                </tr>
+                <tr>
+                    <td>21012232</td>
+                    <td>Olivia</td>
+                    <td>Davis</td>
+                    <td>BSIT</td>
+                    <td>First Year</td>
+                    <td>olivia.d@gmail.com</td>
+                    <td><a href="" id="record">View</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>Generated on: October 13, 2024</p>
+    </footer>
+</div>
 
     </div>
     </div>
@@ -296,4 +311,77 @@ for (i = 0; i < dropdown.length; i++) {
 
 
     </script>
+
+<script>
+  document.getElementById("bell-icon").addEventListener("click", function(event) {
+    event.preventDefault();
+    const notificationBox = document.getElementById("notification-box");
+    notificationBox.classList.toggle("active"); // Toggle visibility
+});
+
+</script>
+
+<script>
+  document.getElementById("settings-icon").addEventListener("click", function(event) {
+    event.preventDefault();
+    const dropdown = document.getElementById("settings-dropdown-menu");
+    dropdown.classList.toggle("active"); // Toggle the dropdown visibility
+});
+</script>
+
+<!-- JavaScript for search functionality -->
+<script>
+document.getElementById('searchInput').addEventListener('keyup', function() {
+    var input = document.getElementById("searchInput").value.toUpperCase();
+    var table = document.getElementById("studentTable");
+    var tr = table.getElementsByTagName("tr");
+
+    for (var i = 1; i < tr.length; i++) {
+        var tdStudentNum = tr[i].getElementsByTagName("td")[0]; // Student Number
+        var tdFirstName = tr[i].getElementsByTagName("td")[1];  // First Name
+        var tdLastName = tr[i].getElementsByTagName("td")[2];   // Last Name
+        if (tdStudentNum || tdFirstName || tdLastName) {
+            var textValueStudentNum = tdStudentNum.textContent || tdStudentNum.innerText;
+            var textValueFirstName = tdFirstName.textContent || tdFirstName.innerText;
+            var textValueLastName = tdLastName.textContent || tdLastName.innerText;
+            if (textValueStudentNum.toUpperCase().indexOf(input) > -1 || 
+                textValueFirstName.toUpperCase().indexOf(input) > -1 || 
+                textValueLastName.toUpperCase().indexOf(input) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+});
+</script>
+
+
+<!-- JavaScript for search functionality -->
+<script>
+document.getElementById('searchInput').addEventListener('keyup', function() {
+    var input = document.getElementById("searchInput").value.toUpperCase();
+    var table = document.getElementById("studentTable");
+    var tr = table.getElementsByTagName("tr");
+
+    for (var i = 1; i < tr.length; i++) {
+        var tdStudentNum = tr[i].getElementsByTagName("td")[0]; // Student Number
+        var tdFirstName = tr[i].getElementsByTagName("td")[1];  // First Name
+        var tdLastName = tr[i].getElementsByTagName("td")[2];   // Last Name
+        if (tdStudentNum || tdFirstName || tdLastName) {
+            var textValueStudentNum = tdStudentNum.textContent || tdStudentNum.innerText;
+            var textValueFirstName = tdFirstName.textContent || tdFirstName.innerText;
+            var textValueLastName = tdLastName.textContent || tdLastName.innerText;
+            if (textValueStudentNum.toUpperCase().indexOf(input) > -1 || 
+                textValueFirstName.toUpperCase().indexOf(input) > -1 || 
+                textValueLastName.toUpperCase().indexOf(input) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+});
+</script>
+
 </html>

@@ -1,15 +1,18 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
 
-body {
-    background-color: #f8f9fa;
-    color: #333;
-}
-
+  }
+  
+  body{
+      margin: 0;
+      font-family: "Lato", sans-serif;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+  }
+  
     
 .sidenav{
   height: 100vh;
@@ -36,6 +39,7 @@ body {
 .sidenav .nav-link{
   margin-top: -16%;
   margin-left: 38%;
+  height: 40%;
 }
 
 .sidenav .nav-link li{
@@ -72,10 +76,10 @@ body {
 }
 
 .admin-profile{
-  width: 80%;
-  height: 50%;
-  margin-left: -20%;
-  margin-top: 30%;
+  width: 100px;
+  height: 100px;
+  margin-left: -150%;
+  margin-top: 50%;
   border-radius: 50%;
 }
 
@@ -94,16 +98,16 @@ tr,td{
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
-  top: -10px;
-  left: 65px;
+  top: 5px;
+  left: -70%;
 }
 
 .user-gmail{
   color: #A8A8A8;
   font-size: 13px;
   position: relative;
-  top: -20px;
-  left: 65px
+  top: -8px;
+  left: -70%;
  
 }
 
@@ -785,6 +789,7 @@ background-color: #555; /* Scrollbar color on hover */
 }
 
 
+
 /* Head Title Container */
 .container .head-title {
     display: flex;
@@ -855,72 +860,283 @@ background-color: #555; /* Scrollbar color on hover */
     width: 100%;
   }
   
+
   
-    .frame {
-      background-color: rgba(168, 168, 168, 0.2); 
-      background: cover;
-      height: 80vh;
-      width: 100%;
-      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-      padding: 20px; 
-      box-sizing: border-box; 
-      transition: padding 0.3s ease; 
+  .frame {
+    background-color: #f0f0f0; 
+    background: cover;
+    height: 90vh;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px; 
+    box-sizing: border-box; 
+    transition: padding 0.3s ease; 
+}
+
+
+  .box-info {
+    height: 70px;
+    width: 50%;
+    margin-left: 2%;
+    display: inline-block;
+    background-color:  #fff;
+    box-shadow:  -10px 0 10px rgba(0, 0, 0, 0.211);
+    position: relative;
+    top: 30px;
+    border-radius: 5%;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .box-info a{
+    text-decoration: none;
   }
 
-.stud-container {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.header {
-    text-align: center;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #007BFF;
-}
-
-.header h1 {
-    color: #007BFF;
-}
-
-.student-list {
-    margin-top: 20px;
-}
-
-.student-list table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.student-list th, .student-list td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-
-.student-list th {
-    background-color: #007BFF;
-    color: white;
-}
-
-.student-list td {
-    background-color: #f9f9f9;
-}
-
-.student-list tbody tr:hover {
-    background-color: #f1f1f1;
-}
-
-footer {
-    margin-top: 30px;
-    text-align: center;
-    font-size: 0.9em;
-    color: #666;
-}
-
-#record{
+  .box-info h1 {
+    font-size: 30px;
+    color: black;
     position: relative;
-    left: 20%;
+    top: 50%;
+    left: 30%;
+    transform: translateY(-50%);
+  }
+
+  
+  .box-info1 {
+    height: 70px;
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 2%;
+    display: inline-block;
+    background-color:  white;
+    box-shadow:  -10px 0 10px rgba(0, 0, 0, 0.211);
+    position: relative;
+    top: 5px;
+    border-radius: 5%;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .box-info1 a{
+    text-decoration: none;
+  }
+
+  .box-info1 h1 {
+    font-size: 30px;
+    color: black;
+    position: relative;
+    top: 50%;
+    left: 30%;
+    transform: translateY(-50%);
+  }
+
+  
+  .box-info2 {
+    height: 70px;
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 2%;
+    display: inline-block;
+    background-color:  #fff;
+    box-shadow:  -10px 0 10px rgba(0, 0, 0, 0.211);
+    position: relative;
+    top: -20px;
+    border-radius: 5%;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .box-info2 a{
+    text-decoration: none;
+  }
+
+  .box-info2 h1 {
+    font-size: 30px;
+    color: black;
+    position: relative;
+    top: 50%;
+    left: 30%;
+    transform: translateY(-50%);
+  }
+
+  
+  .box-info3 {
+    height: 70px;
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 2%;
+    display: inline-block;
+    background-color:  #fff;
+    box-shadow:  -10px 0 10px rgba(0, 0, 0, 0.211);
+    position: relative;
+    top: -50px;
+    border-radius: 5%;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .box-info3 a{
+    text-decoration: none;
+  }
+
+  .box-info3 h1 {
+    font-size: 30px;
+    color: black;
+    position: relative;
+    top: 50%;
+    left: 30%;
+    transform: translateY(-50%);
+  }
+  
+  #year1{
+    position: relative;
+    top: 50%;
+    left: 5%;
+  }
+
+  #year2{
+    position: relative;
+    top: 50%;
+    left: 5%;
+  }
+  
+
+  #year3{
+    position: relative;
+    top: 50%;
+    left: 5%;
+  }
+
+  #year4{
+    position: relative;
+    top: 50%;
+    left: 5%;
+  }
+  
+
+  #view1{
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+    left: 80%;
+    top: -20px;
+  }
+
+  
+  #view2{
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+    left: 80%;
+    top: -20px;
+  }
+
+  
+  #view3{
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+    left: 80%;
+    top: -20px;
+  }
+
+  
+  #view4{
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+    left: 80%;
+    top: -20px;
+  }
+
+  
+/* Style for notification box */
+.notification-box {
+  display: none;
+  position: absolute;
+  top: 40px; /* Adjust depending on your layout */
+  right: 0;
+  width: 230px;
+  height: 250%;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
 }
+
+/* Show the notification box */
+.notification-box.active {
+  display: block;
+}
+
+/* Sample styling for the notification message */
+.notification-box p {
+  margin: 0;
+  color: black;
+  font-size: 14px;
+  position: relative;
+  top: 38%;
+  left: 20%;
+}
+
+.notification-box p i{
+  position: absolute;
+  left: 15%;
+  top: -20px;
+  color: black;
+}
+
+.notification-box .second-paragraph{
+  font-size: 9px;
+  color: rgba(0, 0, 0, 0.356);
+  position: relative;
+  left: 22%;
+  top: 35%;
+ 
+}
+
+.notification-box .third-paragraph{
+  font-size: 9px;
+  color: rgba(0, 0, 0, 0.356);
+ position: relative;
+ left: 30%;
+ top: 10%;
+}
+
+/* Unique Dropdown menu styles */
+.settings-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 40px; /* Adjust depending on your layout */
+  right: 0;
+  width: 130px;
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+  list-style: none;
+  padding: 5px 0;
+}
+
+/* Show the unique dropdown */
+.settings-dropdown-menu.active {
+  display: block;
+}
+
+/* Unique Dropdown menu item styles */
+.settings-dropdown-menu li {
+  padding: 5px 10px;
+}
+
+.settings-dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+.settings-dropdown-menu li a:hover {
+  color: #0056b3;
+  background-color: #f0f0f0;
+}
+
+
