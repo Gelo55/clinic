@@ -1,5 +1,5 @@
 <?php
-include 'connect.php';
+include 'db.php';
 
 $id = $_GET['updateid'];
 $id = intval($id); // Ensure $id is an integer to prevent SQL injection

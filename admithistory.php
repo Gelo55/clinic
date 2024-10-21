@@ -1,7 +1,7 @@
 
 <?php
 
-  include 'connect.php';
+  include 'db.php';
 
 ?>
 

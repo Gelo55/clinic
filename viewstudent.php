@@ -1,5 +1,5 @@
 <?php
-include 'connect.php';
+include 'db.php';
 
 if (isset($_GET['viewid'])) {
     $id = $_GET['viewid'];

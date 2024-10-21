@@ -1,7 +1,7 @@
 
 <?php
 
-  include 'connect.php';
+  include 'db.php';
 
 ?>
 
@@ -237,7 +237,7 @@
         <tbody>
         <?php 
         // Establishing database connection
-        include 'connect.php'; // Include your database connection file
+        include 'db.php'; // Include your database connection file
 
         // Check if a search query is submitted
         if (isset($_GET['search'])) {
