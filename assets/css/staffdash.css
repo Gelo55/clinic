@@ -22,7 +22,7 @@ body{
 .sidenav .bcp{
   width: 12%;
   height: 3.5%;
-  margin-top: -50px;
+  margin-top: -40px;
   margin-left: 9%;
 }
 
@@ -68,8 +68,8 @@ body{
 
 .admin-profile{
   width: 80%;
-  height: 50%;
-  margin-left: -42%;
+  height: 100px;
+  margin-left: -50%;
   margin-top: 30%;
   border-radius: 50%;
 }
@@ -857,7 +857,7 @@ background-color: #555; /* Scrollbar color on hover */
 /* --FRAME -- */
 .frame {
   background-color: rgba(168, 168, 168, 0.2); 
-  height: 1100px;
+  height: 1110px;
   width: 100%;
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px; 
@@ -870,26 +870,27 @@ background-color: #555; /* Scrollbar color on hover */
   width: 10%;
 }
 .box-info {
-  height: 100px;
-  width: 15%;
+  height: 70px;
+  width: 25%;
   margin-top: 5%;
   margin-left: 5%;
   display: inline-block;
   background-color:  #e3f2fd;
   box-shadow:  -10px 0 10px rgba(0, 0, 0, 0.211);
   position: relative;
-  top: 20px;
+  top: 5px;
+  left: 14%;
   border-radius: 5%;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 
 .box-info h1 {
-  font-size: 18px;
-  color: white;
+  font-size: 25px;
+  color: black;
   position: relative;
-  top: -20%;
-  left: 39%;
+  top: 30%;
+  left: 48%;
   transform: translateY(-50%);
 }
 
@@ -897,8 +898,8 @@ background-color: #555; /* Scrollbar color on hover */
   font-size: 50px;
   color: rgba(0, 0, 0, 0.434);
   position: relative;
-  top: -20%;
-  left: 40%;
+  top: -70%;
+  left: 30%;
 }
 
 .box-info .header {
@@ -909,7 +910,7 @@ background-color: #555; /* Scrollbar color on hover */
 
 
 .table-container {
-  max-width: 1100px;
+  max-width: 890px;
   height: 390px;
   margin: 0 auto;
   background-color: #fff;
@@ -919,7 +920,7 @@ background-color: #555; /* Scrollbar color on hover */
   border-left: 5px solid #0056b3;
   border-bottom: 5px solid #0056b3;
   position: relative;
-  left: -7%;
+  left: -4%;
   top: 42%;
 }
 
@@ -986,7 +987,7 @@ background-color: #0056b3;
 
 
 .appointment-container {
-  width: 28%;
+  width: 60%;
   height: 350px;
   background-color: white;
   padding: 20px;
@@ -995,7 +996,7 @@ background-color: #0056b3;
   border-bottom: 5px solid #0056b3;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: relative;
-  left: 50%;
+  left: 15%;
   top: -38%;
 }
 
@@ -1063,20 +1064,6 @@ background-color: #0056b3;
   margin: 0;
   color: #777;
   font-size: 0.9em;
-}
-
-
-.analytics-container{
-  width: 44%;
-  height: 386px;
-  background-color: white;
-  border-left: 5px solid #0056b3;
-  border-bottom: 5px solid #0056b3;
-  border-radius: 2%;
-  position: relative;
-  top: -75.5%;
-  left: 5%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
    /* Style for the chart container */
@@ -1171,6 +1158,13 @@ background-color: #0056b3;
 .settings-dropdown-menu li a:hover {
   color: #0056b3;
   background-color: #f0f0f0;
+}
+
+.dash-container{
+    width: 90%;
+    height: 80%;
+    background-color: white;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {

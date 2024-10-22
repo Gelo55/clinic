@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <title>Clinic Management System</title>
-    <link rel="stylesheet" href="assets/css/dashb.css">
+    <link rel="stylesheet" href="assets/css/staffdash.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
@@ -36,13 +36,13 @@
         <li><a href="#">Logout</a></li>
     </ul>
 </li>
-        <img src="assets/images/changli.jpg" alt="avatar" class="admin-profile">
+        <img src="assets/images/shore.avif" alt="avatar" class="admin-profile">
         <table class="user-profile">
           <tr>
-            <td><span class="user-name"><b>admin name</b></span></td>
+            <td><span class="user-name"><b>staff name</b></span></td>
           </tr>
           <tr>
-              <td> <span class="user-gmail">adminid@gmail.com</span></td>    
+              <td> <span class="user-gmail">staff@gmail.com</span></td>    
           </tr>
         </table>        
     </ul>
@@ -68,15 +68,6 @@
     </div>
 
   </div>
-
-  <div class="dropdownstaff">
-    <button class="dropdown-btn"> <i class='bx bx-user' ></i>
-      <span class="droplinks_name">Clinic Staff</span>
-      <i class="fa fa-caret-down" id="third"></i>
-    </button>
-    <div class="dropdown-container2">
-      <a class="dropdown-a" href="managestaff.php"><span class="droplinks_name">Manage Staff</span></a>
-    </div>
 
   </div>
         </ul>   
@@ -116,7 +107,6 @@
     </button>
     <div class="dropdown-container3">
     <a class="dropdown-a" href="healthform.php"><span class="droplinks_name">Health Form</span></a>
-    <a class="dropdown-a" href="medresult.php"><span class="droplinks_name">Medical Result</span></a>
     </div>
 
   </div><br>
@@ -181,7 +171,7 @@
 					<h1>Dashboard</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Admin</a>
+							<a href="#">Staff</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
@@ -200,35 +190,21 @@
         
 <!-- frame -->
 <div class= "frame">
-    <div class= "box-info" id="info1">
-      <a href="profile.php"><header class= "header"></header>
-      <h1>Profile</h1>
-      <span><i class= "bx bx-user"></i></span></a>
-    </div>
-  
 
-    <div class= "box-info" id="info2">
-      <a href="healthform.php"><header class= "header"></header>
+    
+<div class= "box-info" id="info2">
+      <a href="healthform.php">
       <h1>Medical</h1>
       <span><i class= "bx bx-plus-medical"></i></span></a>
     </div>
-  
-    
-    
-    <div class= "box-info" id="info3">
-      <a href="Medication.php"><header class= "header"></header>
-      <h1>Inventory</h1>
-      <span><i class= "bx bx-calendar"></i></span></a>
-    </div>
-  
+
     
     <div class= "box-info" id="info4">
-      <a href="admithistory.php"><header class= "header"></header>
+      <a href="admithistory.php">
       <h1>Admit</h1>
       <span><i class= "bx bx-message-square-add"></i></span></a>
     </div>
 
-    
     <div class="table-container">
       <table class="clinic-table">
       <header class="schedule-header"><h1>Medical Schedule</h1></header>
@@ -309,14 +285,6 @@
            </li>
        </ul>
       </div>
-
-        
-  <div class="analytics-container">
-
-          <!-- Chart container -->
-    <div id="chart"></div>
-
-
     
     </div>
 </div>
@@ -365,38 +333,6 @@ for (i = 0; i < dropdown.length; i++) {
       number.innerHTML = counter + "%";
     }
   }, 25)
-</script>
-
-
-<script>
-    // Options for the line chart
-    var options = {
-        chart: {
-            type: 'line',
-            height: 380
-        },
-        series: [{
-            name: 'Medical',
-            data: [0, 100, 200, 300, 400]
-        }],
-        xaxis: {
-            categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
-        },
-        title: {
-            text: 'Medical finished per day',
-            align: 'left'
-        },
-        stroke: {
-            straight: 'smooth'
-        },
-        markers: {
-            size: 6,
-        }
-    }
-
-    // Rendering the chart
-    var chart = new ApexCharts(document.querySelector("#chart"), options);
-    chart.render();
 </script>
 
 <script>
