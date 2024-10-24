@@ -33,7 +33,7 @@
     <ul id="settings-dropdown-menu" class="settings-dropdown-menu">
         <li><a href="profile.php">Profile</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="index.php">Logout</a></li>
     </ul>
 </li>
         <img src="assets/images/shore.avif" alt="avatar" class="admin-profile">

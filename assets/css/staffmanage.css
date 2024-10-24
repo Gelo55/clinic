@@ -125,6 +125,8 @@ tr,td{
   position: relative;
   list-style: none;
   height: 50px;
+  position: relative;
+  left: -2%;
 }
 .sidenav .nav-links li a{
   height: 100%;
@@ -145,6 +147,8 @@ tr,td{
   text-align: center;
   font-size: 18px;
   color: white;
+  position: relative;
+  left: -1%;
 }
 
 .sidenav .nav-links li a .links_name{
