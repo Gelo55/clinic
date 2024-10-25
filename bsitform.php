@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/healthform.css">
+    <link rel="stylesheet" href="assets/css/bsitform.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
@@ -199,8 +199,8 @@
 <div clas="container">
     <div class="frame">
   <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" onclick="toggleDropdown()">
-      Course
+    <button class="btn btn-primary dropdown-toggle" onclick="toggleDropdown()" id="btn-bsit">
+      BSIT
     </button>
     <div class="dropdown-menu" id="dropdownMenu">
       <a class="dropdown-item" href="#">CRIM</a>
@@ -209,7 +209,7 @@
       <a class="dropdown-item" href="#">BSOA</a>
       <a class="dropdown-item" href="#">BSAIS</a>
       <a class="dropdown-item" href="#">ENTREP</a>
-      <a class="dropdown-item" href="bsitform.php">BSIT</a>
+      <a class="dropdown-item" href="#">BSIT</a>
       <a class="dropdown-item" href="#">BLIS</a>
       <a class="dropdown-item" href="#">BSCPE</a>
       <a class="dropdown-item" href="#">BSP</a>
@@ -221,22 +221,26 @@
 
   <div class= "box-info" id="info1">
       <h1 id="year1">First Year</h1>
+      <a href="bsit.php" id="view1"><i class="bx bx-right-arrow-circle"></i></a>
     </div>
   
 
     <div class= "box-info1" id="info2">
       <h1 id="year2">Second Year</h1>
+      <a href="" id="view2"><i class="bx bx-right-arrow-circle"></i></a>
     </div>
   
     
     
     <div class= "box-info2" id="info3">
       <h1 id="year3">Third Year</h1>
+      <a href="" id="view3"><i class="bx bx-right-arrow-circle"></i></a>
     </div>
   
     
     <div class= "box-info3" id="info4">
       <h1 id="year4">Fourth Year</h1>
+      <a href="" id="view4"><i class="bx bx-right-arrow-circle"></i></a>
     </div>
 
   </div>

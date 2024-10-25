@@ -1,16 +1,16 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/healthform.css">
+    <link rel="stylesheet" href="assets/css/bsitresult.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <title>Clinic Management System</title>
 </head>
 <body>
@@ -117,7 +117,7 @@
       <i class="fa fa-caret-down" id="first"></i>
     </button>
     <div class="dropdown-container3">
-    <a class="dropdown-a" href="#"><span class="droplinks_name">Health Form</span></a>
+    <a class="dropdown-a" href="healthform.php"><span class="droplinks_name">Health Form</span></a>
     <a class="dropdown-a" href="medresult.php"><span class="droplinks_name">Medical Result</span></a>
     </div>
 
@@ -140,7 +140,7 @@
     </button>
     <div class="dropdown-container4">
     <a class="dropdown-a" href="medication.php"><span class="droplinks_name">Medication</span></a>
-    <a class="dropdown-a" href="equipment.php"><span class="droplinks_name">Equipment</span></a>
+        <a class="dropdown-a" href="equipment.php"><span class="droplinks_name">Equipment</span></a>
      </div>
 
           </div><br>
@@ -183,11 +183,11 @@
 					<h1>Medical</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Student</a>
+							<a href="#">Medical</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Healthform</a>
+							<a class="active" href="#">Result</a>
 						</li>
 					</ul>
 				</div>
@@ -198,7 +198,7 @@
     
 <div clas="container">
     <div class="frame">
-  <div class="dropdown">
+    <div class="dropdown">
     <button class="btn btn-primary dropdown-toggle" onclick="toggleDropdown()">
       Course
     </button>
@@ -209,7 +209,7 @@
       <a class="dropdown-item" href="#">BSOA</a>
       <a class="dropdown-item" href="#">BSAIS</a>
       <a class="dropdown-item" href="#">ENTREP</a>
-      <a class="dropdown-item" href="bsitform.php">BSIT</a>
+      <a class="dropdown-item" href="#">BSIT</a>
       <a class="dropdown-item" href="#">BLIS</a>
       <a class="dropdown-item" href="#">BSCPE</a>
       <a class="dropdown-item" href="#">BSP</a>
@@ -217,38 +217,37 @@
       <a class="dropdown-item" href="#">BSTM</a>
     </div>
   </div>
-
-
   <div class= "box-info" id="info1">
       <h1 id="year1">First Year</h1>
+      <a href="resultlist.php" id="view1">View Record</a>
     </div>
   
 
     <div class= "box-info1" id="info2">
       <h1 id="year2">Second Year</h1>
+      <a href="" id="view2">View Record</a>
     </div>
   
     
     
     <div class= "box-info2" id="info3">
       <h1 id="year3">Third Year</h1>
+      <a href="" id="view3">View Record</a>
     </div>
   
     
     <div class= "box-info3" id="info4">
       <h1 id="year4">Fourth Year</h1>
+      <a href="" id="view4">View Record</a>
     </div>
 
   </div>
 
 </div>
 
-
-
-
 </body>
 
-       
+     
 <script type="text/javascript">
     function toggleNav() {
     const sidenav = document.getElementById("sidenav");
@@ -279,6 +278,7 @@ for (i = 0; i < dropdown.length; i++) {
 }
     </script>
 
+    
 <script>
     function selectOption(element, dropdownId) {
       var selectedText = element.textContent;
@@ -289,7 +289,6 @@ for (i = 0; i < dropdown.length; i++) {
   </script>
 
 <script src="script.js"></script>
-
 
 <script>
   document.getElementById("bell-icon").addEventListener("click", function(event) {

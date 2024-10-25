@@ -234,7 +234,7 @@ if (isset($_POST['submit'])) {
 <div class="frame">
 
     <div class="box-info">
-      <h1>Admission History</h1>
+      <h1>Manage Admission</h1>
       <div class="container my-5">
         <form method="post">
           <div class="form-group">

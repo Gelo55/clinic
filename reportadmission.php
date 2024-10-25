@@ -207,25 +207,24 @@
             <p>Date: <span id="report-date"></span></p>
         </header>
         <section class="student-info">
-            <h2>Student Information</h2>
+            <h2>Admission Monitoring</h2>
             <div class="input-group">
-                <label for="student-name"><strong>Name:</strong></label>
-                <input type="text" id="student-name" value="John Doe" />
+                <label for="number"><strong>Number of Admitted:</strong></label>
+                <input type="number" id="student-name" value="John Doe" />
             </div>
             <div class="input-group">
-                <label for="student-age"><strong>Age:</strong></label>
-                <input type="number" id="student-age" value="18" />
+                <label for="name"><strong>Date:</strong></label>
+                <input type="text" id="student-age" value="18" />
             </div>
             <div class="input-group">
-                <label for="program"><strong>Program:</strong></label>
+                <label for="program"><strong>Department:</strong></label>
                 <input type="text" id="program" value="Computer Science" />
             </div>
             <div class="input-group">
-                <label for="status"><strong>Status:</strong></label>
+                <label for="status"><strong>Category:</strong></label>
                 <select id="status">
-                    <option value="Admitted" selected>Admitted</option>
-                    <option value="Pending">Pending</option>
-                    <option value="Rejected">Rejected</option>
+                    <option value="Admitted" selected>Student</option>
+                    <option value="Pending">Professor</option>
                 </select>
             </div>
         </section>

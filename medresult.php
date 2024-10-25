@@ -198,29 +198,43 @@
     
 <div clas="container">
     <div class="frame">
-
+    <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" onclick="toggleDropdown()">
+      Course
+    </button>
+    <div class="dropdown-menu" id="dropdownMenu">
+      <a class="dropdown-item" href="#">CRIM</a>
+      <a class="dropdown-item" href="#">EDUC</a>
+      <a class="dropdown-item" href="#">BSBA</a>
+      <a class="dropdown-item" href="#">BSOA</a>
+      <a class="dropdown-item" href="#">BSAIS</a>
+      <a class="dropdown-item" href="#">ENTREP</a>
+      <a class="dropdown-item" href="bsitresult.php">BSIT</a>
+      <a class="dropdown-item" href="#">BLIS</a>
+      <a class="dropdown-item" href="#">BSCPE</a>
+      <a class="dropdown-item" href="#">BSP</a>
+      <a class="dropdown-item" href="#">BSHM</a>
+      <a class="dropdown-item" href="#">BSTM</a>
+    </div>
+  </div>
   <div class= "box-info" id="info1">
       <h1 id="year1">First Year</h1>
-      <a href="resultlist.php" id="view1">View Record</a>
     </div>
   
 
     <div class= "box-info1" id="info2">
       <h1 id="year2">Second Year</h1>
-      <a href="" id="view2">View Record</a>
     </div>
   
     
     
     <div class= "box-info2" id="info3">
       <h1 id="year3">Third Year</h1>
-      <a href="" id="view3">View Record</a>
     </div>
   
     
     <div class= "box-info3" id="info4">
       <h1 id="year4">Fourth Year</h1>
-      <a href="" id="view4">View Record</a>
     </div>
 
   </div>
@@ -287,6 +301,24 @@ for (i = 0; i < dropdown.length; i++) {
     const dropdown = document.getElementById("settings-dropdown-menu");
     dropdown.classList.toggle("active"); // Toggle the dropdown visibility
 });
+</script>
+
+
+<script>
+  function toggleDropdown() {
+    const dropdownMenu = document.getElementById("dropdownMenu");
+    dropdownMenu.classList.toggle("show");
+  }
+
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-toggle')) {
+      const dropdownMenus = document.getElementsByClassName("dropdown-menu");
+      for (let i = 0; i < dropdownMenus.length; i++) {
+        dropdownMenus[i].classList.remove('show');
+      }
+    }
+  }
 </script>
 
 </html>
