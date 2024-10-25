@@ -134,7 +134,7 @@ if (isset($_GET['viewid'])) {
                     <input type="text" id="prescription" value="<?php echo htmlspecialchars($prescription); ?>" readonly>
                 </div>
             </div>
-            <a href="admissionhistory.php" class="btn btn-secondary">Back</a>
+            <a href="admithistory.php" class="btn btn-secondary">Back</a>
         </div>
     </div>
 </div>
