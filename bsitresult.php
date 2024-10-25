@@ -200,7 +200,7 @@
     <div class="frame">
     <div class="dropdown">
     <button class="btn btn-primary dropdown-toggle" onclick="toggleDropdown()">
-      Course
+      BSIT
     </button>
     <div class="dropdown-menu" id="dropdownMenu">
       <a class="dropdown-item" href="#">CRIM</a>
