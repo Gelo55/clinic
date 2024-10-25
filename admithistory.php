@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/admissionhistory.css">
+    <link rel="stylesheet" href="assets/css/admithistory.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
@@ -71,7 +71,6 @@
       <i class="fa fa-caret-down" id="second"></i>
     </button>
     <div class="dropdown-container1">
-      <a class="dropdown-a" href="studentinformation.php"><span class="droplinks_name">Student Information</span></a>
       <a class="dropdown-a" href="managestud.php"><span class="droplinks_name">Manage Student</span></a>
     </div>
 
@@ -104,7 +103,6 @@
     </button>
     <div class="dropdown-container3">
     <a class="dropdown-a" href="#"><span class="droplinks_name">Admission History</span></a>
-    <a class="dropdown-a" href="manageadmit.php"><span class="droplinks_name">Manage Admission</span></a>
     </div>
 
   </div><br>
@@ -204,8 +202,6 @@
 <div clas="container">
     <div class="frame">
     <div class="crud-container">
-    <button class="btn btn-primary" id="btn-first"><a href="manageadmit.php" class="text-light">Manage Admit</a></button>
-
     <!-- Search Form -->
     <div class="search-container">
         <form method="GET" action="">
@@ -268,8 +264,6 @@
                         <td>' . $reason . '</td>
                         <td>' . $prescription . '</td>
                         <td>
-                            <button class="btn btn-primary" id="btn-second"><a href="updateadmission.php?updateid=' . $id . '"><i class="fas fa-pen"></i></a></button>
-                            <button class="btn btn-danger" id="btn-third"><a href="deleteadmission.php?deleteid=' . $id . '"><i class="fas fa-trash"></i></a></button>
                             <button class="btn btn-info" id="btn-fourth"><a href="viewadmit.php?viewid=' . $id . '" class="text-light"><i class="fas fa-eye"></i></a></button>
                         </td>
                     </tr>';

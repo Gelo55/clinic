@@ -63,7 +63,6 @@
       <i class="fa fa-caret-down" id="second"></i>
     </button>
     <div class="dropdown-container1">
-      <a class="dropdown-a" href="studentinformation.php"><span class="droplinks_name">Student Information</span></a>
       <a class="dropdown-a" href="managestud.php"><span class="droplinks_name">Manage Student</span></a>
     </div>
 
@@ -76,6 +75,7 @@
     </button>
     <div class="dropdown-container2">
       <a class="dropdown-a" href="managestaff.php"><span class="droplinks_name">Manage Staff</span></a>
+
     </div>
 
   </div>
@@ -96,7 +96,6 @@
     </button>
     <div class="dropdown-container3">
     <a class="dropdown-a" href="admithistory.php"><span class="droplinks_name">Admission History</span></a>
-    <a class="dropdown-a" href="manageadmit.php"><span class="droplinks_name">Manage Admission</span></a>
     </div>
 
   </div><br>
@@ -117,6 +116,7 @@
     <div class="dropdown-container3">
     <a class="dropdown-a" href="healthform.php"><span class="droplinks_name">Health Form</span></a>
     <a class="dropdown-a" href="medresult.php"><span class="droplinks_name">Medical Result</span></a>
+    <a class="dropdown-a" href="qrcode.php"><span class="droplinks_name">Q.R Code</span></a>
     </div>
 
   </div><br>

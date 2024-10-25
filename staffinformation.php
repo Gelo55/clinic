@@ -7,18 +7,18 @@ if (isset($_POST['submit'])) {
     $birthday = $_POST['birthday'];
     $gender = $_POST['gender'];
     $contact = $_POST['contact'];
-    $email = $_POST['email'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
     $role = $_POST['role'];
 
     // Use prepared statements to prevent SQL injection
-    $sql2 = "INSERT INTO staff (firstname, lastname, birthday, gender, contact, email, password, role) 
+    $sql2 = "INSERT INTO staff (firstname, lastname, birthday, gender, contact, username, password, role) 
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     
     $stmt = $con2->prepare($sql2);
     
     // Bind the parameters to the SQL query (four strings "s")
-    $stmt->bind_param("ssssssss", $firstname, $lastname, $birthday, $gender, $contact, $email, $password, $role);
+    $stmt->bind_param("ssssssss", $firstname, $lastname, $birthday, $gender, $contact, $username, $password, $role);
 
     
     if ($stmt->execute()) {
@@ -100,7 +100,6 @@ if (isset($_POST['submit'])) {
       <i class="fa fa-caret-down" id="second"></i>
     </button>
     <div class="dropdown-container1">
-      <a class="dropdown-a" href="studentinformation.php"><span class="droplinks_name">Student Information</span></a>
       <a class="dropdown-a" href="managestud.php"><span class="droplinks_name">Manage Student</span></a>
     </div>
 
@@ -133,7 +132,6 @@ if (isset($_POST['submit'])) {
     </button>
     <div class="dropdown-container3">
     <a class="dropdown-a" href="admithistory.php"><span class="droplinks_name">Admission History</span></a>
-    <a class="dropdown-a" href="manageadmit.php"><span class="droplinks_name">Manage Admission</span></a>
     </div>
 
   </div><br>
@@ -264,8 +262,8 @@ if (isset($_POST['submit'])) {
             <input type="text" class="form-control" placeholder="Enter your Contact Number" name="contact" autocomplete="off">
           </div>
           <div class="form-group5" id="email">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" placeholder="Enter your email" name="email" autocomplete="off">
+            <label for="username">username</label>
+            <input type="username" class="form-control" placeholder="Enter your username" name="username" autocomplete="off">
           </div>
           <div class="form-group6" id="pass">
             <label for="password">Password</label>

@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/staffmanage.css">
+    <link rel="stylesheet" href="assets/css/managestaff.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
@@ -104,7 +104,6 @@
     </button>
     <div class="dropdown-container3">
     <a class="dropdown-a" href="admithistory.php"><span class="droplinks_name">Admission History</span></a>
-    <a class="dropdown-a" href="manageadmit.php"><span class="droplinks_name">Manage Admission</span></a>
     </div>
 
   </div><br>
@@ -206,6 +205,8 @@
     <div class="crud-container">
     <button class="btn btn-primary" id="btn-first"><a href="staffinformation.php" class="text-light">Add Staff</a></button>
     
+    <a href="register.php" class="btn btn-primary" id="btn-account">Add Account</a>
+
     <!-- Search Form with styling -->
     <div class="search-container">
         <form method="GET" action="">
@@ -224,7 +225,7 @@
                 <th>birthday</th>
                 <th>gender</th>
                 <th>contact</th>
-                <th>email</th>
+                <th>Username</th>
                 <th>password</th>
                 <th>role</th>
                 <th>Action</th>
@@ -236,7 +237,7 @@
         if (isset($_GET['search'])) {
             $search = $_GET['search'];
             // Search query to find matching results by firstname, lastname, or email
-            $sql2 = "SELECT * FROM `staff` WHERE firstname LIKE '%$search%' OR lastname LIKE '%$search%' OR email LIKE '%$search%'";
+            $sql2 = "SELECT * FROM `staff` WHERE firstname LIKE '%$search%' OR lastname LIKE '%$search%' OR username LIKE '%$search%'";
         } else {
             // Default query to get all results
             $sql2 = "SELECT * FROM `staff`";
@@ -252,7 +253,7 @@
                 $birthday = $row['birthday'];
                 $gender = $row['gender'];
                 $contact = $row['contact'];
-                $email = $row['email'];
+                $username = $row['username'];
                 $password = $row['password'];
                 $role = $row['role'];
 
@@ -263,7 +264,7 @@
                     <td>' . $birthday . '</td>
                     <td>' . $gender . '</td>
                     <td>' . $contact . '</td>
-                    <td>' . $email . '</td>
+                    <td>' . $username . '</td>
                     <td>' . $password . '</td>
                     <td>' . $role . '</td>
                     <td>

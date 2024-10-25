@@ -1,21 +1,13 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body{
     margin: 0;
-    padding: 0;
+    font-family: "Lato", sans-serif;
     box-sizing: border-box;
+}
 
-  }
-  
-  body{
-      margin: 0;
-      font-family: "Lato", sans-serif;
-      box-sizing: border-box;
-      width: 100%;
-      height: 100%;
-  }
-  
-    
 .sidenav{
-  height: 100vh;
+  height: 95vh;
   width: 280px;
   position: fixed;
   top: 0;
@@ -30,7 +22,7 @@
 .sidenav .bcp{
   width: 12%;
   height: 3.5%;
-  margin-top: -50px;
+  margin-top: -40px;
   margin-left: 9%;
 }
 
@@ -39,7 +31,6 @@
 .sidenav .nav-link{
   margin-top: -16%;
   margin-left: 38%;
-  height: 40%;
 }
 
 .sidenav .nav-link li{
@@ -51,11 +42,11 @@
 
 .sidenav .nav-link .bell{
   margin-top: -38%;
-  margin-left:40%;
+  margin-left:30%;
 }
 
 .sidenav .nav-link .settings{
-  margin-top: -30%;
+  margin-top: -39%;
   margin-left: 60%;
 }
 
@@ -76,10 +67,10 @@
 }
 
 .admin-profile{
-  width: 100px;
-  height: 100px;
-  margin-left: -150%;
-  margin-top: 50%;
+  width: 80%;
+  height: 50%;
+  margin-left: -42%;
+  margin-top: 30%;
   border-radius: 50%;
 }
 
@@ -98,19 +89,18 @@ tr,td{
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
-  top: 5px;
-  left: -70%;
+  top: -10px;
+  left: 5px;
 }
 
 .user-gmail{
   color: #A8A8A8;
   font-size: 13px;
   position: relative;
-  top: -5px;
-  left: -70%;
+  top: -35px;
+  left: -15px
  
 }
-
 
 /* upper nav close*/
 
@@ -125,8 +115,6 @@ tr,td{
   position: relative;
   list-style: none;
   height: 50px;
-  position: relative;
-  left: -2%;
 }
 .sidenav .nav-links li a{
   height: 100%;
@@ -147,8 +135,6 @@ tr,td{
   text-align: center;
   font-size: 18px;
   color: white;
-  position: relative;
-  left: -1%;
 }
 
 .sidenav .nav-links li a .links_name{
@@ -177,6 +163,8 @@ height: 10%;
 width: 100%;
 border-left: none;
 border-right: none;
+position: relative;
+left: -10%;
 }
 
 tr,td{
@@ -197,7 +185,7 @@ text-align: center;
 }
 
 .main{
-margin-left: -50%;
+margin-left: 10%;
 font-size: 14px;
 color: #7064DD;
 margin-top: 2%;
@@ -206,7 +194,7 @@ margin-top: 2%;
 
 .subs{
 color: #A8A8A8;
-margin-left: -40%;
+margin-left: 10%;
 font-size: 12px;
 }
 
@@ -230,7 +218,7 @@ text-align: center;
 font-size: 18px;
 color: white;
 position: relative;
-left: -15px;
+left: -30px;
 }
 
 .dropdownmedical .dropdown-btn .droplinks_name{
@@ -238,7 +226,7 @@ color: white;
 font-size: 14px;
 font-weight: 400;
 white-space: nowrap;
-margin-left: -10%;
+margin-left: -17%;
 }
 
 .dropdownmedical .droplinks_name:hover{
@@ -361,7 +349,7 @@ background-color: #A8A8A8;
 float: right;
 padding-right: 8px;
 position: relative;
-left: 5%;
+left: 17%;
 top: 2px;
 }
 
@@ -449,7 +437,7 @@ background-color: #A8A8A8;
 float: right;
 padding-right: 8px;
 position: relative;
-left: 5%;
+left: 17%;
 top: 8px;
 }
 
@@ -487,7 +475,7 @@ text-align: center;
 font-size: 18px;
 color: white;
 position: relative;
-left: -15px;
+left: -30px;
 }
 
 .dropdownadmission .dropdown-btn .droplinks_name{
@@ -495,7 +483,7 @@ color: white;
 font-size: 14px;
 font-weight: 400;
 white-space: nowrap;
-margin-left: -10%;
+margin-left: -17%;
 }
 
 .dropdownadmission .droplinks_name:hover{
@@ -571,7 +559,7 @@ text-align: center;
 font-size: 18px;
 color: white;
 position: relative;
-left: -5%;
+left: -12%;
 }
 
 .dropdowninventory .dropdown-btn .droplinks_name{
@@ -579,7 +567,7 @@ color: white;
 font-size: 14px;
 font-weight: 400;
 white-space: nowrap;
-margin-left: -10%;
+margin-left: -17%;
 }
 
 .dropdowninventory .droplinks_name:hover{
@@ -655,7 +643,7 @@ text-align: center;
 font-size: 18px;
 color: white;
 position: relative;
-left: -5%;
+left: -10%;
 }
 
 .dropdownreport .dropdown-btn .droplinks_name{
@@ -663,7 +651,7 @@ color: white;
 font-size: 14px;
 font-weight: 400;
 white-space: nowrap;
-margin-left: -10%;
+margin-left: -17%;
 }
 
 .dropdownreport .droplinks_name:hover{
@@ -702,7 +690,7 @@ float: right;
 padding-right: 8px;
 position: relative;
 left: 5%;
-top: -5px;
+top: 5px;
 }
 
 tr,td{
@@ -821,7 +809,7 @@ background-color: #555; /* Scrollbar color on hover */
     /* Center align on smaller screens */
     text-align: left;
     position: relative;
-    left: -50%;
+    left: 10%;
     top: -10px;
 }
 
@@ -837,7 +825,7 @@ background-color: #555; /* Scrollbar color on hover */
     color: var(--blue);
     list-style: none;
     position: relative;
-    left: -55%;
+    left: -10%;
     top: -15px;
     /* Removed negative positioning */
 }
@@ -858,121 +846,141 @@ background-color: #555; /* Scrollbar color on hover */
 }
 /* Breadcrumb */
 
-  
-  .container{
-    height: 100%;
-    width: 100%;
-  }
-  
-  
-    .frame {
-      background-color: #f0f0f0; 
-      background: cover;
-      height: 90vh;
-      width: 100%;
-      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-      padding: 20px; 
-      box-sizing: border-box; 
-      transition: padding 0.3s ease; 
-  }
 
-  .frame a{
-    color: white;
-    text-decoration: none;
-  }
+/*-- frame --*/
+.frame{
+background-color: #f0f0f0; 
+height: 120vh;
+width: 100%;
+box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+padding: 20px; 
+box-sizing: border-box; 
+transition: padding 0.3s ease; 
+}
 
-  .frame #btn-first{
-    color: white;
-    position: relative;
-    top: 35px;
-    left: 2%;
-  }
+.frame .box-info{
+  height: 60%;
+  width: 65%;
+  background-color: #f0f0f0;
+  position: relative;
+  left: -5%;
+  top: 30px;
+}
 
-  .frame #btn-second{
-    width: 30%;
-  }
-  .frame #btn-third{
-    position: relative;
-    left: 10%;
-    width: 30%;
-  }
 
-  .table-container {
-    width: 100%;
-    margin-top: 50px;
-    margin: 5px auto; /* Center the table */
-    font-size: 10px;
-    text-align: left;
-    border-radius: 8px; /* Rounded corners */
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    position: relative;
-    top: 20px;
-  }
-  
-  .table-container caption {
-    caption-side: top;
-    font-size: 24px;
-    font-weight: bold;
-    padding: 10px;
-    background-color: #fFF; /* Accent background */
-    color: black; /* White text for contrast */
-    text-align: left;
-  }
-  
-  .table-container th, 
-  .table-container td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #ddd; /* Soft borders between rows */
-  }
-  
-  .table-container th {
-    background-color: #033683; /* Accent color for headers */
-    color: white; /* White text for contrast */
-    font-weight: bold;
-    text-transform: uppercase; /* Make headers stand out */
-  }
+h1{
+  position: relative;
+  top: 20px;
+  left: 10%;
+}
 
-  
-  
-  .table-container tr:nth-child(even) {
-    background-color: #f9f9f9; /* Light background for alternating rows */
-  }
-  
-  .table-container tr:nth-child(odd) {
-    background-color: #f4f4f4; /* Slightly darker for contrast */
-  }
-  
-  .table-container tr:hover {
-    background-color: #e9e9e9; /* Hover effect for rows */
-  }
-  
-  .table-container td {
-    color: #333; /* Darker text for readability */
-  }
-  
-  /* Optional: Responsive design for smaller screens */
-  @media screen and (max-width: 768px) {
-    .table-container {
-      font-size: 16px;
-      width: 95%; /* Slightly reduce width on smaller screens */
-    }
-  
-    .table-container th, 
-    .table-container td {
-      padding: 8px;
-    }
-  }
-  
-  
+.frame .form-control{
+  color: #333;
+  width: 35%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.frame .form-group{
+  position: relative;
+  top: 10px;
+  left: 10%;
+}
+
+.frame .form-group1{
+  position: relative;
+  top: -52px;
+  left: 50%;
+}
+
+.frame .form-group2{
+  position: relative;
+  top: -12px;
+  left: 10%;
+}
+
+
+.frame .form-group3{
+  position: relative;
+  top: -72px;
+  left: 50%;
+}
+
+
+.frame .form-group4{
+  position: relative;
+  top: -10px;
+  left: 10%;
+}
+
+
+.frame .form-group5{
+  position: relative;
+  top: -72px;
+  left: 50%;
+}
+
+.frame .form-group6{
+  position: relative;
+  top: -35px;
+  left: 10%;
+}
+
+.frame .form-group7{
+  position: relative;
+  top: -97px;
+  left: 50%;
+}
+
+
+.frame .form-group8{
+  position: relative;
+  top: -55px;
+  left: 10%;
+}
+
+.frame .form-group9{
+  position: relative;
+  top: -117px;
+  left: 50%;
+}
+
+.frame .form-group10{
+  position: relative;
+  top: -75px;
+  left: 10%;
+}
+.btn-primary{
+position: relative;
+top: 15px;
+left:45%;
+}
+
+
+#side-logo{
+  width: 30%;
+  position: relative;
+  left: 40%;
+  top: 25%;
+}
+
+
+.box-bg{
+  height: 106%;
+  width: 50%;
+  background-color: #0056b3;
+  position: relative;
+  left: 52%;
+  top: -63%;
+}
+
 /* Style for notification box */
 .notification-box {
   display: none;
   position: absolute;
   top: 40px; /* Adjust depending on your layout */
   right: 0;
-  width: 230px;
-  height: 250%;
+  width: 200px;
+  height: 200%;
   padding: 10px;
   background-color: white;
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -1004,19 +1012,18 @@ background-color: #555; /* Scrollbar color on hover */
 
 .notification-box .second-paragraph{
   font-size: 9px;
-  color: rgba(0, 0, 0, 0.356);
+  color: rgba(0, 0, 0, 0.329);
   position: relative;
   left: 22%;
-  top: 35%;
  
 }
 
 .notification-box .third-paragraph{
   font-size: 9px;
-  color: rgba(0, 0, 0, 0.356);
+  color: rgba(0, 0, 0, 0.329);
  position: relative;
  left: 30%;
- top: 10%;
+ top: 20%;
 }
 
 /* Unique Dropdown menu styles */
@@ -1054,37 +1061,90 @@ background-color: #555; /* Scrollbar color on hover */
   background-color: #f0f0f0;
 }
 
-   /* Styling the search bar container */
-   .search-container {
-    text-align: right;
-    margin-bottom: 20px;
+/* Style for notification box */
+.notification-box {
+  display: none;
+  position: absolute;
+  top: 40px; /* Adjust depending on your layout */
+  right: 0;
+  width: 200px;
+  height: 200%;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
 }
 
-/* Styling the search input field */
-.search-input {
-    padding: 10px;
-    width: 250px;
-    height: 38px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-right: 10px;
-    font-size: 16px;
+/* Show the notification box */
+.notification-box.active {
+  display: block;
 }
 
-/* Styling the search button */
-.search-btn {
-    padding: 10px 15px;
-    background-color: #5bc0de;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    position: relative;
-    top: -3px;
-    left:-0.5%;
+/* Sample styling for the notification message */
+.notification-box p {
+  margin: 0;
+  color: black;
+  font-size: 14px;
+  position: relative;
+  top: 38%;
+  left: 20%;
 }
 
+.notification-box p i{
+  position: absolute;
+  left: 15%;
+  top: -20px;
+  color: black;
+}
 
+.notification-box .second-paragraph{
+  font-size: 9px;
+  color: rgba(0, 0, 0, 0.329);
+  position: relative;
+  left: 22%;
+ 
+}
 
-  
-  
+.notification-box .third-paragraph{
+  font-size: 9px;
+  color: rgba(0, 0, 0, 0.329);
+ position: relative;
+ left: 30%;
+ top: 20%;
+}
+
+/* Unique Dropdown menu styles */
+.settings-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 40px; /* Adjust depending on your layout */
+  right: 0;
+  width: 130px;
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+  list-style: none;
+  padding: 5px 0;
+}
+
+/* Show the unique dropdown */
+.settings-dropdown-menu.active {
+  display: block;
+}
+
+/* Unique Dropdown menu item styles */
+.settings-dropdown-menu li {
+  padding: 5px 10px;
+}
+
+.settings-dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+.settings-dropdown-menu li a:hover {
+  color: #0056b3;
+  background-color: #f0f0f0;
+}

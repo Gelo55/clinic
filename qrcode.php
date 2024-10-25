@@ -1,20 +1,19 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/resultlist.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Clinic Management System</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="assets/css/qr.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.qr-code-generator.com/">
 </head>
 <body>
-    <!-- SIDEBAR -->
+
+ <!-- SIDEBAR -->
  <div id="sidenav" class="sidenav">
     <img src="assets/images/bcp.png" alt="img" class="bcp">
     <ul class="nav-link">
@@ -36,8 +35,9 @@
     <ul id="settings-dropdown-menu" class="settings-dropdown-menu">
         <li><a href="profile.php">Profile</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="index.php">Logout</a></li>
     </ul>
+</li>
         <img src="assets/images/changli.jpg" alt="avatar" class="admin-profile">
         <table class="user-profile">
           <tr>
@@ -54,7 +54,7 @@
         <td>
           <ul class="nav-links">
           <li>
-            <a href="dash.php">
+            <a href="#">
               <i class='bx bx-home' ></i>
               <span class="links_name">Home</span>
             </a>
@@ -65,6 +65,7 @@
       <i class="fa fa-caret-down" id="second"></i>
     </button>
     <div class="dropdown-container1">
+      <a class="dropdown-a" href="studentinformation.php"><span class="droplinks_name">Student Information</span></a>
       <a class="dropdown-a" href="managestud.php"><span class="droplinks_name">Manage Student</span></a>
     </div>
 
@@ -96,7 +97,8 @@
       <i class="fa fa-caret-down" id="fourth"></i>
     </button>
     <div class="dropdown-container3">
-    <a class="dropdown-a" href="admithistory.php"><span class="droplinks_name">Admission History</span></a> 
+    <a class="dropdown-a" href="admithistory.php"><span class="droplinks_name">Admission History</span></a>
+    <a class="dropdown-a" href="manageadmit.php"><span class="droplinks_name">Manage Admission</span></a>
     </div>
 
   </div><br>
@@ -117,6 +119,7 @@
     <div class="dropdown-container3">
     <a class="dropdown-a" href="healthform.php"><span class="droplinks_name">Health Form</span></a>
     <a class="dropdown-a" href="medresult.php"><span class="droplinks_name">Medical Result</span></a>
+    <a class="dropdown-a" href="#"><span class="droplinks_name">Q.R Code</span></a>
     </div>
 
   </div><br>
@@ -181,104 +184,38 @@
 					<h1>Medical</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Result</a>
+							<a href="#">Q.R Code</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">List</a>
+							<a class="active" href="#">Healthform</a>
 						</li>
 					</ul>
 				</div>
     </div> 
 </div>
-
-
     
-<div clas="container">
+<div class="container">
     <div class="frame">
-    <div class="stud-container">
-    <header class="header">
-        <h1>Medical Result</h1>
-    </header>
+        <div class="qr-container">
+        <img src="assets/images/qrcode.png" alt="generator">
+        <h1 class="qr-gen">QR Generator</h1>
+        </div>
 
-    <!-- Search Bar -->
-    <div class="search-container">
-        <input type="text" id="searchInput" class="form-control" placeholder="Search...">
-        <button type="submit" class="btn btn-primary search-btn">Search</button>
+        <div class="form-container">
+        <img src="assets/images/qrform.png" alt="generator">
+        <h1 class="qr-form">Health Form</h1>
+        </div>
+
     </div>
-
-    <section class="student-list">
-        <table id="studentTable">
-            <thead>
-                <tr>
-                    <th>Student Number</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Course</th>
-                    <th>Year Level</th>
-                    <th>Email</th>
-                    <th>Record</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>21010021</td>
-                    <td>Angelo</td>
-                    <td>Abargos</td>
-                    <td>BSIT</td>
-                    <td>First Year</td>
-                    <td>gelo00@gmail.com</td>
-                    <td><a href="linkrecord.php" id="record">View</a></td>
-                </tr>
-                <tr>
-                    <td>21012525</td>
-                    <td>Michael</td>
-                    <td>Smith</td>
-                    <td>BSIT</td>
-                    <td>First Year</td>
-                    <td>michael.s@gmail.com</td>
-                    <td><a href="" id="record">View</a></td>
-                </tr>
-                <tr>
-                    <td>21012323</td>
-                    <td>Sarah</td>
-                    <td>Brown</td>
-                    <td>BSIT</td>
-                    <td>First Year</td>
-                    <td>sarah.b@gmail.com</td>
-                    <td><a href="" id="record">View</a></td>
-                </tr>
-                <tr>
-                    <td>21013333</td>
-                    <td>David</td>
-                    <td>Wilson</td>
-                    <td>BSIT</td>
-                    <td>First Year</td>
-                    <td>david.w@gmail.com</td>
-                    <td><a href="" id="record">View</a></td>
-                </tr>
-                <tr>
-                    <td>21012232</td>
-                    <td>Olivia</td>
-                    <td>Davis</td>
-                    <td>BSIT</td>
-                    <td>First Year</td>
-                    <td>olivia.d@gmail.com</td>
-                    <td><a href="" id="record">View</a></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <footer>
-        <p>Generated on: October 13, 2024</p>
-    </footer>
 </div>
 
-    </div>
-    </div>
+
+
 </body>
-<script type="text/javascript">
+
+        
+    <script type="text/javascript">
     function toggleNav() {
     const sidenav = document.getElementById("sidenav");
     const uppernav = document.getElementById("uppernav");
@@ -310,6 +247,7 @@ for (i = 0; i < dropdown.length; i++) {
 
     </script>
 
+
 <script>
   document.getElementById("bell-icon").addEventListener("click", function(event) {
     event.preventDefault();
@@ -324,61 +262,6 @@ for (i = 0; i < dropdown.length; i++) {
     event.preventDefault();
     const dropdown = document.getElementById("settings-dropdown-menu");
     dropdown.classList.toggle("active"); // Toggle the dropdown visibility
-});
-</script>
-
-<!-- JavaScript for search functionality -->
-<script>
-document.getElementById('searchInput').addEventListener('keyup', function() {
-    var input = document.getElementById("searchInput").value.toUpperCase();
-    var table = document.getElementById("studentTable");
-    var tr = table.getElementsByTagName("tr");
-
-    for (var i = 1; i < tr.length; i++) {
-        var tdStudentNum = tr[i].getElementsByTagName("td")[0]; // Student Number
-        var tdFirstName = tr[i].getElementsByTagName("td")[1];  // First Name
-        var tdLastName = tr[i].getElementsByTagName("td")[2];   // Last Name
-        if (tdStudentNum || tdFirstName || tdLastName) {
-            var textValueStudentNum = tdStudentNum.textContent || tdStudentNum.innerText;
-            var textValueFirstName = tdFirstName.textContent || tdFirstName.innerText;
-            var textValueLastName = tdLastName.textContent || tdLastName.innerText;
-            if (textValueStudentNum.toUpperCase().indexOf(input) > -1 || 
-                textValueFirstName.toUpperCase().indexOf(input) > -1 || 
-                textValueLastName.toUpperCase().indexOf(input) > -1) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
-});
-</script>
-
-
-<!-- JavaScript for search functionality -->
-<script>
-document.getElementById('searchInput').addEventListener('keyup', function() {
-    var input = document.getElementById("searchInput").value.toUpperCase();
-    var table = document.getElementById("studentTable");
-    var tr = table.getElementsByTagName("tr");
-
-    for (var i = 1; i < tr.length; i++) {
-        var tdStudentNum = tr[i].getElementsByTagName("td")[0]; // Student Number
-        var tdFirstName = tr[i].getElementsByTagName("td")[1];  // First Name
-        var tdLastName = tr[i].getElementsByTagName("td")[2];   // Last Name
-        if (tdStudentNum || tdFirstName || tdLastName) {
-            var textValueStudentNum = tdStudentNum.textContent || tdStudentNum.innerText;
-            var textValueFirstName = tdFirstName.textContent || tdFirstName.innerText;
-            var textValueLastName = tdLastName.textContent || tdLastName.innerText;
-            if (textValueStudentNum.toUpperCase().indexOf(input) > -1 || 
-                textValueFirstName.toUpperCase().indexOf(input) > -1 || 
-                textValueLastName.toUpperCase().indexOf(input) > -1) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
 });
 </script>
 

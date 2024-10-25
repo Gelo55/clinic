@@ -191,7 +191,7 @@ margin-top: 2%;
 
 }
 
-.subss{
+.subs{
 color: #A8A8A8;
 margin-left: -50%;
 font-size: 12px;
@@ -854,12 +854,12 @@ transition: padding 0.3s ease;
 }
 
 .frame .box-info{
-  height: 60%;
+  height: 95%;
   width: 65%;
   background-color: #f0f0f0;
   position: relative;
   left: -5%;
-  top: 30px;
+  top: 20px;
 }
 
 
@@ -946,16 +946,8 @@ h1{
 }
 .btn-primary{
 position: relative;
-top: 15px;
-left:45%;
-}
-
-
-#side-logo{
-  width: 30%;
-  position: relative;
-  left: 40%;
-  top: 40%;
+top: -10px;
+left: 40%;
 }
 
 
@@ -965,7 +957,14 @@ left:45%;
   background-color: #0056b3;
   position: relative;
   left: 52%;
-  top: -63%;
+  top: -98%;
 }
 
+
+#side-logo{
+  width: 30%;
+  position: relative;
+  left: 40%;
+  top: 35%;
+}
 

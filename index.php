@@ -98,7 +98,6 @@ if (isset($_POST['submit'])) {
             <div class="input-group">
                 <button type="submit" class="submit-button" name="submit">Sign in</button>
                 <br><br>
-                <a href="register.php" class="submit-button admission-button">Staff Registration</a>
             </div>
         </form>
     </div>
@@ -145,13 +144,15 @@ input[type="checkbox"] {
 }
 
 /* new css for button */
-.submit-button, .admission-button {
+.submit-button{
     display: inline-block; 
     width: 100%; 
     padding: 10px; 
     text-align: center;
     background-color: #0056b3; 
     color: white;
+    position: relative;
+    top: 20px;
     border: none; 
     border-radius: 5px; 
     cursor: pointer; 
