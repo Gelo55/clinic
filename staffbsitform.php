@@ -1,17 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <title>Clinic Management System</title>
-    <link rel="stylesheet" href="assets/css/staffdash.css">
+    <link rel="stylesheet" href="assets/css/bsitform.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>Clinic Management System</title>
 </head>
 <body>
-     <!-- SIDEBAR -->
+    <!-- SIDEBAR -->
  <div id="sidenav" class="sidenav">
     <img src="assets/images/bcp.png" alt="img" class="bcp">
     <ul class="nav-link">
@@ -33,9 +36,8 @@
     <ul id="settings-dropdown-menu" class="settings-dropdown-menu">
         <li><a href="profile.php">Profile</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="index.php">Logout</a></li>
+        <li><a href="#">Logout</a></li>
     </ul>
-</li>
         <img src="assets/images/shore.avif" alt="avatar" class="admin-profile">
         <table class="user-profile">
           <tr>
@@ -52,7 +54,7 @@
         <td>
           <ul class="nav-links">
           <li>
-            <a href="#">
+            <a href="staffdash.php">
               <i class='bx bx-home' ></i>
               <span class="links_name">Home</span>
             </a>
@@ -63,7 +65,7 @@
       <i class="fa fa-caret-down" id="second"></i>
     </button>
     <div class="dropdown-container1">
-    <a class="dropdown-a" href="staffmanagestud.php"><span class="droplinks_name">Manage Student</span></a>
+      <a class="dropdown-a" href="staffmanagestud.php"><span class="droplinks_name">Manage Student</span></a>
     </div>
 
   </div>
@@ -147,129 +149,80 @@
      <div class="container">
     <div class="head-title">
 				<div class="left">
-					<h1>Dashboard</h1>
+					<h1>Medical</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Staff</a>
+							<a href="#">Student</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Home</a>
+							<a class="active" href="#">Healthform</a>
 						</li>
 					</ul>
 				</div>
     </div> 
 </div>
 
-<!-- main -->
-<!-- SIDEBAR -->
-<!--#################################################################################-->
-
-    <div class="container">
-        
-<!-- frame -->
-<div class= "frame">
-
+ 
     
-<div class= "box-info" id="info2">
-      <a href="healthform.php">
-      <h1>Medical</h1>
-      <span><i class= "bx bx-plus-medical"></i></span></a>
+<div clas="container">
+    <div class="frame">
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" onclick="toggleDropdown()" id="btn-bsit">
+      BSIT
+    </button>
+    <div class="dropdown-menu" id="dropdownMenu">
+      <a class="dropdown-item" href="#">CRIM</a>
+      <a class="dropdown-item" href="#">EDUC</a>
+      <a class="dropdown-item" href="#">BSBA</a>
+      <a class="dropdown-item" href="#">BSOA</a>
+      <a class="dropdown-item" href="#">BSAIS</a>
+      <a class="dropdown-item" href="#">ENTREP</a>
+      <a class="dropdown-item" href="#">BSIT</a>
+      <a class="dropdown-item" href="#">BLIS</a>
+      <a class="dropdown-item" href="#">BSCPE</a>
+      <a class="dropdown-item" href="#">BSP</a>
+      <a class="dropdown-item" href="#">BSHM</a>
+      <a class="dropdown-item" href="#">BSTM</a>
+    </div>
+  </div>
+
+
+  <div class= "box-info" id="info1">
+      <h1 id="year1">First Year</h1>
+      <a href="staffbsit.php" id="view1"><i class="bx bx-right-arrow-circle"></i></a>
+    </div>
+  
+
+    <div class= "box-info1" id="info2">
+      <h1 id="year2">Second Year</h1>
+      <a href="" id="view2"><i class="bx bx-right-arrow-circle"></i></a>
+    </div>
+  
+    
+    
+    <div class= "box-info2" id="info3">
+      <h1 id="year3">Third Year</h1>
+      <a href="" id="view3"><i class="bx bx-right-arrow-circle"></i></a>
+    </div>
+  
+    
+    <div class= "box-info3" id="info4">
+      <h1 id="year4">Fourth Year</h1>
+      <a href="" id="view4"><i class="bx bx-right-arrow-circle"></i></a>
     </div>
 
-    
-    <div class= "box-info" id="info4">
-      <a href="admithistory.php">
-      <h1>Admit</h1>
-      <span><i class= "bx bx-message-square-add"></i></span></a>
-    </div>
+  </div>
 
-    <div class="table-container">
-      <table class="clinic-table">
-      <header class="schedule-header"><h1>Medical Schedule</h1></header>
-          <thead class= "sched-table">
-              <tr>
-                  <th class= "sched-table">Department</th>
-                  <th class="sched-table">Time</th>
-                  <th class= "sched-table">Schedule</th>
-                  <th class= "sched-table">Status</th>
-              
-              </tr>
-          </thead>
-          <tbody class= "table-body">
-              <tr>
-                  <td>CRIM</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Monday</td>
-                  <td><span class="status finished">Finished</span></td>
-              </tr>
-              <tr>
-                  <td>EDUC</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Tuesday</td>
-                  <td><span class="status ongoing">ongoing</span></td>
-              </tr>
-              <tr>
-                  <td>BSBA/BSOA/BSAIS/ENTREP</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Wednesday</td>
-                  <td><span class="status pending">pending</span></td>
-              </tr>
-              <tr>
-                  <td>BSIT/BLIS/BSCPE/BSP</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Thursday</td>
-                  <td><span class="status pending">pending</span></td>
-              </tr>
-              <tr>
-                  <td>BSHM/BSTM</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Friday</td>
-                  <td><span class="status pending">pending</span></td>
-              </tr>
-          </tbody>
-      </table>
-     </div>
-
-     <div class="appointment-container">
-      <header class="announce-header"><h2>Announcement</h2></header>
-       <ul class="appointment-list">
-           <li>
-               <div class="time">Today</div>
-               <div class="details">
-                   <h3>Medical is ongoing</h3>
-                   <p>medical is ongoing for educ department</p>
-               </div>
-           </li>
-           <li>
-               <div class="time">8 AM - <br>5 PM</div>
-               <div class="details"> 
-                   <h3>Medical Hours</h3>
-                   <p>Medical will be availlable at 8 am to 5 pm</p>
-               </div>
-           </li>
-           <li>
-               <div class="time">Today</div>
-               <div class="details">
-                   <h3>Inventory Stock</h3>
-                   <p>Stock of medicine was needed</p>
-               </div>
-           </li>
-           <li>
-               <div class="time">Sat and <br> Sun</div>
-               <div class="details">
-                   <h3>Medical will not available</h3>
-                   <p>Medical will not available at weekends</p>
-               </div>
-           </li>
-       </ul>
-      </div>
-    
-    </div>
 </div>
 
 
-    <script type="text/javascript">
+
+
+</body>
+
+       
+<script type="text/javascript">
     function toggleNav() {
     const sidenav = document.getElementById("sidenav");
     const uppernav = document.getElementById("uppernav");
@@ -297,22 +250,19 @@ for (i = 0; i < dropdown.length; i++) {
     }
   });
 }
-
-
     </script>
 
 <script>
-  let number = document.getElementById('number');
-  let counter = 0;
-  setInterval(()=>{
-    if(counter == 75){
-      clearInterval();
-    }else{
-      counter += 1;
-      number.innerHTML = counter + "%";
+    function selectOption(element, dropdownId) {
+      var selectedText = element.textContent;
+      var dropdownButton = document.getElementById(dropdownId);
+      dropdownButton.textContent = selectedText;
+      dropdownButton.classList.add('active'); // Optional: Adds a style indicating selection
     }
-  }, 25)
-</script>
+  </script>
+
+<script src="script.js"></script>
+
 
 <script>
   document.getElementById("bell-icon").addEventListener("click", function(event) {
@@ -330,5 +280,23 @@ for (i = 0; i < dropdown.length; i++) {
     dropdown.classList.toggle("active"); // Toggle the dropdown visibility
 });
 </script>
-</body>
+
+
+<script>
+  function toggleDropdown() {
+    const dropdownMenu = document.getElementById("dropdownMenu");
+    dropdownMenu.classList.toggle("show");
+  }
+
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-toggle')) {
+      const dropdownMenus = document.getElementsByClassName("dropdown-menu");
+      for (let i = 0; i < dropdownMenus.length; i++) {
+        dropdownMenus[i].classList.remove('show');
+      }
+    }
+  }
+</script>
+
 </html>

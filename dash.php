@@ -116,7 +116,6 @@
     <div class="dropdown-container3">
     <a class="dropdown-a" href="healthform.php"><span class="droplinks_name">Health Form</span></a>
     <a class="dropdown-a" href="medresult.php"><span class="droplinks_name">Medical Result</span></a>
-    <a class="dropdown-a" href="qrcode.php"><span class="droplinks_name">Q.R Code</span></a>
     </div>
 
   </div><br>

@@ -1,17 +1,26 @@
+
+<?php
+
+  include 'db.php';
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <title>Clinic Management System</title>
-    <link rel="stylesheet" href="assets/css/staffdash.css">
+    <link rel="stylesheet" href="assets/css/managestudent.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Clinic Management System</title>
 </head>
 <body>
-     <!-- SIDEBAR -->
+    <!-- SIDEBAR -->
  <div id="sidenav" class="sidenav">
     <img src="assets/images/bcp.png" alt="img" class="bcp">
     <ul class="nav-link">
@@ -33,9 +42,8 @@
     <ul id="settings-dropdown-menu" class="settings-dropdown-menu">
         <li><a href="profile.php">Profile</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="index.php">Logout</a></li>
+        <li><a href="#">Logout</a></li>
     </ul>
-</li>
         <img src="assets/images/shore.avif" alt="avatar" class="admin-profile">
         <table class="user-profile">
           <tr>
@@ -52,7 +60,7 @@
         <td>
           <ul class="nav-links">
           <li>
-            <a href="#">
+            <a href="staffdash.php">
               <i class='bx bx-home' ></i>
               <span class="links_name">Home</span>
             </a>
@@ -63,10 +71,8 @@
       <i class="fa fa-caret-down" id="second"></i>
     </button>
     <div class="dropdown-container1">
-    <a class="dropdown-a" href="staffmanagestud.php"><span class="droplinks_name">Manage Student</span></a>
+      <a class="dropdown-a" href="#"><span class="droplinks_name">Manage Student</span></a>
     </div>
-
-  </div>
 
   </div>
         </ul>   
@@ -126,7 +132,7 @@
     </button>
     <div class="dropdown-container4">
     <a class="dropdown-a" href="staffmedication.php"><span class="droplinks_name">Medication</span></a>
-    <a class="dropdown-a" href="staffequipment.php"><span class="droplinks_name">Equipment</span></a>
+        <a class="dropdown-a" href="staffequipment.php"><span class="droplinks_name">Equipment</span></a>
      </div>
 
           </div><br>
@@ -147,129 +153,126 @@
      <div class="container">
     <div class="head-title">
 				<div class="left">
-					<h1>Dashboard</h1>
+					<h1>Student</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Staff</a>
+							<a href="#">Student</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Home</a>
+							<a class="active" href="#">Manage</a>
 						</li>
 					</ul>
 				</div>
     </div> 
 </div>
-
-<!-- main -->
 <!-- SIDEBAR -->
-<!--#################################################################################-->
 
-    <div class="container">
+    
+<div clas="container">
+    <div class="frame">
+    <div class="crud-container">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <button class="btn btn-primary" id="btn-first"><a href="staffstudinfo.php" class="text-light">Add Student</a></button>
         
-<!-- frame -->
-<div class= "frame">
-
-    
-<div class= "box-info" id="info2">
-      <a href="healthform.php">
-      <h1>Medical</h1>
-      <span><i class= "bx bx-plus-medical"></i></span></a>
+        <!-- Search Bar -->
+        <form action="" method="GET" style="margin-right: 20px;">
+            <input type="text" name="search" placeholder="Search Student" class="form-control" style="display: inline-block; width: 250px;">
+            <button type="submit" class="btn btn-primary" id="btn-searchbar">Search</button>
+        </form>
     </div>
 
-    
-    <div class= "box-info" id="info4">
-      <a href="admithistory.php">
-      <h1>Admit</h1>
-      <span><i class= "bx bx-message-square-add"></i></span></a>
-    </div>
+    <table class="table-container">
+        <caption>Student Data</caption>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Middlename</th>
+                <th>Suffix</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Contact number</th>
+                <th>Email</th>
+                <th>Student number</th>
+                <th>Course</th>
+                <th>Year Level</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php 
+        // Establishing database connection
+        include 'db.php'; // Include your database connection file
 
-    <div class="table-container">
-      <table class="clinic-table">
-      <header class="schedule-header"><h1>Medical Schedule</h1></header>
-          <thead class= "sched-table">
-              <tr>
-                  <th class= "sched-table">Department</th>
-                  <th class="sched-table">Time</th>
-                  <th class= "sched-table">Schedule</th>
-                  <th class= "sched-table">Status</th>
-              
-              </tr>
-          </thead>
-          <tbody class= "table-body">
-              <tr>
-                  <td>CRIM</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Monday</td>
-                  <td><span class="status finished">Finished</span></td>
-              </tr>
-              <tr>
-                  <td>EDUC</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Tuesday</td>
-                  <td><span class="status ongoing">ongoing</span></td>
-              </tr>
-              <tr>
-                  <td>BSBA/BSOA/BSAIS/ENTREP</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Wednesday</td>
-                  <td><span class="status pending">pending</span></td>
-              </tr>
-              <tr>
-                  <td>BSIT/BLIS/BSCPE/BSP</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Thursday</td>
-                  <td><span class="status pending">pending</span></td>
-              </tr>
-              <tr>
-                  <td>BSHM/BSTM</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Friday</td>
-                  <td><span class="status pending">pending</span></td>
-              </tr>
-          </tbody>
-      </table>
-     </div>
+        // Check if a search query is submitted
+        if (isset($_GET['search'])) {
+            $search = mysqli_real_escape_string($con, $_GET['search']);
+            // Search query with LIKE clause
+            $sql = "SELECT * FROM `information` WHERE `firstname` LIKE '%$search%' OR `lastname` LIKE '%$search%' OR `studentnumber` LIKE '%$search%'";
+        } else {
+            // Default query to display all students
+            $sql = "SELECT * FROM `information`";
+        }
+        
+        $result = mysqli_query($con, $sql);
+        
+        if ($result) {
+            while($row = mysqli_fetch_assoc($result)){
+                $id = $row['id'];
+                $firstname = $row['firstname'];
+                $lastname = $row['lastname'];
+                $middlename = $row['middlename'];
+                $suffix = $row['suffix'];
+                $gender = $row['gender'];
+                $address = $row['address'];
+                $contact = $row['contact'];
+                $email = $row['email'];
+                $studentnumber = $row['studentnumber'];
+                $course = $row['course'];
+                $year = $row['year'];
+                
+                echo '<tr>
+                <th>'.$id.'</th>
+                <td>'.$firstname.'</td>
+                <td>'.$lastname.'</td>
+                <td>'.$middlename.'</td>
+                <td>'.$suffix.'</td>
+                <td>'.$gender.'</td>
+                <td>'.$address.'</td>
+                <td>'.$contact.'</td>
+                <td>'.$email.'</td>
+                <td>'.$studentnumber.'</td>
+                <td>'.$course.'</td>
+                <td>'.$year.'</td>
+                <td>
+                    <button class="btn btn-primary" id="btn-second">
+                        <a href="updatestud.php?updateid='.$id.'"><i class="fas fa-pen"></i></a>
+                    </button>
+                    <button class="btn btn-danger" id="btn-third">
+                        <a href="deletestud.php?deleteid='.$id.'"><i class="fas fa-trash"></i></a>
+                    </button>
+                    <button class="btn btn-info" id="btn-fourth">
+                        <a href="viewstudent.php?viewid='.$id.'" class="text-light"><i class="fas fa-eye"></i></a>
+                    </button>
+                </td>
+                </tr>';
+            }
+        }
+        ?>
+        </tbody>
+    </table>
+</div>
 
-     <div class="appointment-container">
-      <header class="announce-header"><h2>Announcement</h2></header>
-       <ul class="appointment-list">
-           <li>
-               <div class="time">Today</div>
-               <div class="details">
-                   <h3>Medical is ongoing</h3>
-                   <p>medical is ongoing for educ department</p>
-               </div>
-           </li>
-           <li>
-               <div class="time">8 AM - <br>5 PM</div>
-               <div class="details"> 
-                   <h3>Medical Hours</h3>
-                   <p>Medical will be availlable at 8 am to 5 pm</p>
-               </div>
-           </li>
-           <li>
-               <div class="time">Today</div>
-               <div class="details">
-                   <h3>Inventory Stock</h3>
-                   <p>Stock of medicine was needed</p>
-               </div>
-           </li>
-           <li>
-               <div class="time">Sat and <br> Sun</div>
-               <div class="details">
-                   <h3>Medical will not available</h3>
-                   <p>Medical will not available at weekends</p>
-               </div>
-           </li>
-       </ul>
-      </div>
-    
     </div>
 </div>
 
 
-    <script type="text/javascript">
+</body>
+
+       
+<script type="text/javascript">
     function toggleNav() {
     const sidenav = document.getElementById("sidenav");
     const uppernav = document.getElementById("uppernav");
@@ -297,23 +300,9 @@ for (i = 0; i < dropdown.length; i++) {
     }
   });
 }
-
-
     </script>
-
-<script>
-  let number = document.getElementById('number');
-  let counter = 0;
-  setInterval(()=>{
-    if(counter == 75){
-      clearInterval();
-    }else{
-      counter += 1;
-      number.innerHTML = counter + "%";
-    }
-  }, 25)
-</script>
-
+    
+    
 <script>
   document.getElementById("bell-icon").addEventListener("click", function(event) {
     event.preventDefault();
@@ -330,5 +319,5 @@ for (i = 0; i < dropdown.length; i++) {
     dropdown.classList.toggle("active"); // Toggle the dropdown visibility
 });
 </script>
-</body>
+
 </html>

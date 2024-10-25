@@ -74,10 +74,10 @@ if (isset($_POST['submit'])) {
         <img src="assets/images/changli.jpg" alt="avatar" class="admin-profile">
         <table class="user-profile">
           <tr>
-            <td><span class="user-name"><b>admin name</b></span></td>
+            <td><span class="user-name"><b>staff name</b></span></td>
           </tr>
           <tr>
-              <td> <span class="user-gmail">adminid@gmail.com</span></td>    
+              <td> <span class="user-gmail">staff@gmail.com</span></td>    
           </tr>
         </table>        
     </ul>
@@ -129,7 +129,7 @@ if (isset($_POST['submit'])) {
       <i class="fa fa-caret-down" id="fourth"></i>
     </button>
     <div class="dropdown-container3">
-    <a class="dropdown-a" href="admithistory.php"><span class="droplinks_name">Admission History</span></a>
+    <a class="dropdown-a" href="#"><span class="droplinks_name">Admission History</span></a>
     </div>
 
   </div><br>
@@ -198,6 +198,7 @@ if (isset($_POST['submit'])) {
         </td>
       </tr>            
     </table>
+
 </div>
 <div id="uppernav" >
   <div class="upnav">
@@ -232,7 +233,7 @@ if (isset($_POST['submit'])) {
 <div class="frame">
 
     <div class="box-info">
-      <h1>Manage Admission</h1>
+      <h1>Admission</h1>
       <div class="container my-5">
         <form method="post">
           <div class="form-group">

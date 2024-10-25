@@ -1,17 +1,53 @@
+<?php
+include 'db.php';
+
+if (isset($_POST['submit'])) {
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $department = $_POST['department'];
+    $category = $_POST['category'];
+    $date = $_POST['date'];
+    $time = $_POST['time']; // Fixed spelling of 'address'
+    $reason = $_POST['reason'];
+    $prescription = $_POST['prescription']; // Corrected variable name
+
+    // Use prepared statements to prevent SQL injection
+    $sql = "INSERT INTO admission (firstname, lastname, department, category, date, time, reason, prescription) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    
+    $stmt = $con3->prepare($sql);
+    $stmt->bind_param("ssssssss", $firstname, $lastname, $department, $category, $date, $time, $reason, $prescription);
+    
+    if ($stmt->execute()) {
+        echo "Data inserted successfully";
+        header('location:admithistory.php');
+    } else {
+        die("Error: " . $stmt->error);
+    }
+
+    $stmt->close();
+}
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <title>Clinic Management System</title>
-    <link rel="stylesheet" href="assets/css/staffdash.css">
+    <link rel="stylesheet" href="assets/css/manageadmission.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Clinic Management System</title>
 </head>
 <body>
-     <!-- SIDEBAR -->
+    <!-- SIDEBAR -->
  <div id="sidenav" class="sidenav">
     <img src="assets/images/bcp.png" alt="img" class="bcp">
     <ul class="nav-link">
@@ -33,9 +69,8 @@
     <ul id="settings-dropdown-menu" class="settings-dropdown-menu">
         <li><a href="profile.php">Profile</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="index.php">Logout</a></li>
+        <li><a href="#">Logout</a></li>
     </ul>
-</li>
         <img src="assets/images/shore.avif" alt="avatar" class="admin-profile">
         <table class="user-profile">
           <tr>
@@ -52,7 +87,7 @@
         <td>
           <ul class="nav-links">
           <li>
-            <a href="#">
+            <a href="staffdash.php">
               <i class='bx bx-home' ></i>
               <span class="links_name">Home</span>
             </a>
@@ -63,7 +98,7 @@
       <i class="fa fa-caret-down" id="second"></i>
     </button>
     <div class="dropdown-container1">
-    <a class="dropdown-a" href="staffmanagestud.php"><span class="droplinks_name">Manage Student</span></a>
+      <a class="dropdown-a" href="staffmanagestud.php"><span class="droplinks_name">Manage Student</span></a>
     </div>
 
   </div>
@@ -85,7 +120,7 @@
       <i class="fa fa-caret-down" id="fourth"></i>
     </button>
     <div class="dropdown-container3">
-    <a class="dropdown-a" href="staffmanageadmit.php"><span class="droplinks_name">Manage Admission</span></a>
+    <a class="dropdown-a" href="#"><span class="droplinks_name">Manage Admit</span></a>
     </div>
 
   </div><br>
@@ -147,129 +182,82 @@
      <div class="container">
     <div class="head-title">
 				<div class="left">
-					<h1>Dashboard</h1>
+					<h1>Admission</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Staff</a>
+							<a href="#">Admit</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Home</a>
+							<a class="active" href="#">Manage</a>
 						</li>
 					</ul>
 				</div>
     </div> 
 </div>
-
+    
+     
+</>
 <!-- main -->
-<!-- SIDEBAR -->
-<!--#################################################################################-->
 
-    <div class="container">
-        
-<!-- frame -->
-<div class= "frame">
+<div class="frame">
 
-    
-<div class= "box-info" id="info2">
-      <a href="healthform.php">
-      <h1>Medical</h1>
-      <span><i class= "bx bx-plus-medical"></i></span></a>
-    </div>
+    <div class="box-info">
+      <h1>Admission</h1>
+      <div class="container my-5">
+        <form method="post">
+          <div class="form-group">
+            <label for="name">Firstname</label>
+            <input type="text" class="form-control" placeholder="Enter your Firstname" name="firstname" autocomplete="off">
+          </div>
+          <div class="form-group1">
+            <label for="name">Lastname</label>
+            <input type="text" class="form-control" placeholder="Enter your Lastname" name="lastname" autocomplete="off">
+          </div>
+          <div class="form-group2">
+            <label for="name">Department</label>
+            <input type="text" class="form-control" placeholder="Enter your Department" name="department" autocomplete="off">
+          </div>
 
-    
-    <div class= "box-info" id="info4">
-      <a href="admithistory.php">
-      <h1>Admit</h1>
-      <span><i class= "bx bx-message-square-add"></i></span></a>
-    </div>
+          <div class="form-group3">
+            <label for="name">category</label>
+            <input type="text" class="form-control" placeholder="what category you are?" name="category" autocomplete="off">
+          </div>
+            
+          <div class="form-group5">
+            <label for="date">Date</label>
+            <input type="date" class="form-control" placeholder="Enter date" name="date" autocomplete="off">
+          </div>
 
-    <div class="table-container">
-      <table class="clinic-table">
-      <header class="schedule-header"><h1>Medical Schedule</h1></header>
-          <thead class= "sched-table">
-              <tr>
-                  <th class= "sched-table">Department</th>
-                  <th class="sched-table">Time</th>
-                  <th class= "sched-table">Schedule</th>
-                  <th class= "sched-table">Status</th>
-              
-              </tr>
-          </thead>
-          <tbody class= "table-body">
-              <tr>
-                  <td>CRIM</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Monday</td>
-                  <td><span class="status finished">Finished</span></td>
-              </tr>
-              <tr>
-                  <td>EDUC</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Tuesday</td>
-                  <td><span class="status ongoing">ongoing</span></td>
-              </tr>
-              <tr>
-                  <td>BSBA/BSOA/BSAIS/ENTREP</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Wednesday</td>
-                  <td><span class="status pending">pending</span></td>
-              </tr>
-              <tr>
-                  <td>BSIT/BLIS/BSCPE/BSP</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Thursday</td>
-                  <td><span class="status pending">pending</span></td>
-              </tr>
-              <tr>
-                  <td>BSHM/BSTM</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Friday</td>
-                  <td><span class="status pending">pending</span></td>
-              </tr>
-          </tbody>
-      </table>
-     </div>
+          <div class="form-group6">
+            <label for="time">Time</label>
+            <input type="time" class="form-control" placeholder="Enter timer" name="time" autocomplete="off">
+          </div>
 
-     <div class="appointment-container">
-      <header class="announce-header"><h2>Announcement</h2></header>
-       <ul class="appointment-list">
-           <li>
-               <div class="time">Today</div>
-               <div class="details">
-                   <h3>Medical is ongoing</h3>
-                   <p>medical is ongoing for educ department</p>
-               </div>
-           </li>
-           <li>
-               <div class="time">8 AM - <br>5 PM</div>
-               <div class="details"> 
-                   <h3>Medical Hours</h3>
-                   <p>Medical will be availlable at 8 am to 5 pm</p>
-               </div>
-           </li>
-           <li>
-               <div class="time">Today</div>
-               <div class="details">
-                   <h3>Inventory Stock</h3>
-                   <p>Stock of medicine was needed</p>
-               </div>
-           </li>
-           <li>
-               <div class="time">Sat and <br> Sun</div>
-               <div class="details">
-                   <h3>Medical will not available</h3>
-                   <p>Medical will not available at weekends</p>
-               </div>
-           </li>
-       </ul>
+          <div class="form-group7">
+            <label for="reason">Reason</label>
+            <input type="text" class="form-control" placeholder="Enter your reason" name="reason" autocomplete="off">
+          </div>
+          <div class="form-group8">
+            <label for="prescription">Prescription</label>
+            <input type="text" class="form-control" placeholder="Enter prescription" name="prescription" autocomplete="off">
+          </div>
+
+            <button type="submit" class="btn btn-primary" name="submit">submit</button>
+
+        </form>
       </div>
-    
     </div>
+
+  
+    <div class="box-bg">
+    <img src="assets/images/bcp.png" alt="" id="side-logo">
+  </div>
+
+
 </div>
 
-
-    <script type="text/javascript">
+<script type="text/javascript">
     function toggleNav() {
     const sidenav = document.getElementById("sidenav");
     const uppernav = document.getElementById("uppernav");
@@ -297,23 +285,31 @@ for (i = 0; i < dropdown.length; i++) {
     }
   });
 }
-
-
     </script>
 
 <script>
-  let number = document.getElementById('number');
-  let counter = 0;
-  setInterval(()=>{
-    if(counter == 75){
-      clearInterval();
-    }else{
-      counter += 1;
-      number.innerHTML = counter + "%";
-    }
-  }, 25)
-</script>
+          let hrs = document.getElementById("hrs");
+          let min = document.getElementById("min");
 
+          setInterval(() => {
+            let currentTime = new Date();
+
+          hrs.innerHTML = (currentTime.getHours() <10?"0":"") + currentTime.getHours();
+          min.innerHTML = (currentTime.getMinutes() <10?"0":"") + currentTime.getMinutes();
+          }, 1000);
+
+          function updateclock() {
+            pe = "PM";
+          }
+
+          if(hrs > 12){
+            hrs = hrs - 12;
+            pe = "AM";
+          }
+          
+        </script>
+
+          
 <script>
   document.getElementById("bell-icon").addEventListener("click", function(event) {
     event.preventDefault();
@@ -330,5 +326,6 @@ for (i = 0; i < dropdown.length; i++) {
     dropdown.classList.toggle("active"); // Toggle the dropdown visibility
 });
 </script>
+
 </body>
 </html>

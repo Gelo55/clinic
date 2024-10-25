@@ -1,17 +1,25 @@
+ 
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <title>Clinic Management System</title>
-    <link rel="stylesheet" href="assets/css/staffdash.css">
+    <link rel="stylesheet" href="assets/css/bsit.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Clinic Management System</title>
 </head>
 <body>
-     <!-- SIDEBAR -->
+    <!-- SIDEBAR -->
  <div id="sidenav" class="sidenav">
     <img src="assets/images/bcp.png" alt="img" class="bcp">
     <ul class="nav-link">
@@ -33,9 +41,8 @@
     <ul id="settings-dropdown-menu" class="settings-dropdown-menu">
         <li><a href="profile.php">Profile</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="index.php">Logout</a></li>
+        <li><a href="#">Logout</a></li>
     </ul>
-</li>
         <img src="assets/images/shore.avif" alt="avatar" class="admin-profile">
         <table class="user-profile">
           <tr>
@@ -52,7 +59,7 @@
         <td>
           <ul class="nav-links">
           <li>
-            <a href="#">
+            <a href="staffdash.php">
               <i class='bx bx-home' ></i>
               <span class="links_name">Home</span>
             </a>
@@ -63,7 +70,7 @@
       <i class="fa fa-caret-down" id="second"></i>
     </button>
     <div class="dropdown-container1">
-    <a class="dropdown-a" href="staffmanagestud.php"><span class="droplinks_name">Manage Student</span></a>
+      <a class="dropdown-a" href="staffmanagestud.php"><span class="droplinks_name">Manage Student</span></a>
     </div>
 
   </div>
@@ -126,7 +133,7 @@
     </button>
     <div class="dropdown-container4">
     <a class="dropdown-a" href="staffmedication.php"><span class="droplinks_name">Medication</span></a>
-    <a class="dropdown-a" href="staffequipment.php"><span class="droplinks_name">Equipment</span></a>
+        <a class="dropdown-a" href="staffequipment.php"><span class="droplinks_name">Equipment</span></a>
      </div>
 
           </div><br>
@@ -147,129 +154,92 @@
      <div class="container">
     <div class="head-title">
 				<div class="left">
-					<h1>Dashboard</h1>
+					<h1>Medical</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Staff</a>
+							<a href="#">Healthform</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Home</a>
+							<a class="active" href="#">Liat</a>
 						</li>
 					</ul>
 				</div>
     </div> 
 </div>
-
-<!-- main -->
 <!-- SIDEBAR -->
-<!--#################################################################################-->
 
-    <div class="container">
-        
-<!-- frame -->
-<div class= "frame">
+ 
+<div clas="container">
+    <div class="frame">
 
-    
-<div class= "box-info" id="info2">
-      <a href="healthform.php">
-      <h1>Medical</h1>
-      <span><i class= "bx bx-plus-medical"></i></span></a>
+    <div class="crud-container">
+    <button id="backButton" onclick="goBack()">Back</button>
+
+    <!-- Search Form -->
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" onkeyup="searchTable()" placeholder="Search for students...">
+        <button type="submit" class="btn btn-primary search-btn">Search</button>
     </div>
 
-    
-    <div class= "box-info" id="info4">
-      <a href="admithistory.php">
-      <h1>Admit</h1>
-      <span><i class= "bx bx-message-square-add"></i></span></a>
-    </div>
-
-    <div class="table-container">
-      <table class="clinic-table">
-      <header class="schedule-header"><h1>Medical Schedule</h1></header>
-          <thead class= "sched-table">
-              <tr>
-                  <th class= "sched-table">Department</th>
-                  <th class="sched-table">Time</th>
-                  <th class= "sched-table">Schedule</th>
-                  <th class= "sched-table">Status</th>
-              
-              </tr>
-          </thead>
-          <tbody class= "table-body">
-              <tr>
-                  <td>CRIM</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Monday</td>
-                  <td><span class="status finished">Finished</span></td>
-              </tr>
-              <tr>
-                  <td>EDUC</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Tuesday</td>
-                  <td><span class="status ongoing">ongoing</span></td>
-              </tr>
-              <tr>
-                  <td>BSBA/BSOA/BSAIS/ENTREP</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Wednesday</td>
-                  <td><span class="status pending">pending</span></td>
-              </tr>
-              <tr>
-                  <td>BSIT/BLIS/BSCPE/BSP</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Thursday</td>
-                  <td><span class="status pending">pending</span></td>
-              </tr>
-              <tr>
-                  <td>BSHM/BSTM</td>
-                  <td>8:00 AM - 5:00 PM</td>
-                  <td>Friday</td>
-                  <td><span class="status pending">pending</span></td>
-              </tr>
-          </tbody>
-      </table>
-     </div>
-
-     <div class="appointment-container">
-      <header class="announce-header"><h2>Announcement</h2></header>
-       <ul class="appointment-list">
-           <li>
-               <div class="time">Today</div>
-               <div class="details">
-                   <h3>Medical is ongoing</h3>
-                   <p>medical is ongoing for educ department</p>
-               </div>
-           </li>
-           <li>
-               <div class="time">8 AM - <br>5 PM</div>
-               <div class="details"> 
-                   <h3>Medical Hours</h3>
-                   <p>Medical will be availlable at 8 am to 5 pm</p>
-               </div>
-           </li>
-           <li>
-               <div class="time">Today</div>
-               <div class="details">
-                   <h3>Inventory Stock</h3>
-                   <p>Stock of medicine was needed</p>
-               </div>
-           </li>
-           <li>
-               <div class="time">Sat and <br> Sun</div>
-               <div class="details">
-                   <h3>Medical will not available</h3>
-                   <p>Medical will not available at weekends</p>
-               </div>
-           </li>
-       </ul>
-      </div>
-    
-    </div>
+    <!-- Table -->
+    <table id="studentTable">
+        <caption>BSIT Health Form List</caption>
+        <thead>
+            <tr id="student-row">
+                <th>Student Name</th>
+                <th>Student number</th>
+                <th>Course</th>
+                <th>Year Level</th>
+                <th>Submission Date</th>
+                <th>Health Form</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>gelo</td>
+            <td>21014343</td>
+            <td>BSIT</td>
+            <td>1st Year</td>
+            <td>10/12/2024</td>
+            <td><a href="formhealth.php" id="health">Health Form</a></td>
+          </tr>
+          <tr>
+            <td>john</td>
+            <td>21014344</td>
+            <td>BSIT</td>
+            <td>2nd Year</td>
+            <td>09/15/2024</td>
+            <td><a href="formhealth.php" id="health">Health Form</a></td>
+          </tr>
+          <tr>
+            <td>john</td>
+            <td>21014344</td>
+            <td>BSIT</td>
+            <td>2nd Year</td>
+            <td>09/15/2024</td>
+            <td><a href="formhealth.php" id="health">Health Form</a></td>
+          </tr>
+          <tr>
+            <td>john</td>
+            <td>21014344</td>
+            <td>BSIT</td>
+            <td>2nd Year</td>
+            <td>09/15/2024</td>
+            <td><a href="formhealth.php" id="health">Health Form</a></td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+    </table>
 </div>
 
 
-    <script type="text/javascript">
+    </div>
+    </div>
+
+    </body>
+        
+<script type="text/javascript">
     function toggleNav() {
     const sidenav = document.getElementById("sidenav");
     const uppernav = document.getElementById("uppernav");
@@ -297,22 +267,25 @@ for (i = 0; i < dropdown.length; i++) {
     }
   });
 }
-
-
     </script>
 
 <script>
-  let number = document.getElementById('number');
-  let counter = 0;
-  setInterval(()=>{
-    if(counter == 75){
-      clearInterval();
-    }else{
-      counter += 1;
-      number.innerHTML = counter + "%";
+    function selectOption(element, dropdownId) {
+      var selectedText = element.textContent;
+      var dropdownButton = document.getElementById(dropdownId);
+      dropdownButton.textContent = selectedText;
+      dropdownButton.classList.add('active'); // Optional: Adds a style indicating selection
     }
-  }, 25)
-</script>
+  </script>
+
+<script src="script.js"></script>
+
+<!-- JavaScript to enable the back button functionality -->
+<script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 
 <script>
   document.getElementById("bell-icon").addEventListener("click", function(event) {
@@ -330,5 +303,31 @@ for (i = 0; i < dropdown.length; i++) {
     dropdown.classList.toggle("active"); // Toggle the dropdown visibility
 });
 </script>
-</body>
+
+  <!-- JavaScript to filter the table -->
+<script>
+function searchTable() {
+    // Get the search input
+    var input = document.getElementById("searchInput");
+    var filter = input.value.toUpperCase();
+    var table = document.getElementById("studentTable");
+    var tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those that don't match the search query
+    for (var i = 1; i < tr.length; i++) {
+        var tdName = tr[i].getElementsByTagName("td")[0];  // Student Name
+        var tdNumber = tr[i].getElementsByTagName("td")[1]; // Student Number
+        if (tdName || tdNumber) {
+            var textValueName = tdName.textContent || tdName.innerText;
+            var textValueNumber = tdNumber.textContent || tdNumber.innerText;
+            if (textValueName.toUpperCase().indexOf(filter) > -1 || textValueNumber.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+</script>
+
 </html>
