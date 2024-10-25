@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
     
     if ($stmt->execute()) {
         echo "Data inserted successfully";
-        header('location:admit000000000000000000000000000000000000000000000000000000000history.php');
+        header('location:admithistory.php');
     } else {
         die("Error: " . $stmt->error);
     }

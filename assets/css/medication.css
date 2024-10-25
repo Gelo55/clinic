@@ -13,6 +13,7 @@
       height: 100%;
   }
   
+  
     
 .sidenav{
   height: 100vh;
@@ -882,7 +883,7 @@ background-color: #555; /* Scrollbar color on hover */
   
   .frame #btn-fourth{
     position: relative;
-    left: -43%;
+    left: -53%;
     width: -1%;
   }
 
@@ -1020,7 +1021,7 @@ background-color: #555; /* Scrollbar color on hover */
 
   #btn-modal{
     position: relative;
-    top: 60px;
+    top: -320px;
   }
   
   
@@ -1114,12 +1115,12 @@ background-color: #555; /* Scrollbar color on hover */
 }
 
 #search-input{
+  width: 20%;
   position: relative;
-  top: 60px;
+  top: 70px;
 }
 
 #btn-search{
   position: relative;
-  top: 60px;
+  top: 70px;
 }
-  
