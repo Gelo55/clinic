@@ -68,17 +68,6 @@
 
   </div>
 
-  <div class="dropdownstaff">
-    <button class="dropdown-btn"> <i class='bx bx-user' ></i>
-      <span class="droplinks_name">Clinic Staff</span>
-      <i class="fa fa-caret-down" id="third"></i>
-    </button>
-    <div class="dropdown-container2">
-      <a class="dropdown-a" href="managestaff.php"><span class="droplinks_name">Manage Staff</span></a>
-
-    </div>
-
-  </div>
         </ul>   
         </td>
       </tr>            
@@ -88,8 +77,6 @@
       <tr>
         <td>
         <div class="dropdownadmission">
-    <span class="main"><b>Admission</b></span><br>
-    <span class="subs"><b>Admission history</b></span><br><br>
     <button class="dropdown-btn"> <i class='bx bx-add-to-queue' ></i>
       <span class="droplinks_name">Admission</span>
       <i class="fa fa-caret-down" id="fourth"></i>
@@ -107,8 +94,6 @@
       <tr>
         <td>
     <div class="dropdownmedical">
-    <span class="main"><b>Medical</b></span><br>
-    <span class="subs"><b>Medical Status</b></span><br><br>
     <button class="dropdown-btn"> <i class='bx bx-plus' ></i>
       <span class="droplinks_name">Medical</span>
       <i class="fa fa-caret-down" id="first"></i>
@@ -129,8 +114,6 @@
       <tr>
         <td>
     <div class="dropdowninventory">
-    <span class="main"><b>Inventory</b></span><br>
-    <span class="subs"><b>Inventory Monitoring</b></span><br><br>
     <button class="dropdown-btn"> <i class='bx bx-capsule' ></i>
       <span class="droplinks_name">inventory</span>
       <i class="fa fa-caret-down" id="fifth"></i>
@@ -149,8 +132,6 @@
       <tr>
         <td>
         <div class="dropdownreport">
-    <span class="main"><b>Report</b></span><br>
-    <span class="subs"><b>Report Update</b></span><br><br>
     <button class="dropdown-btn"> <i class='bx bx-edit' ></i>
       <span class="droplinks_name">Report and Analytics</span>
       <i class="fa fa-caret-down" id="sixth"></i>
